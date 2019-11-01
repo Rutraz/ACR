@@ -6,5 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Block extends Model
 {
-    return $this->belongsToMany('App\Block');
+    public function medics(){
+
+        return $this->belongsToMany('App\Medic');
+
+    }
+    
 }

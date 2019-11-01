@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Medic extends Model
 {
-    return $this->belongsToMany('App\Medic')
-    ->withTimestamps();
+    public function blocks(){
+
+        return $this->belongsToMany('App\Block');
+
+    }
 }
