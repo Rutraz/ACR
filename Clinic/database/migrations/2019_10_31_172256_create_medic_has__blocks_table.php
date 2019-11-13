@@ -15,10 +15,10 @@ class CreateMedicHasBlocksTable extends Migration
     {
         if(!Schema::hasTable('medic_has__blocks')) {
         Schema::create('medic_has__blocks', function (Blueprint $table) {
-            $table->unsignedBigInteger('medic_id');  
-            $table->unsignedBigInteger('block_id');  
-            $table->foreign('medic_id')->references('id')->on('medics');
-            $table->foreign('block_id')->references('id')->on('blocks');
+            $table->integer('medic_id')->unsigned()->index();  
+            $table->integer('block_id')->unsigned()->index(); 
+            $table->foreign('medic_id')->references('id')->on('medics')->onDelete('cascade');;
+            $table->foreign('block_id')->references('id')->on('blocks')->onDelete('cascade');;
             $table->date('date');
             $table->timestamps();
         });

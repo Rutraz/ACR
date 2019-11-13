@@ -36,4 +36,17 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function medic()
+    {
+        return $this->hasOne('App\Medic');
+    }
+    public function employee()
+    {
+        return $this->hasOne('App\Employee');
+    }
+    public function client()
+    {
+        return $this->hasOne('App\Client');
+    }
 }

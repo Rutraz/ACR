@@ -15,12 +15,12 @@ class CreateMedicsTable extends Migration
     {
         
         Schema::create('medics', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id');   
+            $table->increments('id');
+            $table->integer('user_id')->unsigned()->index();  
             $table->foreign('user_id')->references('id')->on('users');
-            $table->char('specialty');
-            $table->smallInteger('rating');
-            $table->smallInteger('adse');
+            $table->string('specialty');
+            $table->integer('rating');
+            $table->integer('adse');
             $table->timestamps();
         });
     }

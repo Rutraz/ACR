@@ -15,8 +15,8 @@ class CreateEmployeesTable extends Migration
     {
         if(!Schema::hasTable('employees')) {
         Schema::create('employees', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id');  
+            $table->increments('id');
+            $table->integer('user_id')->unsigned()->index(); 
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
