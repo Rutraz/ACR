@@ -21,55 +21,37 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+        <nav class="topnav">
+            <div>
+                <a href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
 
-                <a class="navbar-brand" href="{{ url('/about') }}">
+                <a  href="{{ url('/about') }}">
                     Sobre nos
                 </a>
 
-                <a class="navbar-brand" href="{{ url('/help') }}">
+                <a href="{{ url('/help') }}">
                     FAQ
                 </a>
 
-                <a class="navbar-brand" href="{{ url('/contact') }}">
+                <a href="{{ url('/contact') }}">
                     Contactos
                 </a>
-
-
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @if (Route::has('login'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @endif
-
-                    </ul>
-                </div>
             </div>
-        </nav>
+            <!-- Authentication Links -->
+            @if (Route::has('login'))
+                <div class="goLeft">
+                        <a href="{{ route('login') }}">Login</a>
 
-        <main class="py-4">
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}">Register</a>
+                        @endif
+                </div>
+            @endif
+
+        </nav>
+        <main>
             @yield('content')
         </main>
     </div>

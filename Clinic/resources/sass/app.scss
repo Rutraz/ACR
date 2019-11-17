@@ -4,12 +4,35 @@
 // Variables
 @import "variables";
 
-@import "welcome";
+@import "Gest/welcome";
 
-@import "about";
+@import "Gest/about";
 
-@import "client";
+@import "Auth/auth";
+//@import "bootstrap";
 
-@import "employee";
+.topnav {
+    overflow: hidden;
+    background-color: $cyan;
 
-@import "bootstrap";
+    a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 1em;
+    }
+    a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+    a:active {
+        background-color: $cin;
+        color: white;
+    }
+
+    .goLeft {
+        float: right;
+    }
+}

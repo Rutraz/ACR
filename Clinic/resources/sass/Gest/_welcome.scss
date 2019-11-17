@@ -1,7 +1,6 @@
-html,
 body {
     background-color: white;
-    color: #636b6f;
+    color: $welcomeColor;
     font-family: "Nunito", sans-serif;
     font-weight: 200;
     height: 100vh;
@@ -9,23 +8,11 @@ body {
 }
 
 .full-height {
-    height: 100vh;
-}
-
-.flex-center {
+    height: 87vh;
     align-items: center;
     display: flex;
     justify-content: center;
-}
-
-.position-ref {
     position: relative;
-}
-
-.top-right {
-    position: absolute;
-    right: 10px;
-    top: 18px;
 }
 
 .content {
@@ -37,14 +24,25 @@ body {
     margin-top: 55px;
 }
 
-.links > a {
-    color: #636b6f;
-    padding: 0 25px;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.1rem;
-    text-decoration: none;
-    text-transform: uppercase;
+.links {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+    a {
+        color: $welcomeColor;
+        padding: 0 25px;
+        font-size: 0.8em;
+        font-weight: 600;
+        letter-spacing: 0.1rem;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+    a:hover {
+        letter-spacing: 0.2rem;
+        transition: 0.2s;
+        text-decoration: underline;
+        color: $blue;
+    }
 }
 
 .midleLinks {
@@ -62,7 +60,7 @@ body {
             width: 20%;
         }
         a {
-            color: #636b6f;
+            color: $welcomeColor;
             padding: 0 25px;
             font-size: 1.2em;
             font-weight: 600;
@@ -84,6 +82,8 @@ body {
     margin-bottom: 40px;
     display: flex;
     text-align: right;
+    max-width: 900px;
+    max-height: 225px;
 }
 
 #stetho {

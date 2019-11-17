@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Clinic</title>
+        <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -12,9 +12,9 @@
         
     </head>
     <body style="background-color:white">
-        <div class="flex-center position-ref full-height">
+        <div class="full-height">
             @if (Route::has('login'))
-                <div class="top-right links">
+                <div class="links">
                         <a href="{{ route('login') }}">Login</a>
 
                         @if (Route::has('register'))
@@ -48,5 +48,10 @@
                </div>
             </div>
         </div>
+        <hr>
+        <footer>
+            <p>Created by: Ricardo Jardim , Vitor Velosa, and João Santos</p>
+            <p>Contact information: <a href="mailto:2040416@student.uma.pt">Ricardo Jardim</a> | <a href="mailto:2018915@student.uma.pt">Vitor Velosa</a> | <a href="mailto:2095415@student.uma.pt">João Santos</a></p>
+        </footer>
     </body>
 </html>
