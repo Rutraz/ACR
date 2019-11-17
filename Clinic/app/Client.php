@@ -13,4 +13,8 @@ class Client extends Model
     public function appointment(){
         return $this->hasMany('App\Appointment');
     }
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }

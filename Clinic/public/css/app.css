@@ -2,7 +2,7 @@
 
 html,
 body {
-  background-color: #ffffff;
+  background-color: white;
   color: #636b6f;
   font-family: "Nunito", sans-serif;
   font-weight: 200;
@@ -39,6 +39,7 @@ body {
 
 .title {
   font-size: 84px;
+  margin-top: 55px;
 }
 
 .links > a {
@@ -51,8 +52,54 @@ body {
   text-transform: uppercase;
 }
 
+.midleLinks {
+  display: -webkit-box;
+  display: flex;
+}
+
+.midleLinks .item {
+  display: block;
+  text-align: center;
+  size: auto;
+  margin-right: 3%;
+  margin-left: 3%;
+  margin-top: 3%;
+  max-width: 300px;
+}
+
+.midleLinks .item img {
+  width: 20%;
+}
+
+.midleLinks .item a {
+  color: #636b6f;
+  padding: 0 25px;
+  font-size: 1.2em;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.midleLinks .item a:hover {
+  letter-spacing: 0.1em;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  text-decoration: underline;
+  font-size: 1.4em;
+  color: #3490dc;
+}
+
 .m-b-md {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+  display: -webkit-box;
+  display: flex;
+  text-align: right;
+}
+
+#stetho {
+  width: 25%;
+  margin-right: 15%;
 }
 
 /*!
@@ -11153,9 +11200,5 @@ a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6;
   }
-}
-
-.ola {
-  background-color: yellow;
 }
 

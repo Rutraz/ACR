@@ -39,14 +39,14 @@ class User extends Authenticatable
 
     public function medic()
     {
-        return $this->hasOne('App\Medic');
+        return $this->hasMany('App\Medic');
     }
     public function employee()
     {
-        return $this->hasOne('App\Employee');
+        return $this->hasMany('App\Employee');
     }
     public function client()
     {
-        return $this->hasOne('App\Client');
+        return $this->hasMany('App\Client');
     }
 }
