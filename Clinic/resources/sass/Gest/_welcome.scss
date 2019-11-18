@@ -8,7 +8,7 @@ body {
 }
 
 .full-height {
-    height: 87vh;
+    height: 90vh;
     align-items: center;
     display: flex;
     justify-content: center;
@@ -89,4 +89,12 @@ body {
 #stetho {
     width: 25%;
     margin-right: 15%;
+}
+
+footer {
+    padding: 0px;
+    p{
+        margin-top:0px;
+        margin-bottom: 0px;
+    }
 }
