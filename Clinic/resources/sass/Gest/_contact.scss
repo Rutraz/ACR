@@ -1,0 +1,109 @@
+
+.contactContainer{
+    .header {
+        text-align: center;
+        background-image: url('assets/contact.jpg');
+        background-size:100%;
+        background-position-y: 50%;
+        border-top: groove rgb(39, 189, 240);
+        border-bottom: groove rgb(39, 189, 240);
+        color: white;
+        font-family: "Times New Roman", Times, serif;
+        font-size: 30px;
+        padding-top: 100px;
+        padding-bottom: 100px ;
+       
+    }
+   
+    .body{
+        h2 {
+            text-align: center;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-left: 10%;
+            margin-right: 10%;
+          }
+
+          .midleLinks {
+            display: flex;
+            margin-top: 0%;
+            
+            .item {
+                display: block;
+                text-align: center;
+                size: auto;
+                margin-left: 16%;
+                margin-top:0%;
+                background-color: lightgray;
+                width: 400px;
+                height: 400px;
+                box-shadow: 10px 10px 5px grey;
+                textarea {
+                    border-radius: 4px;
+                }
+                input {
+                    border-radius: 4px;
+                }
+                button {
+                    align-content: center;
+                    background-color: #4CAF50; /* Green */  
+                    color: white;
+                    font-size: 30px;
+                    
+                }
+
+                a {
+                    color: $welcomeColor;
+                    padding: 0 25px;
+                    font-size: 1.2em;
+                    font-weight: 600;
+                    letter-spacing: 0.1rem;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                }
+                a:hover {
+                    letter-spacing: 0.1em;
+                    transition: 0.4s;
+                    text-decoration: underline;
+                    font-size: 1.4em;
+                    color: $blue;
+                }
+
+                hr{
+                    border: 2px solid grey;
+                    
+                }
+            }
+        }
+
+        .container1{
+            display:block;
+            padding-left: 5%;
+            padding-top: 5%;
+            img{
+                
+                width: 20px;
+                height: 20px;
+                
+            }
+            p{
+                margin-left: 20%;
+            }
+            
+        }
+       
+
+        .item1{
+            display: flex;
+            #p {
+                margin-left: 20%;
+            }
+            
+        }
+    }
+
+}
