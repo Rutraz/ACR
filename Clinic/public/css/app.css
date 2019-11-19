@@ -268,6 +268,71 @@ footer p {
   margin-right: auto;
 }
 
+.headerhelp {
+  background-image: url(/images/helpbg.png?a3d360924b4b1679420fa68a0ba0f933);
+  background-size: 100%;
+  background-position: center;
+  border-top: groove #27bdf0;
+  border-bottom: groove #27bdf0;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  line-height: 0.2;
+  height: 200px;
+}
+
+.headerhelp .maintitle {
+  width: 80%;
+  margin-left: 10%;
+  font-size: 4em;
+  font-weight: bold;
+}
+
+.headerhelp .abstract {
+  width: 80%;
+  margin-left: 10%;
+  font-size: 1.2em;
+  line-height: 1;
+}
+
+.helpContainer {
+  width: 80%;
+  margin-left: 10%;
+  font-family: "Futura", "Trebuchet MS", "Arial", sans-serif;
+}
+
+.helpContainer .question {
+  background-color: white;
+  color: #444;
+  cursor: pointer;
+  padding: 26px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 1.2em;
+  font-weight: bold;
+  border-bottom: 2px solid lightgrey;
+}
+
+.helpContainer .question img {
+  width: 24px;
+  float: right;
+  height: auto;
+  position: relative;
+}
+
+.helpContainer .active,
+.helpContainer .question:hover {
+  background-color: #ccc;
+}
+
+.helpContainer .answer {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
 .aboutContainer .header {
   text-align: center;
   background-image: url(/images/banner.jpg?a218b24f52aebd8fada1070d22757642);
