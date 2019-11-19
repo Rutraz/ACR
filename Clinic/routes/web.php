@@ -20,7 +20,7 @@ Route::get('/about', function () {
     return view('Gest.about');
 });
 
-Route::get('/help', 'SelectController@index');
+Route::get('/help', 'FaqController@index');
 
 Route::get('/contact', function () {
     return view('Gest.contact');
