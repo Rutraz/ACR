@@ -11,6 +11,33 @@
 |
 */
 
+//ROTAS PARA GEST
 Route::get('/', function () {
-    return view('welcome');
+    return view('Gest.welcome');
 });
+
+Route::get('/about', function () {
+    return view('Gest.about');
+});
+
+Route::get('/help', function () {
+    return view('Gest.help');
+});
+
+Route::get('/contact', function () {
+    return view('Gest.contact');
+});
+
+//ROTAS PARA AUTHENTICAÇÂO
+Auth::routes();
+
+
+Route::get('/query', 'SelectController@index');
+
+//ROTAS PARA CLIENTE
+Route::get('/client', 'ClientController@index');
+
+
+//ROTAS PARA FUNCIONARIO
+
+Route::get('/employee', 'EmployeeController@index');

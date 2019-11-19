@@ -15,13 +15,13 @@ class CreateAppointmentsTable extends Migration
     {
         if(!Schema::hasTable('appointments')) {
         Schema::create('appointments', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->date('date');
             $table->date('hour');
-            $table->smallInteger('state');
-            $table->char('comments');
-            $table->unsignedBigInteger('medic_id');  
-            $table->unsignedBigInteger('client_id');  
+            $table->integer('state');
+            $table->string('comments');
+            $table->integer('medic_id')->unsigned();  
+            $table->integer('client_id')->unsigned();  
             $table->foreign('medic_id')->references('id')->on('medics');
             $table->foreign('client_id')->references('id')->on('clients');
             $table->timestamps();

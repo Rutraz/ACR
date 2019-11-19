@@ -15,10 +15,10 @@ class CreateAnalysesTable extends Migration
     {
         
         Schema::create('analyses', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('client_id'); 
+            $table->increments('id');
+            $table->integer('client_id')->unsigned()->index(); 
             $table->foreign('client_id')->references('id')->on('clients');
-            $table->smallInteger('state');
+            $table->integer('state');
             $table->date('date');
             $table->date('hour');
             $table->timestamps();

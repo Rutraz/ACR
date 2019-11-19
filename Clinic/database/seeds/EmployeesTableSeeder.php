@@ -12,7 +12,11 @@ class EmployeesTableSeeder extends Seeder
     public function run()
     {
         DB::table('employees')->insert([
-           'user_id' => '5',
+           'user_id' => '1',
         ]);
+
+        DB::table('employees')->insert([
+            'user_id' => '6',
+         ]);
     }
 }

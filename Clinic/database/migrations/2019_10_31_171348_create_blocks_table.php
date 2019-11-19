@@ -14,9 +14,9 @@ class CreateBlocksTable extends Migration
     public function up()
     {
         Schema::create('blocks', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->smallInteger('begin_hour');
-            $table->smallInteger('end_hour');
+            $table->increments('id');
+            $table->integer('begin_hour');
+            $table->integer('end_hour');
             $table->timestamps();
         });
     }

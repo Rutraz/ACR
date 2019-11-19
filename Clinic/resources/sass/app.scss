@@ -1,8 +1,42 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url("https://fonts.googleapis.com/css?family=Nunito");
 
 // Variables
-@import 'variables';
+@import "variables";
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "Gest/welcome";
+
+@import "Gest/contact";
+
+@import "Gest/help";
+
+@import "Gest/about";
+
+@import "Auth/auth";
+//@import "bootstrap";
+
+.topnav {
+    overflow: hidden;
+    background-color: $cyan;
+
+    a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 1em;
+    }
+    a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+    a:active {
+        background-color: $cin;
+        color: white;
+    }
+
+    .goLeft {
+        float: right;
+    }
+}
