@@ -31,7 +31,13 @@ Route::get('/contact', function () {
 //ROTAS PARA AUTHENTICAÇÂO
 Auth::routes();
 
+
+Route::get('/query', 'SelectController@index');
+
 //ROTAS PARA CLIENTE
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/client', 'ClientController@index');
+
 
 //ROTAS PARA FUNCIONARIO
+
+Route::get('/employee', 'EmployeeController@index');

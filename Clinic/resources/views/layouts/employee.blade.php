@@ -39,17 +39,6 @@
                     Contactos
                 </a>
             </div>
-            <!-- Authentication Links -->
-            @if (Route::has('login'))
-                <div class="goLeft">
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                </div>
-            @endif
-
         </nav>
         <main>
             @yield('content')

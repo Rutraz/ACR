@@ -18,10 +18,10 @@ class CreateClientsTable extends Migration
             $table->increments('id');   
             $table->integer('user_id')->unsigned()->index();      
             $table->foreign('user_id')->references('id')->on('users');
-            $table->integer('CC');
-            $table->integer('adse')->nullable();
+            $table->string('CC')->unique();;
+            $table->string('adse')->nullable();
             $table->string('morada'); 
-            $table->integer('idade')->nullable(); 
+            $table->date('idade')->nullable(); 
             $table->timestamps();
         });
         }

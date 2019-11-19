@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Medic extends Model
 {
+    protected $fillable = [
+        'user_id', 'specialty', 'rating','adse'
+    ];
+
+
     public function blocks(){
 
         return $this->belongsToMany('App\Block',"medic_has__blocks");

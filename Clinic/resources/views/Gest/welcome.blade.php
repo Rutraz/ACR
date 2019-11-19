@@ -26,7 +26,7 @@
             <div class="content">
                 <div class="m-b-md">
                 <img id="stetho" src="{{asset('assets/healthcare.png')}}"/>
-                    <h1 class= "title"> Healthcare </h1>
+                    <h1 class= "title"> HealthCare </h1>
                 </div>
 
                 <div class="midleLinks">

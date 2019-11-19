@@ -20,7 +20,7 @@ class CreateMedicsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('specialty');
             $table->integer('rating');
-            $table->integer('adse');
+            $table->string('adse');
             $table->timestamps();
         });
     }

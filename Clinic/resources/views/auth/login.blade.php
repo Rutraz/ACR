@@ -11,10 +11,10 @@
             <div class="logItem">
                 <label for="email">{{ __('E-Mail Address') }}</label>
                 
-                <input class="loginput @error('email') is-invalid @enderror" id="email" placeholder="Enter your email" type="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                <input class="loginput @error('email') invalid @enderror" id="email" placeholder="Enter your email" type="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                 
                 @error('email')
-                <span class="invalid-feedback" role="alert">
+                <span class="feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
                 @enderror
@@ -23,10 +23,10 @@
             <div class="logItem">
             <label for="password" >{{ __('Password') }}</label>
            
-            <input class="loginput @error('password') is-invalid @enderror" placeholder="Enter your password" id="password" type="password" required autocomplete="current-password">
+            <input class="loginput @error('password') invalid @enderror" placeholder="Enter your password" id="password" name="password" type="password" required autocomplete="current-password">
 
             @error('password')
-                <span class="invalid-feedback" role="alert">
+                <span class="feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
             @enderror
