@@ -3,7 +3,6 @@
 @section('content')
 <script src="{{ asset('js/help.js') }}" defer></script>
 <div>
-
     <div class="headerhelp">
         <p class="maintitle"> FAQ </p>
         <p class="abstract"> Têm alguma dúvida relativamente ao funcionamento do nosso serviço ou à nossa plataforma de apoio ? 
