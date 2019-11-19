@@ -9,16 +9,18 @@
         <div class="midleLinks">
             <div class="item">
                 <h3>Envie um Email.</h3>
-                <form action="">
-                <input type="text" size="40" placeholder=" Nome" name="Yourname" id="name" >
+                <form method ="post" action="sendEmail.php">
+                <input  type="text" size="40" placeholder=" Nome" name="name" id="name" >
                 <br>
                 <br>
-                <input type="email" size="40" placeholder=" Email" name="YourEmail" id="email" >
+                <input type="email" size="40" placeholder=" Email" name="email" id="email" >
                 <br>
                 <br>
-                <textarea rows="4" cols="39" placeholder=" Messagem"> </textarea>
+                <textarea rows="4" cols="39" placeholder=" Messagem" name="message" id="message"> </textarea>
                 <br> <br>
-                <button type="button" onclick="alert('Ricard é gay')">Enviar</button>
+             <!--   <input class="button button1"  type="button" value="Enviar"> -->
+              <!-- <button class="button button1" type="button" >Enviar</button>   -->
+               
                 </form>
             </div>
             <div class="item">
@@ -31,11 +33,18 @@
                     <p id="p" > Tuaprima@hotmail.com  </p>     </div>
                </div>
                <hr>
+               <div class="container2" >
+               <div class="item2"> <img src="{{asset('assets/facebook-icon.png')}}" alt="" >
+               <div class="item2" > <img src="{{asset('assets/twitter-logo.png')}}"  alt="" > 
+               <div class="item2" > <img src="{{asset('assets/instagram-logo.png')}}"  alt="" >  
+               <div class="item2" > <img src="{{asset('assets/linkin-icon.png')}}"  alt="" >            
             </div>
 
         </div>
            <br><br>
         </div> 
+        
     </div>
+    
 </div>
 @endsection
