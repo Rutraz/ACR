@@ -20,9 +20,7 @@ Route::get('/about', function () {
     return view('Gest.about');
 });
 
-Route::get('/help', function () {
-    return view('Gest.help');
-});
+Route::get('/help', 'SelectController@index');
 
 Route::get('/contact', function () {
     return view('Gest.contact');
@@ -37,6 +35,7 @@ Route::get('/query', 'SelectController@index');
 //ROTAS PARA CLIENTE
 Route::get('/client', 'ClientController@index');
 
+Route::get('/client/profile','ClientController@profile');
 
 //ROTAS PARA FUNCIONARIO
 
