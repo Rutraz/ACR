@@ -15,13 +15,13 @@ class CreateClientsTable extends Migration
     {
         if(!Schema::hasTable('clients')) {
         Schema::create('clients', function (Blueprint $table) {
-            $table->bigIncrements('id');   
-            $table->unsignedBigInteger('user_id');      
+            $table->increments('id');   
+            $table->integer('user_id')->unsigned()->index();      
             $table->foreign('user_id')->references('id')->on('users');
-            $table->mediumInteger('CC');
-            $table->smallInteger('adse')->nullable();;
-            $table->char('morada'); 
-            $table->char('idade')->nullable();;  
+            $table->string('CC')->unique();;
+            $table->string('adse')->nullable();
+            $table->string('morada'); 
+            $table->date('idade')->nullable(); 
             $table->timestamps();
         });
         }

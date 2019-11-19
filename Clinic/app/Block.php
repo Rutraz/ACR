@@ -8,7 +8,7 @@ class Block extends Model
 {
     public function medics(){
 
-        return $this->belongsToMany('App\Medic');
+        return $this->belongsToMany('App\Medic',"medic_has__blocks");
 
     }
     
