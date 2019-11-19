@@ -114,7 +114,6 @@ footer p {
 
 .contactContainer .header {
   text-align: center;
-  background-image: url(/images/contact.jpg?528eb86d9802cc8a5d868bb49acbb66c);
   background-size: 100%;
   background-position-y: 50%;
   border-top: groove #27bdf0;
@@ -166,7 +165,7 @@ footer p {
 }
 
 .contactContainer .body .midleLinks .item button {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   /* Green */
   border: none;
   color: white;
@@ -185,11 +184,11 @@ footer p {
 .contactContainer .body .midleLinks .item .button1 {
   background-color: white;
   color: black;
-  border: 2px solid #4CAF50;
+  border: 2px solid #4caf50;
 }
 
 .contactContainer .body .midleLinks .item .button1:hover {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
 }
 
@@ -269,7 +268,6 @@ footer p {
 }
 
 .headerhelp {
-  background-image: url(/images/helpbg.png?a3d360924b4b1679420fa68a0ba0f933);
   background-size: 100%;
   background-position: center;
   border-top: groove #27bdf0;
@@ -294,6 +292,17 @@ footer p {
   line-height: 1;
 }
 
+.headerhelp .abstract a {
+  color: white;
+  -webkit-text-decoration: underline white;
+          text-decoration: underline white;
+}
+
+.headerhelp .abstract a:hover {
+  -webkit-text-decoration: underline #6cb2eb;
+          text-decoration: underline #6cb2eb;
+}
+
 .helpContainer {
   width: 80%;
   margin-left: 10%;
@@ -309,7 +318,7 @@ footer p {
   border: none;
   text-align: left;
   outline: none;
-  font-size: 1.2em;
+  font-size: 1.4em;
   font-weight: bold;
   border-bottom: 2px solid lightgrey;
 }
@@ -328,6 +337,7 @@ footer p {
 
 .helpContainer .answer {
   padding: 0 18px;
+  font-size: 1.2em;
   display: none;
   overflow: hidden;
   background-color: #f1f1f1;
@@ -335,7 +345,6 @@ footer p {
 
 .aboutContainer .header {
   text-align: center;
-  background-image: url(/images/banner.jpg?a218b24f52aebd8fada1070d22757642);
   background-size: 100%;
   background-position: center;
   border-top: groove #27bdf0;
