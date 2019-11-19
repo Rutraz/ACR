@@ -20,29 +20,35 @@
     <link href="{{ mix('/css/employee.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="employee">
-        <nav class="topnav">
-            <div>
-                <a href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
+    <nav class="sidenav">
+                <header>
+                <a href="{{ url('/employee') }}">{{$user->name}}</a>
+                </header>
+            <a href="{{ url('/') }}">
+            <img src="{{asset('assets/appointment.png')}}"/> Consultas
+            </a>
 
-                <a  href="{{ url('/about') }}">
-                    Sobre nos
-                </a>
+            <a  href="{{ url('/about') }}">
+                Medicos
+            </a>
 
-                <a href="{{ url('/help') }}">
-                    FAQ
-                </a>
+            <a href="{{ url('/contact') }}">
+                Horarios
+            </a>
 
-                <a href="{{ url('/contact') }}">
-                    Contactos
-                </a>
-            </div>
-        </nav>
-        <main>
-            @yield('content')
-        </main>
-    </div>
+            <a href="{{ url('/help') }}">
+                Clientes
+            </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button type="submit">Logout</button>
+            </form>
+    </nav>
+
+
+    <main>
+        @yield('content')
+    </main>
+
 </body>
 </html>

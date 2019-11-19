@@ -17,10 +17,23 @@ class ClientController extends Controller
     {
         $user = Auth::user();
         if($user){
+            return view('Client.home',compact('user'));
+        }
+        else{
+            return redirect('/');
+        }
+    }
+
+    public function profile()
+    {
+        $user = Auth::user();
+        if($user){
             $id = $user->id;
             $client = Client::where('user_id',$id)->first();;
-                if($client)
-                    return view('Client.home',compact('user','client'));
+                if($client){
+                    $appointments = $client->appointment;
+                    return view('Client.profile',compact('user','client','appointments'));
+                }
                 else{
                     return redirect('/');
                 }

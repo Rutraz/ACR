@@ -37,6 +37,7 @@ Route::get('/query', 'SelectController@index');
 //ROTAS PARA CLIENTE
 Route::get('/client', 'ClientController@index');
 
+Route::get('/client/profile','ClientController@profile');
 
 //ROTAS PARA FUNCIONARIO
 
