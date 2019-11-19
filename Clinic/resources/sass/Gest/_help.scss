@@ -2,8 +2,7 @@
 
 .headerhelp {
     //text-align: center;
-    background-image: url('assets/helpbg.png');
-    background-size:100%;
+    background-size: 100%;
     background-position: center;
     border-top: groove rgb(39, 189, 240);
     border-bottom: groove rgb(39, 189, 240);
@@ -27,16 +26,23 @@
         margin-left: 10%;
         font-size: 1.2em;
         line-height: 1;
+
+        a {
+            color: white;
+            text-decoration: underline white;
+        }
+        a:hover {
+            text-decoration: underline $cyan;
+        }
     }
 }
- 
- .helpContainer {
 
+.helpContainer {
     // Estilo do corpo da página
     width: 80%;
     margin-left: 10%;
-    font-family: 'Futura','Trebuchet MS','Arial',sans-serif;
- 
+    font-family: "Futura", "Trebuchet MS", "Arial", sans-serif;
+
     // Estilo da pergunta
     .question {
         background-color: white;
@@ -47,7 +53,7 @@
         border: none;
         text-align: left;
         outline: none;
-        font-size: 1.2em;
+        font-size: 1.4em;
         font-weight: bold;
         //border-top: 2px solid lightgrey;
         border-bottom: 2px solid lightgrey;
@@ -58,20 +64,20 @@
             height: auto;
             position: relative;
         }
-
     }
-    
+
     // Cor da pergunta se passarmos por cima ou clicar-mos
-    .active, .question:hover {
+    .active,
+    .question:hover {
         background-color: #ccc;
     }
-    
+
     // Estilo da resposta que está escondida por defeito
     .answer {
         padding: 0 18px;
+        font-size: 1.2em;
         display: none;
         overflow: hidden;
         background-color: #f1f1f1;
-    } 
-
+    }
 }

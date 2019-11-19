@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="contactContainer">
-    <div class="header"> </div>
+    <div class="header" style="background-image:url('{{ asset('assets/contact.jpg') }}')"> </div>
     <div class="body">
     <h2>Contactos</h2>
     

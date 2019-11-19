@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="aboutContainer">
-    <div class="header">    
+    <div class="header" style="background-image:url('{{ asset('assets/banner.jpg') }}')">    
     </div>
     <div class="body">
         <h2>Sobre nós</h2> 
