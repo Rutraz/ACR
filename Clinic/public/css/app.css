@@ -112,7 +112,163 @@ footer p {
   margin-bottom: 0px;
 }
 
-.header {
+.contactContainer .header {
+  text-align: center;
+  background-image: url(/images/contact.jpg?528eb86d9802cc8a5d868bb49acbb66c);
+  background-size: 100%;
+  background-position-y: 50%;
+  border-top: groove #27bdf0;
+  border-bottom: groove #27bdf0;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 30px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.contactContainer .body h2 {
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 40px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  text-align: center;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.contactContainer .body .midleLinks {
+  display: -webkit-box;
+  display: flex;
+  margin-top: 0%;
+}
+
+.contactContainer .body .midleLinks .item {
+  display: block;
+  text-align: center;
+  size: auto;
+  margin-left: 16%;
+  margin-top: 0%;
+  width: 400px;
+  height: 400px;
+}
+
+.contactContainer .body .midleLinks .item textarea {
+  border-radius: 4px;
+}
+
+.contactContainer .body .midleLinks .item input {
+  border-radius: 4px;
+}
+
+.contactContainer .body .midleLinks .item button {
+  background-color: #4CAF50;
+  /* Green */
+  border: none;
+  color: white;
+  padding: 5px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 0%;
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.contactContainer .body .midleLinks .item .button1 {
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50;
+}
+
+.contactContainer .body .midleLinks .item .button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.contactContainer .body .midleLinks .item a {
+  color: #4b5053;
+  padding: 0 25px;
+  font-size: 1.2em;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.contactContainer .body .midleLinks .item a:hover {
+  letter-spacing: 0.1em;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  text-decoration: underline;
+  font-size: 1.4em;
+  color: #3490dc;
+}
+
+.contactContainer .body .midleLinks .item hr {
+  border: 1px solid grey;
+}
+
+.contactContainer .body .container1 {
+  display: block;
+  padding-left: 5%;
+  padding-top: 5%;
+}
+
+.contactContainer .body .container1 img {
+  width: 20px;
+  height: 20px;
+}
+
+.contactContainer .body .container1 p {
+  margin-left: 20%;
+}
+
+.contactContainer .body .container1 #spread {
+  padding: 50%;
+}
+
+.contactContainer .body .item1 {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: baseline;
+          align-items: baseline;
+}
+
+.contactContainer .body .item1 #p {
+  margin-left: 20%;
+}
+
+.contactContainer .body .container2 {
+  display: block;
+  padding-left: 35%;
+  padding-top: 2%;
+}
+
+.contactContainer .body .container2 img {
+  width: 20px;
+  height: 20px;
+}
+
+.contactContainer .body .item2 {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: baseline;
+          align-items: baseline;
+  -webkit-box-pack: center;
+          justify-content: center;
+  margin-left: 4%;
+  margin-right: auto;
+}
+
+.aboutContainer .header {
   text-align: center;
   background-image: url(/images/banner.jpg?a218b24f52aebd8fada1070d22757642);
   background-size: 100%;
@@ -126,12 +282,7 @@ footer p {
   padding-bottom: 100px;
 }
 
-.header img {
-  width: 20px;
-  height: 20px;
-}
-
-.body h2 {
+.aboutContainer .body h2 {
   text-align: center;
   font-family: "Times New Roman", Times, serif;
   font-size: 40px;
@@ -144,6 +295,42 @@ footer p {
   text-align: center;
   margin-left: 10%;
   margin-right: 10%;
+}
+
+.aboutContainer .body p {
+  text-align: center;
+  margin-left: 12%;
+  margin-right: 12%;
+}
+
+.aboutContainer .body .sub-body {
+  background-color: lightgray;
+  margin-left: 14%;
+  margin-right: 14%;
+}
+
+.aboutContainer .body .sub-body h2 {
+  font-size: 30px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.aboutContainer .body .sub-body p {
+  margin-left: auto;
+  margin-right: 5%;
+  text-justify: auto;
+}
+
+.aboutContainer .body .sub-body img {
+  width: 25%;
+  margin-right: 5%;
+  margin-top: 0x;
+  margin-bottom: 5%;
+  margin-left: 5%;
+}
+
+.aboutContainer .body .sub-body div {
+  padding-bottom: 0px;
 }
 
 h2:before,
