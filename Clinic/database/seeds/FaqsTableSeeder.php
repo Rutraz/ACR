@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class FaqTableSeeder extends Seeder
+class FaqsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -42,6 +42,5 @@ class FaqTableSeeder extends Seeder
             'question' => 'Quero me matar o que faço?',
             'response' => 'Nao sei, mas por 50€ pode marcar uma consulta.'
          ]);
-         
     }
 }
