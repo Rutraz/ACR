@@ -17,6 +17,9 @@ class DatabaseSeeder extends Seeder
              MedicsTableSeeder::class,
              AppointmentsTableSeeder::class,
              EmployeesTableSeeder::class,
+             FaqsTableSeeder::class,
+             AnalysisTableSeeder::class
                  ]);
+
     }
 }

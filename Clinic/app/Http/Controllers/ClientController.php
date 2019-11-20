@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Client;
+use App\Appointment;
+use App\Http\Resources\ClientAppointmentResource;
 
 class ClientController extends Controller
 {
@@ -17,10 +19,47 @@ class ClientController extends Controller
     {
         $user = Auth::user();
         if($user){
+            return view('Client.home',compact('user'));
+        }
+        else{
+            return redirect('/');
+        }
+    }
+
+    public function analysis()
+    {
+        $user = Auth::user();
+        if($user){
+            return view('Client.analysis',compact('user'));
+        }
+        else{
+            return redirect('/');
+        }
+    }
+    
+    public function getAllClients()
+    {
+        $user = Auth::user();
+        if($user){
+            $allusers = Client::all();
+            return view('Employee.client',compact('user','allusers'));
+        }
+        else{
+            return redirect('/');
+        }
+    }
+
+    public function profile()
+    {
+        $user = Auth::user();
+        if($user){
             $id = $user->id;
             $client = Client::where('user_id',$id)->first();;
-                if($client)
-                    return view('Client.home',compact('user','client'));
+                if($client){
+                    //$appointments = Appointment::where('client_id', $client->id)->latest('date')->get(); APENAS TRAZ A TAbela consultas
+                    $appointments = ClientAppointmentResource::collection(Appointment::where('client_id', $client->id)->latest('date')->get());
+                    return view('Client.profile',compact('user','client','appointments'));
+                }
                 else{
                     return redirect('/');
                 }
@@ -29,5 +68,7 @@ class ClientController extends Controller
             return redirect('/');
         }
     }
+
+    
 
 }

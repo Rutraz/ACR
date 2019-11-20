@@ -20,30 +20,36 @@
     <link href="{{ mix('/css/client.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="client">
-        <nav class="topnav">
-            <div>
-                <a href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+        <nav class="sidenav">
+                 <header>
+                    <a href="{{ url('/client') }}">{{$user->name}}</a>
+                 </header>
+                <a href="{{ url('/client/profile') }}">
+                    <img src="{{asset('assets/Both/profile.png')}}"/> Perfil
                 </a>
 
-                <a  href="{{ url('/about') }}">
-                    Sobre nos
+                <a  href="{{ url('/client/appointment') }}">
+                <img src="{{asset('assets/Both/appointment.png')}}"/> Consultas
                 </a>
 
-                <a href="{{ url('/help') }}">
-                    FAQ
+                <a href="{{ url('/client/analysis') }}">
+                <img src="{{asset('assets/Both/profile.png')}}"/> Analises
                 </a>
 
-                <a href="{{ url('/contact') }}">
-                    Contactos
+                <a href="{{ url('/client/support') }}">
+                <img src="{{asset('assets/Both/profile.png')}}"/> Suporte
                 </a>
-            </div>
-
+                
+                <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit">  <img src="{{asset('assets/Both/profile.png')}}"/> Logout</button>
+                </form>
         </nav>
+
+
         <main>
             @yield('content')
         </main>
-    </div>
+
 </body>
 </html>

@@ -25,23 +25,23 @@
 
             <div class="content">
                 <div class="m-b-md">
-                <img id="stetho" src="{{asset('assets/healthcare.png')}}"/>
+                <img id="stetho" src="{{asset('assets/Gest/healthcare.png')}}"/>
                     <h1 class= "title"> HealthCare </h1>
                 </div>
 
                 <div class="midleLinks">
                     <div class="item">
-                        <img src="{{asset('assets/about-us.png')}}"/>
+                        <img src="{{asset('assets/Gest/about-us.png')}}"/>
                         <p></p>
                         <a href="{{ url('/about') }}"> Sobre nos </a> 
                     </div>
                     <div class="item">
-                        <img src="{{asset('assets/help.png')}}"/>
+                        <img src="{{asset('assets/Gest/help.png')}}"/>
                         <p></p>
                         <a href="{{ url('/help') }}"> FAQ </a> 
                     </div>
                     <div class="item">
-                        <img src="{{asset('assets/phone-contact.png')}}"/>
+                        <img src="{{asset('assets/Gest/phone-contact.png')}}"/>
                         <p></p>
                         <a href="{{ url('/contact') }}"> Contactos </a> 
                     </div>

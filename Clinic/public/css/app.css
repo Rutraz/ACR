@@ -114,7 +114,6 @@ footer p {
 
 .contactContainer .header {
   text-align: center;
-  background-image: url(/images/contact.jpg?528eb86d9802cc8a5d868bb49acbb66c);
   background-size: 100%;
   background-position-y: 50%;
   border-top: groove #27bdf0;
@@ -166,7 +165,7 @@ footer p {
 }
 
 .contactContainer .body .midleLinks .item button {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   /* Green */
   border: none;
   color: white;
@@ -185,11 +184,11 @@ footer p {
 .contactContainer .body .midleLinks .item .button1 {
   background-color: white;
   color: black;
-  border: 2px solid #4CAF50;
+  border: 2px solid #4caf50;
 }
 
 .contactContainer .body .midleLinks .item .button1:hover {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
 }
 
@@ -268,9 +267,84 @@ footer p {
   margin-right: auto;
 }
 
+.headerhelp {
+  background-size: 100%;
+  background-position: center;
+  border-top: groove #27bdf0;
+  border-bottom: groove #27bdf0;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  line-height: 0.2;
+  height: 200px;
+}
+
+.headerhelp .maintitle {
+  width: 80%;
+  margin-left: 10%;
+  font-size: 4em;
+  font-weight: bold;
+}
+
+.headerhelp .abstract {
+  width: 80%;
+  margin-left: 10%;
+  font-size: 1.2em;
+  line-height: 1;
+}
+
+.headerhelp .abstract a {
+  color: white;
+  -webkit-text-decoration: underline white;
+          text-decoration: underline white;
+}
+
+.headerhelp .abstract a:hover {
+  -webkit-text-decoration: underline #6cb2eb;
+          text-decoration: underline #6cb2eb;
+}
+
+.helpContainer {
+  width: 80%;
+  margin-left: 10%;
+  font-family: "Futura", "Trebuchet MS", "Arial", sans-serif;
+}
+
+.helpContainer .question {
+  background-color: white;
+  color: #444;
+  cursor: pointer;
+  padding: 26px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 1.4em;
+  font-weight: bold;
+  border-bottom: 2px solid lightgrey;
+}
+
+.helpContainer .question img {
+  width: 24px;
+  float: right;
+  height: auto;
+  position: relative;
+}
+
+.helpContainer .active,
+.helpContainer .question:hover {
+  background-color: #ccc;
+}
+
+.helpContainer .answer {
+  padding: 0 18px;
+  font-size: 1.2em;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
 .aboutContainer .header {
   text-align: center;
-  background-image: url(/images/banner.jpg?a218b24f52aebd8fada1070d22757642);
   background-size: 100%;
   background-position: center;
   border-top: groove #27bdf0;
