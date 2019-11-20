@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="contactContainer">
-    <div class="header" style="background-image:url('{{ asset('assets/contact.jpg') }}')"> </div>
+    <div class="header" style="background-image:url('{{ asset('assets/Gest/contact.jpg') }}')"> </div>
     <div class="body">
     <h2>Contactos</h2>
     
@@ -25,19 +25,18 @@
             </div>
             <div class="item">
                <div class="container1">
-                    <div class="item1"> <img src="{{asset('assets/gps-icon.png')}}"  alt="" >  
+                    <div class="item1"> <img src="{{asset('assets/Gest/gps-icon.png')}}"  alt="" >  
                     <p> Rua da tua prima  </p>     </div>
-                    <div class="item1"> <img src="{{asset('assets/cellphone-icon.png')}}"  alt="" >  
+                    <div class="item1"> <img src="{{asset('assets/Gest/cellphone-icon.png')}}"  alt="" >  
                     <p> 291 478 342  </p>     </div>
-                    <div class="item1"> <img src="{{asset('assets/email-icon.png')}}"  alt="" >  
+                    <div class="item1"> <img src="{{asset('assets/Gest/email-icon.png')}}"  alt="" >  
                     <p id="p" > Tuaprima@hotmail.com  </p>     </div>
                </div>
                <hr>
                <div class="container2" >
-               <div class="item2"> <img src="{{asset('assets/facebook-icon.png')}}" alt="" >
-               <div class="item2" > <img src="{{asset('assets/twitter-logo.png')}}"  alt="" > 
-               <div class="item2" > <img src="{{asset('assets/instagram-logo.png')}}"  alt="" >  
-               <div class="item2" > <img src="{{asset('assets/linkin-icon.png')}}"  alt="" >            
+               <div class="item2"> <img src="{{asset('assets/Gest/facebook-icon.png')}}" alt="" >
+               <div class="item2" > <img src="{{asset('assets/Gest/twitter-logo.png')}}"  alt="" > 
+               <div class="item2" > <img src="{{asset('assets/Gest/instagram-logo.png')}}"  alt="" >         
             </div>
 
         </div>

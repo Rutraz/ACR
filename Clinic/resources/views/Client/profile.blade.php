@@ -18,14 +18,16 @@
         <h2>{{$client->CC}}</h2>
         <h2>{{$client->adse}}</h2>
         <h2>{{$client->morada}}</h2>
-        <h2>{{$client->idade}}</h2>
+        <h2>{{$client->idade}}</h2>        
 
         @if ($appointments->isNotEmpty())
         @foreach($appointments as $appointment) 
                 <h1>{{$appointment->date}}</h1>
             <ul>
                 <li>{{$appointment->state}}</li> 
-                <li>{{$appointment->comments}}</li>                 
+                <li>{{$appointment->comments}}</li> 
+                <li>{{$appointment->medic->user->name}}</li> 
+                                
              </ul>
             @endforeach
         @else

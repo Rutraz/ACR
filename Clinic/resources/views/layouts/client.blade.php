@@ -25,24 +25,24 @@
                     <a href="{{ url('/client') }}">{{$user->name}}</a>
                  </header>
                 <a href="{{ url('/client/profile') }}">
-                    <img src="{{asset('assets/profile.png')}}"/> Perfil
+                    <img src="{{asset('assets/Both/profile.png')}}"/> Perfil
                 </a>
 
-                <a  href="{{ url('/about') }}">
-                <img src="{{asset('assets/appointment.png')}}"/> Consultas
+                <a  href="{{ url('/client/appointment') }}">
+                <img src="{{asset('assets/Both/appointment.png')}}"/> Consultas
                 </a>
 
-                <a href="{{ url('/help') }}">
-                <img src="{{asset('assets/profile.png')}}"/> Analises
+                <a href="{{ url('/client/analysis') }}">
+                <img src="{{asset('assets/Both/profile.png')}}"/> Analises
                 </a>
 
-                <a href="{{ url('/contact') }}">
-                <img src="{{asset('assets/profile.png')}}"/> Suporte
+                <a href="{{ url('/client/support') }}">
+                <img src="{{asset('assets/Both/profile.png')}}"/> Suporte
                 </a>
                 
                 <form id="logout-form" action="{{ route('logout') }}" method="POST">
                     @csrf
-                    <button type="submit">  <img src="{{asset('assets/profile.png')}}"/> Logout</button>
+                    <button type="submit">  <img src="{{asset('assets/Both/profile.png')}}"/> Logout</button>
                 </form>
         </nav>
 

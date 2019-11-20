@@ -38,3 +38,7 @@ Ta feito de maneira a que App -> css do Guest ; Client -> css do cliente ; Emplo
 Gest -> utiliza layout app.blade.php
 Funcionario -> utiliza layout employee.blade.php
 Client -> utiliza layout client.blade.php
+
+# Paginate
+
+Verificar a paginação para as paginas do funcionário

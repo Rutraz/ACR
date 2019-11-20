@@ -20,7 +20,6 @@ class CreateAnalysesTable extends Migration
             $table->foreign('client_id')->references('id')->on('clients');
             $table->integer('state');
             $table->date('date');
-            $table->date('hour');
             $table->timestamps();
         });
     }

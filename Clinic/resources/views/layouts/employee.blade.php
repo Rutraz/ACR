@@ -24,24 +24,24 @@
                 <header>
                 <a href="{{ url('/employee') }}">{{$user->name}}</a>
                 </header>
-            <a href="{{ url('/') }}">
-            <img src="{{asset('assets/appointment.png')}}"/> Consultas
+            <a href="{{ url('/employee/appointment') }}">
+            <img src="{{asset('assets/Both/appointment.png')}}"/> Consultas
             </a>
 
-            <a  href="{{ url('/about') }}">
-                Medicos
+            <a  href="{{ url('/employee/medic') }}">
+            <img src="{{asset('assets/Both/appointment.png')}}"/> Medicos
             </a>
 
-            <a href="{{ url('/contact') }}">
-                Horarios
+            <a href="{{ url('/employee/schedule') }}">
+            <img src="{{asset('assets/Both/appointment.png')}}"/> Horarios
             </a>
 
-            <a href="{{ url('/help') }}">
-                Clientes
+            <a href="{{ url('/employee/client') }}">
+            <img src="{{asset('assets/Both/appointment.png')}}"/> Clientes
             </a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST">
                 @csrf
-                <button type="submit">Logout</button>
+                <button type="submit"><img src="{{asset('assets/Both/appointment.png')}}"/> Logout</button>
             </form>
     </nav>
 
