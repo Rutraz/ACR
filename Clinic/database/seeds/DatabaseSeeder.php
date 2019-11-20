@@ -19,5 +19,6 @@ class DatabaseSeeder extends Seeder
              EmployeesTableSeeder::class,
              FaqTableSeeder::class
                  ]);
+                 
     }
 }
