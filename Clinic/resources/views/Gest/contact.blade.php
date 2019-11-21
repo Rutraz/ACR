@@ -31,7 +31,7 @@
                     <div class="item1"> <img src="{{asset('assets/Gest/cellphone-icon.png')}}"  alt="" >  
                     <p> 291 478 342  </p>     </div>
                     <div class="item1"> <img src="{{asset('assets/Gest/email-icon.png')}}"  alt="" >  
-                    <p id="p" > Tuaprima@hotmail.com  </p>     </div>
+                    <p id="p" > acrclinicemail@gmail.com  </p>     </div>
                </div>
                <hr>
                <div class="container2" >
