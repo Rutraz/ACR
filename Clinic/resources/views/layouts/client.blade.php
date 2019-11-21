@@ -32,11 +32,11 @@
                 <img src="{{asset('assets/Both/appointment.png')}}"/> Consultas
                 </a>
 
-                <a href="{{ url('/help') }}">
+                <a href="{{ url('/client/analysis') }}">
                 <img src="{{asset('assets/analises-icon.png')}}"/> Analises
                 </a>
 
-                <a href="{{ url('/contact') }}">
+                <a href="{{ url('/client/support') }}">
                 <img src="{{asset('assets/support-icon.png')}}"/> Suporte
                 </a>
                 
