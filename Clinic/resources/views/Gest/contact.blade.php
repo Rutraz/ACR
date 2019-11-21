@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<script src="{{ asset('js/sendEmail.js')}}"></script>
+<script src="{{ asset('js/sendEmail.js')}}" defer></script>
 <script src="https://smtpjs.com/v3/smtp.js"></script>
 <div class="contactContainer">
     <div class="header" style="background-image:url('{{ asset('assets/Gest/contact.jpg') }}')"> </div>
@@ -11,20 +11,18 @@
         <div class="midleLinks">
             <div class="item">
                 <h3>Envie um Email.</h3>
-                <form id="myForm" method ="post"  action="">
-                <input  type="text" size="40" placeholder=" Nome" name="name" id="name" >
-                <br>
-                <br>
-                <input type="email" size="40" placeholder=" Email" name="email" id="email" >
-                <br>
-                <br>
-                <textarea rows="4" cols="39" placeholder=" Messagem" name="message" id="message"> </textarea>
-                <br> <br>
+                <form id="myForm" method =""  action="">
+                    <input  type="text" size="40" placeholder=" Nome" name="name" id="name" >
+                    <br>
+                    <br>
+                    <input type="email" size="40" placeholder=" Email" name="email" id="email" >
+                    <br>
+                    <br>
+                    <textarea rows="4" cols="39" placeholder=" Messagem" name="message" id="message"> </textarea>
+                    <br> <br>
              <!--   <input class="button button1"  type="button" value="Enviar"> -->
-               <button onclick="sendEmail()" type="button" >Enviar</button>   
-               
-               </script>
                 </form>
+               <button id="addEventBtn" type="button" >Enviar</button>   
             </div>
             <div class="item">
                <div class="container1">
