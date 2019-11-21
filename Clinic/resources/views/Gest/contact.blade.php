@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+<script src="{{ asset('js/sendEmail.js')}}"></script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
 <div class="contactContainer">
     <div class="header" style="background-image:url('{{ asset('assets/Gest/contact.jpg') }}')"> </div>
     <div class="body">
@@ -9,7 +11,7 @@
         <div class="midleLinks">
             <div class="item">
                 <h3>Envie um Email.</h3>
-                <form method ="post" action="sendEmail.php">
+                <form id="myForm" method ="post"  action="">
                 <input  type="text" size="40" placeholder=" Nome" name="name" id="name" >
                 <br>
                 <br>
@@ -19,8 +21,9 @@
                 <textarea rows="4" cols="39" placeholder=" Messagem" name="message" id="message"> </textarea>
                 <br> <br>
              <!--   <input class="button button1"  type="button" value="Enviar"> -->
-              <!-- <button class="button button1" type="button" >Enviar</button>   -->
+               <button onclick="sendEmail()" type="button" >Enviar</button>   
                
+               </script>
                 </form>
             </div>
             <div class="item">

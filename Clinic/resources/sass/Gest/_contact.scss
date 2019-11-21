@@ -1,7 +1,7 @@
 .contactContainer {
     .header {
         text-align: center;
-        background-size: 100%;
+        background-size:100%;
         background-position-y: 50%;
         border-top: groove rgb(39, 189, 240);
         border-bottom: groove rgb(39, 189, 240);
@@ -13,6 +13,7 @@
     }
 
     .body {
+        
         h2 {
             text-align: center;
             font-family: "Times New Roman", Times, serif;
@@ -28,7 +29,7 @@
         .midleLinks {
             display: flex;
             margin-top: 0%;
-
+            padding-left: 8%;;
             .item {
                 display: block;
                 text-align: center;
