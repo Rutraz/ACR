@@ -32,22 +32,22 @@ Auth::routes();
 Route::get('/query', 'SelectController@index');
 
 //ROTAS PARA CLIENTE
-Route::get('/client', 'ClientController@index');
+Route::get('/client', 'ClientController@index'); //Controller done -> MANDAR MENSAGENS SE ALTEROU CONSULTA OU NAO
 
-Route::get('/client/profile','ClientController@profile');
+Route::get('/client/profile','ClientController@profile'); //Controller done
 
 Route::get('/client/appointment','AppointmentController@client');
 
-Route::get('/client/analysis','ClientController@analysis');
+Route::get('/client/analysis','ClientController@analysis'); // Controller done
 
-Route::get('/client/support','EmployeeController@support');
+Route::get('/client/support','EmployeeController@support'); // Controller done
 
 
 //ROTAS PARA FUNCIONARIO
 
-Route::get('/employee', 'EmployeeController@index');
+Route::get('/employee', 'EmployeeController@index'); 
 
-Route::get('/employee/client','ClientController@getAllClients');
+Route::get('/employee/client','ClientController@getAllClients'); 
 
 Route::get('/employee/appointment','AppointmentController@employee');
 

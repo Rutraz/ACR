@@ -5,9 +5,19 @@
     
     <h1> Support page</h1>
 
-    <h1>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem, ea omnis esse dolorum quisquam numquam quae accusamus quia repellat odit! Sed beatae rerum quibusdam vitae minus voluptates dignissimos illum numquam!</h1>
-    <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus, repellat sunt facilis magnam quos, ab cupiditate aliquid quod odio exercitationem quibusdam minima nostrum vel nihil, accusamus recusandae fugit. Placeat, quisquam.</h1>
-    <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet pariatur quaerat accusamus praesentium sed, itaque alias quia magnam? Maxime quaerat possimus dolorem fugit nobis numquam repellat repudiandae tempora magnam illum.</h1>
+    @if ($allemplos->isNotEmpty())
+            @foreach($allemplos as $allemplo) 
+                <h1>{{$allemplo->id}} {{$allemplo->user->name}}</h1>
+                    <ul>
+                <li><a href="mailto:{{$allemplo->user->email}}">{{$allemplo->user->email}}</a></li> 
+                <li>{{$allemplo->user->cellphone}}</li>                   
+                    </ul>
+            @endforeach
+    @else
+        <h1> Tem tem funcionários registados no website </h1>
+    @endif
+
+    <h1></h1>
 
 </div>
 @endsection
