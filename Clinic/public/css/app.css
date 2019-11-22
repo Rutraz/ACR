@@ -25,6 +25,7 @@
 .title {
   font-size: 84px;
   margin-top: 55px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .links {
@@ -100,11 +101,8 @@
 
 #stetho {
   width: 25%;
-  margin-right: 15%;
-}
-
-footer {
-  padding: 0px;
+  margin-right: 10%;
+  margin-left: 7%;
 }
 
 footer p {
@@ -112,10 +110,40 @@ footer p {
   margin-bottom: 0px;
 }
 
+.rotate-vert-center {
+  -webkit-animation: rotate-vert-center 5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 2s infinite;
+  animation: rotate-vert-center 5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 2s infinite;
+}
+
+@-webkit-keyframes rotate-vert-center {
+  0% {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0);
+  }
+
+  100% {
+    -webkit-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes rotate-vert-center {
+  0% {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0);
+  }
+
+  100% {
+    -webkit-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+  }
+}
+
 .contactContainer .header {
   text-align: center;
   background-size: 100%;
   background-position-y: 50%;
+  background-repeat: no-repeat;
   border-top: groove #27bdf0;
   border-bottom: groove #27bdf0;
   color: white;
@@ -143,31 +171,85 @@ footer p {
 .contactContainer .body .midleLinks {
   display: -webkit-box;
   display: flex;
-  margin-top: 0%;
-  padding-left: 8%;
+  background-color: lightgrey;
+  margin: 2%;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-bottom: 5%;
+  padding-left: 0%;
+  border: solid grey;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 4px;
 }
 
 .contactContainer .body .midleLinks .item {
   display: block;
   text-align: center;
-  size: auto;
   margin-left: 16%;
-  margin-top: 0%;
-  width: 400px;
-  height: 400px;
+  width: 500px;
+}
+
+.contactContainer .body .midleLinks .item > h3 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 25px;
+  color: #6cb2eb;
 }
 
 .contactContainer .body .midleLinks .item textarea {
   border-radius: 4px;
+  width: 100%;
+  height: 100px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  background-color: #f8f8f8;
+  resize: vertical;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.contactContainer .body .midleLinks .item input {
+.contactContainer .body .midleLinks .item textarea:focus {
+  border: 3px solid #555;
+}
+
+.contactContainer .body .midleLinks .item input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
   border-radius: 4px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.contactContainer .body .midleLinks .item input[type=text]:focus {
+  border: 3px solid #555;
+}
+
+.contactContainer .body .midleLinks .item #input {
+  margin-bottom: 0%;
+}
+
+.contactContainer .body .midleLinks .item input[type=email] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.contactContainer .body .midleLinks .item input[type=email]:focus {
+  border: 3px solid #555;
 }
 
 .contactContainer .body .midleLinks .item button {
-  background-color: #4caf50;
-  /* Green */
+  background-color: #6cb2eb;
   border: none;
   color: white;
   padding: 5px 40px;
@@ -175,7 +257,7 @@ footer p {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin-top: 0%;
+  margin-top: 3%;
   -webkit-transition-duration: 0.4s;
   /* Safari */
   transition-duration: 0.4s;
@@ -185,31 +267,12 @@ footer p {
 .contactContainer .body .midleLinks .item .button1 {
   background-color: white;
   color: black;
-  border: 2px solid #4caf50;
+  border: 2px solid #6cb2eb;
 }
 
 .contactContainer .body .midleLinks .item .button1:hover {
-  background-color: #4caf50;
+  background-color: #6cb2eb;
   color: white;
-}
-
-.contactContainer .body .midleLinks .item a {
-  color: #4b5053;
-  padding: 0 25px;
-  font-size: 1.2em;
-  font-weight: 600;
-  letter-spacing: 0.1rem;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-.contactContainer .body .midleLinks .item a:hover {
-  letter-spacing: 0.1em;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-  text-decoration: underline;
-  font-size: 1.4em;
-  color: #3490dc;
 }
 
 .contactContainer .body .midleLinks .item hr {
@@ -218,8 +281,8 @@ footer p {
 
 .contactContainer .body .container1 {
   display: block;
+  padding-top: 35%;
   padding-left: 5%;
-  padding-top: 5%;
 }
 
 .contactContainer .body .container1 img {
@@ -229,10 +292,8 @@ footer p {
 
 .contactContainer .body .container1 p {
   margin-left: 20%;
-}
-
-.contactContainer .body .container1 #spread {
-  padding: 50%;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
 }
 
 .contactContainer .body .item1 {
@@ -382,6 +443,7 @@ footer p {
   background-color: lightgray;
   margin-left: 14%;
   margin-right: 14%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .aboutContainer .body .sub-body h2 {
@@ -391,8 +453,9 @@ footer p {
 }
 
 .aboutContainer .body .sub-body p {
-  margin-left: auto;
+  margin-left: 2%;
   margin-right: 5%;
+  margin-bottom: 2%;
   text-justify: auto;
 }
 
@@ -401,7 +464,7 @@ footer p {
   margin-right: 5%;
   margin-top: 0x;
   margin-bottom: 5%;
-  margin-left: 5%;
+  margin-left: 17%;
 }
 
 .aboutContainer .body .sub-body div {

@@ -22,6 +22,8 @@ body {
 .title {
     font-size: 84px;
     margin-top: 55px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   
 }
 
 .links {
@@ -58,7 +60,9 @@ body {
 
         img {
             width: 20%;
+            
         }
+        
         a {
             color: $welcomeColor;
             padding: 0 25px;
@@ -88,13 +92,44 @@ body {
 
 #stetho {
     width: 25%;
-    margin-right: 15%;
+    margin-right: 10%;
+    margin-left: 7%;
 }
 
 footer {
-    padding: 0px;
     p{
         margin-top:0px;
         margin-bottom: 0px;
     }
 }
+
+
+.rotate-vert-center {
+	-webkit-animation: rotate-vert-center 5s cubic-bezier(0.455, 0.030, 0.515, 0.955) 2s infinite ;
+	        animation: rotate-vert-center 5s cubic-bezier(0.455, 0.030, 0.515, 0.955) 2s infinite ;
+}
+
+
+@-webkit-keyframes rotate-vert-center {
+    0% {
+      -webkit-transform: rotateY(0);
+              transform: rotateY(0);
+    }
+    100% {
+      -webkit-transform: rotateY(360deg);
+              transform: rotateY(360deg);
+    }
+  }
+  @keyframes rotate-vert-center {
+    0% {
+      -webkit-transform: rotateY(0);
+              transform: rotateY(0);
+    }
+    100% {
+      -webkit-transform: rotateY(360deg);
+              transform: rotateY(360deg);
+    }
+  }
+  
+
+  

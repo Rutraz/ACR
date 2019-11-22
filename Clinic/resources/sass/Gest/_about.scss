@@ -33,14 +33,17 @@
             background-color: lightgray;
             margin-left: 14%;
             margin-right: 14%;
+            
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             h2 {
                 font-size: 30px;
                 margin-left: 5%;
                 margin-right: 5%;
             }
             p {
-                margin-left: auto;
+                margin-left: 2%;
                 margin-right: 5%;
+                margin-bottom: 2%;
                 text-justify: auto;
             }
             img {
@@ -48,7 +51,8 @@
                 margin-right: 5%;
                 margin-top: 0x;
                 margin-bottom: 5%;
-                margin-left: 5%;
+                margin-left: 17%;
+                
             }
             div {
                 padding-bottom: 0px;

@@ -10,20 +10,15 @@
     
         <div class="midleLinks">
             <div class="item">
-                <h3>Envie um Email.</h3>
+                <h3>Envie-nos um e-mail.</h3>
                 <form id="myForm" method =""  action="">
-                    <input  type="text" size="40" placeholder=" Nome" name="name" id="name" >
-                    <br>
-                    <br>
-                    <input type="email" size="40" placeholder=" Email" name="email" id="email" >
-                    <br>
-                    <br>
-                    <textarea rows="4" cols="39" placeholder=" Messagem" name="message" id="message"> </textarea>
-                    <br> <br>
-             <!--   <input class="button button1"  type="button" value="Enviar"> -->
+                    <input id="input"  type="text" size="45" placeholder="Nome" name="name" id="name" >         
+                    <input type="email" size="45" placeholder="Email" name="email" id="email" >
+                    <textarea rows="4" cols="43" placeholder="Messagem..." name="message" id="message"> </textarea>
                 </form>
-               <button id="addEventBtn" type="button" >Enviar</button>   
+               <button class="button1" id="addEventBtn" type="button" >Enviar</button>   
             </div>
+            
             <div class="item">
                <div class="container1">
                     <div class="item1"> <img src="{{asset('assets/Gest/gps-icon.png')}}"  alt="" >  
