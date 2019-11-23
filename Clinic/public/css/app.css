@@ -1,4 +1,6 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);body {
+@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+
+body {
   background-color: white;
   color: #4b5053;
   font-family: "Nunito", sans-serif;
@@ -25,6 +27,7 @@
 .title {
   font-size: 84px;
   margin-top: 55px;
+  font-family: "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .links {
@@ -100,11 +103,8 @@
 
 #stetho {
   width: 25%;
-  margin-right: 15%;
-}
-
-footer {
-  padding: 0px;
+  margin-right: 10%;
+  margin-left: 7%;
 }
 
 footer p {
@@ -112,10 +112,40 @@ footer p {
   margin-bottom: 0px;
 }
 
+.rotate-vert-center {
+  -webkit-animation: rotate-vert-center 5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 2s infinite;
+  animation: rotate-vert-center 5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 2s infinite;
+}
+
+@-webkit-keyframes rotate-vert-center {
+  0% {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0);
+  }
+
+  100% {
+    -webkit-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes rotate-vert-center {
+  0% {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0);
+  }
+
+  100% {
+    -webkit-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+  }
+}
+
 .contactContainer .header {
   text-align: center;
   background-size: 100%;
   background-position-y: 50%;
+  background-repeat: no-repeat;
   border-top: groove #27bdf0;
   border-bottom: groove #27bdf0;
   color: white;
@@ -143,29 +173,86 @@ footer p {
 .contactContainer .body .midleLinks {
   display: -webkit-box;
   display: flex;
-  margin-top: 0%;
+  background-color: lightgrey;
+  margin: 2%;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-bottom: 5%;
+  padding-left: 0%;
+  border: solid grey;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 4px;
 }
 
 .contactContainer .body .midleLinks .item {
   display: block;
   text-align: center;
-  size: auto;
   margin-left: 16%;
-  margin-top: 0%;
-  width: 400px;
-  height: 400px;
+  width: 500px;
+}
+
+.contactContainer .body .midleLinks .item > h3 {
+  font-family: "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 2em;
+  color: black;
+  margin-bottom: 0px;
 }
 
 .contactContainer .body .midleLinks .item textarea {
   border-radius: 4px;
+  width: 100%;
+  height: 100px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  background-color: #f8f8f8;
+  resize: vertical;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.contactContainer .body .midleLinks .item input {
+.contactContainer .body .midleLinks .item textarea:focus {
+  border: 3px solid #555;
+}
+
+.contactContainer .body .midleLinks .item input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
   border-radius: 4px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.contactContainer .body .midleLinks .item input[type=text]:focus {
+  border: 3px solid #555;
+}
+
+.contactContainer .body .midleLinks .item #input {
+  margin-bottom: 0%;
+}
+
+.contactContainer .body .midleLinks .item input[type=email] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.contactContainer .body .midleLinks .item input[type=email]:focus {
+  border: 3px solid #555;
 }
 
 .contactContainer .body .midleLinks .item button {
-  background-color: #4caf50;
+  background-color: #6cb2eb;
   /* Green */
   border: none;
   color: white;
@@ -173,16 +260,19 @@ footer p {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-  margin-top: 0%;
-  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
   /* Safari */
-  transition-duration: 0.4s;
+  width: 100%;
+  font-size: 1em;
   cursor: pointer;
+  border-radius: 2px;
+  border: #ddd solid 1px;
 }
 
-.contactContainer .body .midleLinks .item .button1 {
-  background-color: white;
+.contactContainer .body .midleLinks .item button:hover {
+  background-color: #ddd;
+  border: #6cb2eb solid 1px;
   color: black;
   border: 2px solid #4caf50;
 }
@@ -217,8 +307,8 @@ footer p {
 
 .contactContainer .body .container1 {
   display: block;
+  padding-top: 35%;
   padding-left: 5%;
-  padding-top: 5%;
 }
 
 .contactContainer .body .container1 img {
@@ -228,10 +318,8 @@ footer p {
 
 .contactContainer .body .container1 p {
   margin-left: 20%;
-}
-
-.contactContainer .body .container1 #spread {
-  padding: 50%;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
 }
 
 .contactContainer .body .item1 {
@@ -323,11 +411,16 @@ footer p {
   border-bottom: 2px solid lightgrey;
 }
 
-.helpContainer .question img {
-  width: 24px;
+.helpContainer .question:after {
+  content: "+";
+  color: #777;
+  font-weight: bold;
   float: right;
-  height: auto;
-  position: relative;
+  margin-left: 5px;
+}
+
+.helpContainer .active:after {
+  content: "\2212";
 }
 
 .helpContainer .active,
@@ -381,6 +474,7 @@ footer p {
   background-color: lightgray;
   margin-left: 14%;
   margin-right: 14%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .aboutContainer .body .sub-body h2 {
@@ -390,8 +484,9 @@ footer p {
 }
 
 .aboutContainer .body .sub-body p {
-  margin-left: auto;
+  margin-left: 2%;
   margin-right: 5%;
+  margin-bottom: 2%;
   text-justify: auto;
 }
 
@@ -400,7 +495,7 @@ footer p {
   margin-right: 5%;
   margin-top: 0x;
   margin-bottom: 5%;
-  margin-left: 5%;
+  margin-left: 17%;
 }
 
 .aboutContainer .body .sub-body div {
@@ -484,6 +579,7 @@ h2:after {
 
 .loginForm .logButton {
   background-color: #3490dc;
+  font-family: "Nunito", sans-serif;
   color: white;
   padding: 12px 18px;
   margin-left: 10%;
@@ -494,7 +590,7 @@ h2:after {
   width: 80%;
   font-size: 1.1em;
   font-weight: bold;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
   border-radius: 4px;
 }
 

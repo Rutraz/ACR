@@ -12,9 +12,9 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'name' => 'Admin',
-            'email' => 'admin@gmail.com',
-            'cellphone' => '923232698' ,
+            'name' => 'Joao Fernandes',
+            'email' => 'employee1@gmail.com',
+            'cellphone' => '291775123' ,
             'password' => bcrypt('12345678'),
         ]); 
 
@@ -47,9 +47,16 @@ class UsersTableSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
-            'name' => 'employee1',
-            'email' => 'employee1@gmail.com',
-            'cellphone' => '923232693' ,
+            'name' => 'Maria Alberta',
+            'email' => 'employee2@gmail.com',
+            'cellphone' => '291775124' ,
+            'password' => bcrypt('12345678'),
+        ]);
+
+        DB::table('users')->insert([
+            'name' => 'Albertino Rocha',
+            'email' => 'employee3@gmail.com',
+            'cellphone' => '291775125' ,
             'password' => bcrypt('12345678'),
         ]);
     }

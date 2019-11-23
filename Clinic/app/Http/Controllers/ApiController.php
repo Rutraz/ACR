@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Faq;
 use App\Medic;
 use App\Client;
 use App\Appointment;
 use App\Analysis;
-use App\Http\Resources\FaqResource;
+use DB;
+use Validator;
+
+use Illuminate\Support\Facades\Hash;
 use App\Http\Resources\MedicResource;
 use App\Http\Resources\MedicAppointmentResource;
 use App\Http\Resources\ClientAppointmentResource;
@@ -17,10 +19,6 @@ use App\Http\Resources\AnalysisResource;
 
 class ApiController extends Controller
 {
-    //TODOS OS FAQ 5 POR PAGINA
-    public function getAllFaq(){
-        return FaqResource::collection(Faq::paginate(5));
-    }
 
     // TODOS OS MEDICOS
     public function getAllMedic(){
@@ -32,23 +30,26 @@ class ApiController extends Controller
         $medico = Medic::find($id);
         if($medico)
             return new MedicResource($medico);
-        else
+        else{
             return response()->json([
                 'success' => false,
                 'message' => 'No medic found'
             ], 404);;
-    }
+        }
+        }
 
     //APENAS UM CLIENTE COM ID=X
     public function getClientSingle($id){
         $client = Client::find($id);
         if($client)
             return new ClientResource($client);
-        else
+        else{
+
             return response()->json([
                 'success' => false,
                 'message' => 'No client found'
             ], 404);;
+        }
     }
 
     //CONSULTAS DO MEDICO COM ID=X
@@ -57,11 +58,13 @@ class ApiController extends Controller
         if($medico){
             return MedicAppointmentResource::collection(Appointment::where('medic_id', $medico->id)->latest('date')->paginate(10));
         }
-        else
+        else{
+
             return response()->json([
                 'success' => false,
                 'message' => 'No medic appointments found'
             ], 404);
+        }
     }
 
     //CONSULTAS DO CLIENTE COM ID=X
@@ -70,11 +73,13 @@ class ApiController extends Controller
         if($client){
             return ClientAppointmentResource::collection(Appointment::where('client_id', $client->id)->latest('date')->paginate(10));
         }
-        else
+        else{
+
             return response()->json([
                 'success' => false,
                 'message' => 'No client appointments found'
             ], 404);
+        }
     }
 
     //CONSULTAS DO CLIENTE COM ID=X
@@ -83,11 +88,112 @@ class ApiController extends Controller
         if($client){
             return AnalysisResource::collection(Analysis::where('client_id', $client->id)->latest('date')->paginate(10));
         }
-        else
+        else{
+
             return response()->json([
                 'success' => false,
                 'message' => 'No client appointments found'
             ], 404);
+        }
     }
+
+    //CREATE CLIENT
+    public function createClient(Request $request)
+    {
+        
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:8',
+            'cellphone' => 'required|string|regex:/[0-9]{9}/|unique:users',
+            'CC' => 'required|string|regex:/[0-9]{1,9}/|unique:clients',
+            'adse' => 'nullable|string|regex:/[0-9]{1,10}/',
+            'morada' => 'required|string',
+            'idade' => 'nullable|date'
+        ]);
     
+        if ($validator->fails()) {
+            return response()->json([
+                'success' => false,
+            'message' => "Invalid parameters"
+            ], 201);
+        }
+        else{
+
+            DB::beginTransaction();
+            $user = User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+                'cellphone' => $request->cellphone,
+            ]);
+
+
+            $client = Client::create([
+                'user_id' =>  $user->id,
+                'CC' =>  $request->CC,
+                'adse' =>  $request->adse,
+                'morada' => $request->morada,
+                'idade' => $request->idade,
+            ]);
+
+            DB::commit();
+
+            if($client)
+                return new ClientResource($client);
+            else{
+                return response()->json([
+                    'success' => false,
+                'message' => 'Insert failed'
+                ], 201);
+            }   
+        }
+    }
+    //Create Medic
+    public function createMedic(Request $request){
+
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+                'email' => 'required|string|email|max:255|unique:users',
+                'password' => 'required|string|min:8',
+                'cellphone' => 'required|string|regex:/[0-9]{9}/|unique:users',
+                'adse' => 'nullable|string',
+                'specialty' => 'required|string' 
+        ]);
+    
+        if ($validator->fails()) {
+            return response()->json([
+                'success' => false,
+            'message' => "Invalid parameters"
+            ], 201);
+        }
+        else{
+
+            DB::beginTransaction();
+            $user = User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+                'cellphone' => $request->cellphone,
+            ]);
+
+            $medic = Medic::create([
+                'user_id' =>  $user->id,
+                'specialty' => $request->specialty,
+                'rating' => '0',
+                'adse' => $request->adse,   
+            ]);
+
+            DB::commit();
+
+            if($medic)
+                return new MedicResource($medic);
+            else{
+                return response()->json([
+                    'success' => false,
+                'message' => 'Insert failed'
+                ], 201);
+            }         
+        }
+    }
 }

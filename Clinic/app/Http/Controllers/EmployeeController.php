@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Employee;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Resources\EmployeeResource;
+use Validator;
 
 class EmployeeController extends Controller
 {
@@ -35,7 +37,8 @@ class EmployeeController extends Controller
     {
         $user = Auth::user();
         if($user){
-            return view('Client.support',compact('user'));
+            $allemplos = EmployeeResource::collection(Employee::all());        
+            return view('Client.support',compact('user','allemplos'));
         }
         else{
             return redirect('/');

@@ -19,7 +19,7 @@ class CreateAnalysesTable extends Migration
             $table->integer('client_id')->unsigned()->index(); 
             $table->foreign('client_id')->references('id')->on('clients');
             $table->integer('state');
-            $table->date('date');
+            $table->dateTime('date');
             $table->timestamps();
         });
     }

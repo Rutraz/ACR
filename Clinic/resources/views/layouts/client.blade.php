@@ -33,16 +33,16 @@
                 </a>
 
                 <a href="{{ url('/client/analysis') }}">
-                <img src="{{asset('assets/Both/profile.png')}}"/> Analises
+                <img src="{{asset('assets/analises-icon.png')}}"/> Analises
                 </a>
 
                 <a href="{{ url('/client/support') }}">
-                <img src="{{asset('assets/Both/profile.png')}}"/> Suporte
+                <img src="{{asset('assets/support-icon.png')}}"/> Suporte
                 </a>
                 
                 <form id="logout-form" action="{{ route('logout') }}" method="POST">
                     @csrf
-                    <button type="submit">  <img src="{{asset('assets/Both/profile.png')}}"/> Logout</button>
+                    <button type="submit">  <img src="{{asset('assets/logout-icon.png')}}"/> Logout</button>
                 </form>
         </nav>
 

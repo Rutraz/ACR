@@ -24,16 +24,16 @@
             @endif
 
             <div class="content">
-                <div class="m-b-md">
-                <img id="stetho" src="{{asset('assets/Gest/healthcare.png')}}"/>
-                    <h1 class= "title"> HealthCare </h1>
+                <div class="m-b-md">           
+                <img class="rotate-vert-center" id="stetho" src="{{asset('assets/Gest/healthcare-logo.png')}}"/>        
+                    <h1  class= "title"> HealthCare </h1>
                 </div>
 
                 <div class="midleLinks">
                     <div class="item">
                         <img src="{{asset('assets/Gest/about-us.png')}}"/>
                         <p></p>
-                        <a href="{{ url('/about') }}"> Sobre nos </a> 
+                        <a class="jello-horizontal" href="{{ url('/about') }}"> Sobre nos </a> 
                     </div>
                     <div class="item">
                         <img src="{{asset('assets/Gest/help.png')}}"/>
@@ -49,8 +49,8 @@
             </div>
         </div>
         <hr>
-        <footer>
+       <footer>
             <p>Created by: <a href="mailto:2040416@student.uma.pt">Ricardo Jardim</a> , <a href="mailto:2018915@student.uma.pt">Vitor Velosa</a> , <a href="mailto:2095415@student.uma.pt">João Santos</a></p>
-        </footer>
+        </footer> 
     </body>
 </html>

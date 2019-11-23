@@ -6,6 +6,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Medic;
 
+use Validator;
+use Illuminate\Support\Facades\Hash;
+use App\Http\Resources\MedicResource;
+
 class MedicController extends Controller
 {
     public function getAllMedic(){
