@@ -55,6 +55,7 @@
     }
     .logButton {
         background-color: $blue;
+        font-family: "Nunito", sans-serif;
         color: white;
         padding: 12px 18px;
         margin-left: 10%;
@@ -65,7 +66,7 @@
         width: 80%;
         font-size: 1.1em;
         font-weight: bold;
-        letter-spacing: 0.1em;
+        letter-spacing: 0.05em;
         border-radius: 4px;
     }
 

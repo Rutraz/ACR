@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Employee;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Resources\EmployeeResource;
+use Validator;
 
 class EmployeeController extends Controller
 {

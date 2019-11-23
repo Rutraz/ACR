@@ -18,5 +18,9 @@ class EmployeesTableSeeder extends Seeder
         DB::table('employees')->insert([
             'user_id' => '6',
          ]);
+
+         DB::table('employees')->insert([
+            'user_id' => '7',
+         ]);
     }
 }

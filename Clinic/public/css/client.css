@@ -1,4 +1,132 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);.sidenav {
+@import url(https://fonts.googleapis.com/css?family=Nunito);.support {
+  text-align: center;
+  display: block;
+  font-family: "Nunito", sans-serif;
+  font-size: 1em;
+  background-color: #e9f3fc;
+}
+
+.support .text {
+  width: 70%;
+  margin: auto;
+  margin-top: 1%;
+}
+
+.support .text h3 {
+  text-align: justify;
+}
+
+.support .employee {
+  margin-top: 3%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-flow: row wrap;
+}
+
+.support .employee .item {
+  margin-top: 15px;
+  display: block;
+  text-align: center;
+  border-radius: 15px;
+  background-color: white;
+  margin-right: auto;
+  margin-left: auto;
+  width: 28%;
+  padding: 12px 24px;
+}
+
+.support .employee .item ul {
+  list-style-type: none;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  font-size: 1.4em;
+}
+
+.support .employee .item ul a {
+  color: #6574cd;
+  text-decoration: none;
+}
+
+.support .employee .item ul a:hover {
+  text-decoration: underline;
+  -webkit-text-decoration-color: #6574cd;
+          text-decoration-color: #6574cd;
+}
+
+.support .employee .item:hover {
+  box-shadow: 5px 10px 10px #d6d6d6;
+}
+
+.support .emailSend {
+  margin-right: auto;
+  margin-left: auto;
+  width: 50%;
+  border-radius: 15px;
+  background-color: white;
+}
+
+.support .emailSend h2 {
+  text-align: center;
+  font-weight: bold;
+}
+
+.support .emailSend input {
+  font-family: "Nunito", sans-serif;
+  width: 80%;
+  padding: 10px 0px;
+}
+
+.support .emailSend input:hover {
+  border: 2px solid #6cb2eb;
+}
+
+.support .emailSend textarea {
+  font-family: "Nunito", sans-serif;
+  width: 80%;
+  padding: 10px 0px;
+}
+
+.support .emailSend textarea:hover {
+  border: 2px solid #6cb2eb;
+}
+
+.support .emailSend button {
+  background-color: #6cb2eb;
+  /* Green */
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1em;
+  width: 80%;
+  -webkit-transition-duration: 0.2s;
+  /* Safari */
+  transition-duration: 0.2s;
+  cursor: pointer;
+  border-radius: 2px;
+  border: #ddd solid 1px;
+}
+
+.support .emailSend button:hover {
+  background-color: #ddd;
+  border: #6cb2eb solid 1px;
+  color: black;
+}
+
+.support .emailSend:hover {
+  box-shadow: 5px 10px 10px #d6d6d6;
+}
+
+body {
+  margin: 0px;
+  margin-top: -21px;
+}
+
+.sidenav {
   font-family: "Nunito", sans-serif;
   position: fixed;
   left: 0;
@@ -86,7 +214,7 @@
 }
 
 main {
-  margin-left: 18%;
+  margin-left: 17%;
   overflow: auto;
 }
 

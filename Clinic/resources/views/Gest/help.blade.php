@@ -12,7 +12,7 @@
 
     <div class="helpContainer">
         @foreach($faqs as $faq) 
-       <button type="button" class="question">{{$faq->question}} <img id="img{{$faq->id}}" src="{{ asset('assets/Gest/plus.svg') }}"></button>
+       <button type="button" class="question">{{$faq->question}}</button>
         <div class="answer">
         <p>{{$faq->response}}</p>
         </div> 

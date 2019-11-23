@@ -7,7 +7,10 @@ use Illuminate\Support\Facades\Auth;
 use App\Client;
 use App\Analysis;
 use App\Appointment;
+use Validator;
 use App\Http\Resources\ClientAppointmentResource;
+use App\Http\Resources\ClientResource;
+
 
 class ClientController extends Controller
 {
@@ -21,25 +24,6 @@ class ClientController extends Controller
         $user = Auth::user();
         if($user){
             return view('Client.home',compact('user'));
-        }
-        else{
-            return redirect('/');
-        }
-    }
-
-    public function analysis()
-    {
-        $user = Auth::user();
-        if($user){
-            $id = $user->id;
-            $client = Client::where('user_id',$id)->first();;
-            if($client){
-                $analysis = Analysis::Select('*')->latest('date')->get();
-                return view('Client.analysis',compact('user','client','analysis'));
-            }
-            else{
-                return redirect('/');
-            }
         }
         else{
             return redirect('/');
@@ -78,7 +62,5 @@ class ClientController extends Controller
             return redirect('/');
         }
     }
-
-    
 
 }

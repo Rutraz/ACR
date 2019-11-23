@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Appointment;
+use Validator;
 
 class AppointmentController extends Controller
 {
@@ -17,7 +18,7 @@ class AppointmentController extends Controller
     {
         $user = Auth::user();
         if($user){
-
+            
             return view('Client.appointment',compact('user'));
         }
         else{

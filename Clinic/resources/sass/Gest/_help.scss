@@ -57,13 +57,19 @@
         font-weight: bold;
         //border-top: 2px solid lightgrey;
         border-bottom: 2px solid lightgrey;
+    }
 
-        img {
-            width: 24px;
-            float: right;
-            height: auto;
-            position: relative;
-        }
+    //Icon do + na direita
+    .question:after {
+        content: "\002B";
+        color: #777;
+        font-weight: bold;
+        float: right;
+        margin-left: 5px;
+    }
+    //Icon do - na direita depois de clicar
+    .active:after {
+        content: "\2212";
     }
 
     // Cor da pergunta se passarmos por cima ou clicar-mos

@@ -10,7 +10,7 @@
     
         <div class="midleLinks">
             <div class="item">
-                <h3>Envie-nos um e-mail.</h3>
+                <h3>Contacte-nos</h3>
                 <form id="myForm" method =""  action="">
                     <input id="input"  type="text" size="45" placeholder="Nome" name="name" id="name" >         
                     <input type="email" size="45" placeholder="Email" name="email" id="email" >
@@ -22,7 +22,7 @@
             <div class="item">
                <div class="container1">
                     <div class="item1"> <img src="{{asset('assets/Gest/gps-icon.png')}}"  alt="" >  
-                    <p> Rua da tua prima  </p>     </div>
+                    <p> Rua da Queimada de cima  </p>     </div>
                     <div class="item1"> <img src="{{asset('assets/Gest/cellphone-icon.png')}}"  alt="" >  
                     <p> 291 478 342  </p>     </div>
                     <div class="item1"> <img src="{{asset('assets/Gest/email-icon.png')}}"  alt="" >  

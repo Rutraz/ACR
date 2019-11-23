@@ -28,6 +28,10 @@
             <img src="{{asset('assets/Both/appointment.png')}}"/> Consultas
             </a>
 
+            <a href="{{ url('/employee/analysis') }}">
+            <img src="{{asset('assets/Both/appointment.png')}}"/> Analises
+            </a>
+
             <a  href="{{ url('/employee/medic') }}">
             <img src="{{asset('assets/Both/appointment.png')}}"/> Medicos
             </a>
