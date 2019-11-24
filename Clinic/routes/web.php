@@ -26,39 +26,59 @@ Route::get('/contact', function () {
     return view('Gest.contact'); // VIEW CONTACTOS
 });
 
+//----------------------------------------------
 //ROTAS PARA AUTHENTICAÇÂO
 Auth::routes();
 
 Route::get('/query', 'SelectController@index'); // VERIFICA SE É CLIENTE OU FUNCIONARIO
 
+//----------------------------------------------
 //ROTAS PARA CLIENTE
 Route::get('/client', 'ClientController@index'); // ENVIA A INFORMAÇÃO DO CLIENTE
 
+//--------PROFILE
 Route::get('/client/profile','ClientController@profile'); // ENVIA A INFORMAÇÃO DO CLIENTE COM CONSULTAS E ANALISES
 
+Route::get('/client/profile/edit','ClientController@editProfile'); // ENVIA A INFORMAÇÃO DO CLIENTE 
+
+Route::post('/client/profile/edit','ClientController@submitEditProfile'); // MODIFICA A INFORMAÇÃO DO CLIENTE 
+
+Route::post('/client/profile/edit/email','ClientController@submitEditEmail'); // MODIFICA A INFORMAÇÃO DO CLIENTE
+
+Route::post('/client/profile/edit/password','ClientController@submitEditPassword'); // MODIFICA A INFORMAÇÃO DO CLIENTE
+
+Route::post('/client/profile/erase','ClientController@eraseProfile'); // ELIMINA O PERFIL
+
+//--------CONSULTAS
 Route::get('/client/appointment','AppointmentController@client');
 
+//--------ANALISES
 Route::get('/client/analysis','AnalysisController@clientAnalysis'); // ENVIA AS ANÁLISES MARCADAS
 
+//--------SUPORTE
 Route::get('/client/support','EmployeeController@support'); // ENVIA A INFORMAÇÃO DOS FUNCIONARIOS
 
-
+//----------------------------------------------
 //ROTAS PARA FUNCIONARIO
-
 Route::get('/employee', 'EmployeeController@index'); // ENVIA A INFORMAÇÃO DO FUNCIONARIO
 
+//--------CLIENTES
 Route::get('/employee/client','ClientController@getAllClients'); // ENVIA A INFORMAÇÃO DE TODOS OS CLIENTE
 
+//--------CONSULTAS
 Route::get('/employee/appointment','AppointmentController@employee');
 
+//--------ANALISES
 Route::get('/employee/analysis','AnalysisController@employeeAnalysis'); // ENVIA A INFORMAÇÃO DE TODAS AS ANÁLISES
 
+//--------MEDICOS
 Route::get('/employee/medic','MedicController@getAllMedic'); // ENVIA A INFORMAÇÃO DE TODOS OS MEDICOS
 
+//--------HORARIOS
 Route::get('/employee/schedule','MedicController@schedule'); // ENVIA A HORARIOS DOS MEDICOS
 
-//ROTAS PARA API
-//IR AO VerifyCsrfToken para retirar a token 
+//----------------------------------------------
+//ROTAS PARA API -> IR AO VerifyCsrfToken para retirar a token 
 
 Route::get('/api/faq', 'FaqController@getAllFaq'); // ENVIA A INFORMAÇÃO DAS FAQ
 

@@ -5,7 +5,7 @@
 <script src="https://smtpjs.com/v3/smtp.js"></script>
 <div class="support">
     <br>
-    <h1> Support page</h1>
+    <h1> Pagina de suporte</h1>
     <div class="text">
         <h3>Pode contar com a nossa equipa de especialistas altamente qualificados em serviços de assistência ao cliente, que se orgulham pessoalmente de prestar um serviço de alto nível a todos os clientes.</h3>
         <h3>

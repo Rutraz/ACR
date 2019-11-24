@@ -30,7 +30,7 @@ class FaqController extends Controller
         if ($validator->fails()) {
             return response()->json([
                 'success' => false,
-                'message' => "Invalid parameters"
+                'menssage' =>  $validator->errors(),
             ], 201);
         }
         else{

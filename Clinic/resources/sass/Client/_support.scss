@@ -47,7 +47,8 @@
             }
         }
         .item:hover {
-            box-shadow: 5px 10px 10px #d6d6d6;
+            z-index: 50px;
+            box-shadow: 10px 10px 10px #d6d6d6;
         }
     }
 
@@ -80,6 +81,7 @@
             border: 2px solid $cyan;
         }
         button {
+            margin-top: 2px;
             background-color: $cyan; /* Green */
             border: none;
             color: white;
@@ -101,6 +103,7 @@
         }
     }
     .emailSend:hover {
-        box-shadow: 5px 10px 10px #d6d6d6;
+        z-index: 50px;
+        box-shadow: 10px 10px 10px #d6d6d6;
     }
 }

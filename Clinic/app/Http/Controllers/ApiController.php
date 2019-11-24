@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 use App\Medic;
 use App\Client;
 use App\Appointment;
@@ -105,9 +106,9 @@ class ApiController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8',
-            'cellphone' => 'required|string|regex:/[0-9]{9}/|unique:users',
-            'CC' => 'required|string|regex:/[0-9]{1,9}/|unique:clients',
-            'adse' => 'nullable|string|regex:/[0-9]{1,10}/',
+            'cellphone' => 'required|string|regex:/^[0-9]{9}$/|unique:users',
+            'CC' => 'required|string|regex:/^[0-9]{1,9}$/|unique:clients',
+            'adse' => 'nullable|string|regex:/^[0-9]{1,10}$/',
             'morada' => 'required|string',
             'idade' => 'nullable|date'
         ]);
@@ -115,7 +116,7 @@ class ApiController extends Controller
         if ($validator->fails()) {
             return response()->json([
                 'success' => false,
-            'message' => "Invalid parameters"
+                'menssage' =>  $validator->errors(),
             ], 201);
         }
         else{
@@ -156,7 +157,7 @@ class ApiController extends Controller
             'name' => 'required|string|max:255',
                 'email' => 'required|string|email|max:255|unique:users',
                 'password' => 'required|string|min:8',
-                'cellphone' => 'required|string|regex:/[0-9]{9}/|unique:users',
+                'cellphone' => 'required|string|regex:/^[0-9]{9}$/|unique:users',
                 'adse' => 'nullable|string',
                 'specialty' => 'required|string' 
         ]);
@@ -164,7 +165,7 @@ class ApiController extends Controller
         if ($validator->fails()) {
             return response()->json([
                 'success' => false,
-            'message' => "Invalid parameters"
+                'menssage' =>  $validator->errors(),
             ], 201);
         }
         else{

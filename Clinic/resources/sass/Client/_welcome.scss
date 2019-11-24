@@ -1,0 +1,50 @@
+.welcome {
+    text-align: center;
+    display: block;
+    font-family: "Nunito", sans-serif;
+    font-size: 1em;
+
+    height: 99vh;
+    position: relative;
+    h1 {
+        margin-top: 5%;
+        margin-bottom: 0px;
+    }
+    .title {
+        font-size: 4em;
+        color: $blue;
+        font-family: "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen",
+            "Ubuntu", "Cantarell", "Open Sans", "Helvetica Neue", sans-serif;
+        margin: 0px;
+    }
+
+    #stetho {
+        width: 5%;
+        position: absolute;
+        left: 15px;
+        top: 30px;
+    }
+
+    .text {
+        width: 70%;
+        margin: auto;
+        margin-top: 1%;
+        h3 {
+            text-align: justify;
+            > strong {
+                font-weight: bold;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    #temperature2 {
+        display: flex;
+        flex-flow: row wrap;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2%;
+        justify-content: space-between;
+    }
+}

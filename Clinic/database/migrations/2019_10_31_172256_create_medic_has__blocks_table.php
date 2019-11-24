@@ -17,8 +17,8 @@ class CreateMedicHasBlocksTable extends Migration
         Schema::create('medic_has__blocks', function (Blueprint $table) {
             $table->integer('medic_id')->unsigned()->index();  
             $table->integer('block_id')->unsigned()->index(); 
-            $table->foreign('medic_id')->references('id')->on('medics')->onDelete('cascade');;
-            $table->foreign('block_id')->references('id')->on('blocks')->onDelete('cascade');;
+            $table->foreign('medic_id')->references('id')->on('medics')->onDelete('cascade');
+            $table->foreign('block_id')->references('id')->on('blocks')->onDelete('cascade');
             $table->date('date');
             $table->timestamps();
         });

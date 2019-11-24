@@ -59,5 +59,12 @@ class UsersTableSeeder extends Seeder
             'cellphone' => '291775125' ,
             'password' => bcrypt('12345678'),
         ]);
+
+        DB::table('users')->insert([
+            'name' => 'medic3',
+            'email' => 'medic3@gmail.com',
+            'cellphone' => '923234694' ,
+            'password' => bcrypt('12345678'),
+        ]);
     }
 }

@@ -493,7 +493,7 @@ footer p {
 .aboutContainer .body .sub-body img {
   width: 25%;
   margin-right: 5%;
-  margin-top: 0x;
+  margin-top: auto;
   margin-bottom: 5%;
   margin-left: 17%;
 }

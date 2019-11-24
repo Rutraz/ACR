@@ -43,7 +43,7 @@
              </div>
 
              <div class="logItem">
-                <label for="password-confirm" >{{ __('Confirma a Password') }}</label>
+                <label for="password-confirm" >{{ __('Confirme a Password') }}</label>
                 <input id="password-confirm" type="password" class="loginput" name="password_confirmation" placeholder="Comfirme a sua password" required autocomplete="new-password">
             </div>
 
@@ -81,7 +81,7 @@
             </div>
                
             <div class="logItem">
-                <label for="adse" >{{ __('adse') }}</label>
+                <label for="adse" >{{ __('Adse') }}</label>
                 <input id="adse" type="text" class="loginput @error('adse') invalid @enderror" name="adse" value="{{ old('adse') }}" placeholder="ADSE se beneficiar " autofocus>
 
                 @error('adse')
