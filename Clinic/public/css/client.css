@@ -167,6 +167,20 @@
   text-decoration: underline;
 }
 
+.welcome #temperature2 {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-flow: row wrap;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2%;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+}
+
 .profile * {
   margin-bottom: 0;
   margin-top: 0;
@@ -182,8 +196,8 @@
 }
 
 .profile .intro {
-  height: 95vh;
-  margin-top: 1%;
+  height: 100vh;
+  margin-top: 2%;
 }
 
 .profile .client-info {
@@ -362,5 +376,6 @@ body {
 
 main {
   margin-left: 17%;
+  overflow: auto;
 }
 
