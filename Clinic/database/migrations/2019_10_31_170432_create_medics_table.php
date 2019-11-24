@@ -17,7 +17,7 @@ class CreateMedicsTable extends Migration
         Schema::create('medics', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned()->index();  
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('specialty');
             $table->integer('rating');
             $table->string('adse')->nullable();

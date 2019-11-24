@@ -36,6 +36,16 @@ Route::get('/client', 'ClientController@index'); // ENVIA A INFORMAÇÃO DO CLIE
 
 Route::get('/client/profile','ClientController@profile'); // ENVIA A INFORMAÇÃO DO CLIENTE COM CONSULTAS E ANALISES
 
+Route::get('/client/profile/edit','ClientController@editProfile'); // ENVIA A INFORMAÇÃO DO CLIENTE 
+
+Route::post('/client/profile/edit','ClientController@submitEditProfile'); // MODIFICA A INFORMAÇÃO DO CLIENTE 
+
+Route::post('/client/profile/edit/email','ClientController@submitEditEmail'); // MODIFICA A INFORMAÇÃO DO CLIENTE
+
+Route::post('/client/profile/edit/password','ClientController@submitEditPassword'); // MODIFICA A INFORMAÇÃO DO CLIENTE
+
+Route::post('/client/profile/erase','ClientController@eraseProfile'); // ELIMINA O PERFIL
+
 Route::get('/client/appointment','AppointmentController@client');
 
 Route::get('/client/analysis','AnalysisController@clientAnalysis'); // ENVIA AS ANÁLISES MARCADAS

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 use App\Medic;
 use App\Client;
 use App\Appointment;
@@ -115,7 +116,7 @@ class ApiController extends Controller
         if ($validator->fails()) {
             return response()->json([
                 'success' => false,
-            'message' => "Invalid parameters"
+                'menssage' =>  $validator->errors(),
             ], 201);
         }
         else{
@@ -164,7 +165,7 @@ class ApiController extends Controller
         if ($validator->fails()) {
             return response()->json([
                 'success' => false,
-            'message' => "Invalid parameters"
+                'menssage' =>  $validator->errors(),
             ], 201);
         }
         else{

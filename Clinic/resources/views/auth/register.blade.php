@@ -81,7 +81,7 @@
             </div>
                
             <div class="logItem">
-                <label for="adse" >{{ __('adse') }}</label>
+                <label for="adse" >{{ __('Adse') }}</label>
                 <input id="adse" type="text" class="loginput @error('adse') invalid @enderror" name="adse" value="{{ old('adse') }}" placeholder="ADSE se beneficiar " autofocus>
 
                 @error('adse')

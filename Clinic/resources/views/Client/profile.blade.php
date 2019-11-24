@@ -11,10 +11,13 @@
         @endif
         
         <h1> Cliente</h1>
+        
+        <form  action="/client/profile/edit">            
+            <button type="submit" >editar</button>
+        </form>
 
         <h2>{{$user->name}}</h2>
         <h2>{{$user->email}}</h2>
-        <h2>{{$client->user_id}}</h2>
         <h2>{{$client->CC}}</h2>
         <h2>{{$client->adse}}</h2>
         <h2>{{$client->morada}}</h2>
