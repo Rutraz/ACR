@@ -222,12 +222,12 @@
 }
 
 .profile .client-info .profile-info h2 {
-  margin-top: 2%;
+  margin-top: 1%;
   color: grey;
 }
 
 .profile .client-info .profile-info h3 {
-  margin-top: 2%;
+  margin-top: 1.5%;
 }
 
 .profile .client-info .profile-info hr {
@@ -280,6 +280,21 @@
 .profile .client-appointmments .appointmments-name > hr {
   margin-top: 2%;
   border: 2px solid #6cb2eb;
+}
+
+.profile .client-appointmments .appointmments-table table,
+.profile .client-appointmments .appointmments-table td,
+.profile .client-appointmments .appointmments-table th {
+  border: 1px solid black;
+}
+
+.profile .client-appointmments .appointmments-table table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.profile .client-appointmments .appointmments-table th {
+  height: 50px;
 }
 
 body {
