@@ -1,5 +1,14 @@
 @extends('layouts.client')
 
+
+<!--<div class="home">
+    <div class="item1">
+            <h1 class="puff-in-right">Bem-vindo {{$user->name}}   </h1>
+            <img  class="puff-in-right" src="{{asset('assets/Gest/healthcare-logo.png')}}"/>       
+        </div>
+    </div>
+        
+</div> -->
 @section('content')
 <div class="welcome">
 <img id="stetho" src="{{asset('assets/Gest/healthcare-logo.png')}}"/>  

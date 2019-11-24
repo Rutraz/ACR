@@ -8,6 +8,8 @@
 
 @import "Client/welcome";
 
+@import "Client/profile";
+
 body {
     margin: 0px;
     margin-top: -21px;
@@ -92,5 +94,5 @@ body {
 
 main {
     margin-left: 17%;
-    overflow: auto;
+    
 }
