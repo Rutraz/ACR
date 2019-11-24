@@ -43,7 +43,7 @@
              </div>
 
              <div class="logItem">
-                <label for="password-confirm" >{{ __('Confirma a Password') }}</label>
+                <label for="password-confirm" >{{ __('Confirme a Password') }}</label>
                 <input id="password-confirm" type="password" class="loginput" name="password_confirmation" placeholder="Comfirme a sua password" required autocomplete="new-password">
             </div>
 

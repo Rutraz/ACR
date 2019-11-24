@@ -11,6 +11,7 @@ use App\Appointment;
 use Validator;
 use DB;
 
+use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Resources\ClientAppointmentResource;
@@ -85,6 +86,48 @@ class ClientController extends Controller
         }
     }
 
+    public function eraseProfile( Request $request ){
+        $user = Auth::user();
+        if($user){           
+            $id = $user->id;
+            $client = Client::where('user_id',$id)->first();
+                if($client){
+                    $pass = DB::table('users')->select('password')->where('id',$id)->first();
+
+                    $resul = Hash::check($request->passwordErase, $pass->password); // verifica se old é igual a new 
+                    $conf = Str::is($request->passwordErase, $request->passwordComfirm); // verifica se pass == passconfirm
+                    
+                    if( !$conf || !$resul ){
+                        $messages = [
+                            'passwordComfirm' => 'Passwords têm de ser iguais',
+                            'passwordErase' => 'Password pode estar incorreta'
+                        ];
+                        return redirect('/client/profile/edit')->withErrors($messages);
+                    }
+                    else{
+                        $validator = Validator::make($request->all(), [
+                            'passwordErase' => 'required|string|min:8',
+                            'passwordComfirm' => 'required|string|min:8',
+                            ]);
+                        if ($validator->fails()) {
+                            return redirect('/client/profile/edit')->withErrors($validator)->withInput();
+                        }
+                        else{
+                            $client->delete();
+                            $user->delete();
+                            return redirect('/');
+                        }
+                    }
+                }
+                else{
+                    return redirect('/');
+                }
+        }
+        else{
+            return redirect('/');
+        }
+    }
+
     public function submitEditProfile( Request $request )
     {
         $user = Auth::user();
@@ -95,9 +138,9 @@ class ClientController extends Controller
                     
                     $validator = Validator::make($request->all(), [
                         'name' => 'required|string|max:255',
-                        'cellphone' => 'required|string|regex:/[0-9]{9}/',
-                        'CC' => 'required|string|regex:/[0-9]{1,9}/',
-                        'adse' => 'nullable|string|regex:/[0-9]{1,10}/',
+                        'cellphone' => 'required|string|regex:/^[0-9]{9}$/',
+                        'CC' => 'required|string|regex:/^[0-9]{1,9}$/',
+                        'adse' => 'nullable|string|regex:/^[0-9]{1,10}$/',
                         'morada' => 'required|string',
                         'idade' => 'nullable|date'
                     ]);
@@ -146,7 +189,7 @@ class ClientController extends Controller
                     $pass = DB::table('users')->select('password')->where('id',$id)->first();
                     $resul = Hash::check($request->password, $pass->password);
 
-                    if(Str::is($request->email, $user->email && !$resul) ){
+                    if(Str::is($request->email, $user->email) || !$resul) {
                         $messages = [
                             'email' => 'O email tem de ser diferente',
                             'password' => 'Password pode estar incorreta'
@@ -179,6 +222,8 @@ class ClientController extends Controller
             else
                 return redirect('/');
         }
+
+
     public function submitEditPassword(Request $request){
         $user = Auth::user();
         if($user){           

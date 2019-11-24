@@ -6,7 +6,7 @@ function handleNewTemp(data) {
     console.log(data);
 
     $("#temperature2").append(
-        "<h3> Localização atual: " +
+        "<h3> Localização: " +
             data.location.name +
             " / " +
             data.location.region +
