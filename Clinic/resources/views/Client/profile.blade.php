@@ -34,40 +34,57 @@
     </section>
 
     <section>
-        <div class="client-appointmments">
-            <div class="appointmments-name"> 
-                <h1>Consultas</h1>
-                <p>Actualize as informações do seu perfil e as definições.</p>
-                <hr>
-            </div>
+    <div class="client-appointmments">
+                <div class="appointmments-name"> 
+                    <h1>Consultas</h1>
+                    <p>Actualize as informações do seu perfil e as definições.</p>
+                    <hr>
+                </div>
                 <br>
-            <div class="appointmments-table">
-            <table>
-                <tr>
-                    <th>Data</th>
-                    <th>Especialização</th>
-                    <th>Médico</th>
-                    <th>Observação</th>
-                    <th>Rating</th>
-                </tr>
-                    @if ($appointments->isNotEmpty())
-                    @foreach($appointments as $appointment) 
-                    <tr>
-                    <td>{{$appointment->date}}</td>
-                    <td>{{$appointment->medic->specialty}}</td>
-                    <td>{{$appointment->medic->user->name}}</td>
-                    <td>{{$appointment->comments}}</td>
-                    <td>{{$appointment->state}}</td>
-                    </tr>
-                    @endforeach
-                    @else
-                        <h1> Nao tem consultas marcadas ou realizadas </h1>
-                    @endif
+                <div  class="appointmments-table">
+                    
+                        <div id="scrolltable">
+                            <table>
+                               
+                                <tr >
+                                
+                                <div> <th> Data </th> </div>
+                                <div> <th> Especialização </th> </div>
+                                <div> <th> Médico </th> </div>
+                                <div> <th> Observação </th> </div>
+                                <div> <th> Estado</th> </div>
                 
-            </table>
-
-            </div>
-        </div>
+                                </tr>
+                                    @if ($appointments->isNotEmpty())
+                                        @foreach($appointments as $appointment) 
+                                            <tr>
+                                                <td>{{$appointment->date}}</td>
+                                                <td>{{$appointment->medic->specialty}}</td>
+                                                <td>{{$appointment->medic->user->name}}</td>
+                                                <td>{{$appointment->comments}}</td>
+                                                <td>{{$appointment->state}}</td>                        
+                                            </tr>
+                                                                    
+                                        @endforeach
+                                    @else
+                                        <h1> Nao tem consultas marcadas ou realizadas </h1>
+                                    @endif
+                                    <tr><td>test</td><td>test</td><td>test</td><td>test</td><td>test</td></tr>  
+                                    <tr><td>test</td><td>test</td><td>test</td><td>test</td><td>test</td></tr>  
+                                    <tr><td>test</td><td>test</td><td>test</td><td>test</td><td>test</td></tr>  
+                                    <tr><td>test</td><td>test</td><td>test</td><td>test</td><td>test</td></tr> 
+                                    <tr><td>test</td><td>test</td><td>test</td><td>test</td><td>test</td></tr>  
+                                    <tr><td>test</td><td>test</td><td>test</td><td>test</td><td>test</td></tr>  
+                                     <tr><td>test</td><td>test</td><td>test</td><td>test</td><td>test</td></tr> 
+                                     <tr><td>test</td><td>test</td><td>test</td><td>test</td><td>test</td></tr>  
+                                     <tr><td>test</td><td>test</td><td>test</td><td>test</td><td>test</td></tr>  
+                                     <tr><td>test</td><td>test</td><td>test</td><td>test</td><td>test</td></tr>  
+                                     <tr><td>test</td><td>test</td><td>test</td><td>test</td><td>test</td></tr>   
+                            </table>
+                        </div>
+                     
+                </div>
+    </div>
                 
     </section>
     <section>

@@ -36,22 +36,16 @@
         .profile-info {
             margin-top: 4%;
             h2 {
-                margin-top: 1%;
+                margin-top: 2%;
                 color: grey;
             }
             h3 {
                 margin-top: 1.5%;
+                border-bottom: 1px black;
             }
-            hr {
-                background-image: linear-gradient(
-                    to right,
-                    rgba(0, 0, 0, 0),
-                    rgba(0, 0, 0, 0.75),
-                    rgba(0, 0, 0, 0)
-                );
-            }
+          
             button {
-                margin-top: 2%;
+                margin-top: 3%;
                 box-shadow: inset 0px 1px 0px 0px #bbdaf7;
                 background: linear-gradient(
                     to bottom,
@@ -97,25 +91,56 @@
                 font-weight: 600;
                 font-size: 50px;
             }
-            > hr {
+             hr {
                 margin-top: 2%;
                 border: 2px solid $cyan;
             }
         }
         .appointmments-table {
-            table,
-            td,
-            th {
-                border: 1px solid black;
-            }
-            table {
+            table{
                 border-collapse: collapse;
                 width: 100%;
-            }
-            th {
-                height: 50px;
-            }
+                text-align: center;
+                background-color: lightgrey;
+                border: 2px solid black;
+                height: 70vh;
+
+               tr{
+                    div{
+                        position: absolute;
+                    }
+               }
+
+           
+               
+              
+                   
+                
+                tr:nth-child(odd){
+                    background-color: #f2f2f2;
+                }
+                tr:hover {
+                    background-color: lightblue;
+                }
+                th,td {
+                    height: 50px;
+                    width: 20px;
+                    border: 1px solid black;
+                }
+                th{
+                    background-color: $cyan;
+                }
+               
+            }           
+            #scrolltable { 
+                margin-top: 20px; 
+                height: 70vh;
+                overflow: auto; 
+               /* th div { position: absolute; margin-top: -20px; } */
+            }        
         }
+              
+              
     }
 
     .client-analysis {

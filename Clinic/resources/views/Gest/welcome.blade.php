@@ -14,6 +14,7 @@
 </head>
 
 <body style="background-color:white">
+<div class="containerGuestWelcome">
     <div class="full-height">
         @if (Route::has('login'))
         <div class="links">
@@ -27,8 +28,12 @@
 
         <div class="content">
             <div class="m-b-md">
-                <img class="rotate-vert-center" id="stetho" src="{{asset('assets/Gest/healthcare-logo.png')}}" />
-                <h1 class="title text-focus-in"> HealthCare </h1>
+                <div class="image-logo">
+                    <img  id="stetho" src="{{asset('assets/Gest/healthcare-logo1.png')}}" />
+                </div>       
+                <img class="rotate-vert-center" id="stetho" src="{{asset('assets/Gest/healthcare-logo2.png')}}" />   
+                    <h1 class="title text-focus-in"> HealthCare </h1>
+                    
             </div>
 
             <div class="midleLinks">
@@ -50,12 +55,13 @@
             </div>
         </div>
     </div>
-    <hr>
+    
     <footer>
         <p>Created by: <a href="mailto:2040416@student.uma.pt">Ricardo Jardim</a> , <a
                 href="mailto:2018915@student.uma.pt">Vitor Velosa</a> , <a href="mailto:2095415@student.uma.pt">João
                 Santos</a></p>
     </footer>
+</div>
 </body>
 
 </html>
