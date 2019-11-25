@@ -42,12 +42,24 @@ class AppointmentController extends Controller
         }
     }
 
+ 
     
     public function employee()
     {
         $user = Auth::user();
         if($user){
-            return view('Employee.appointment',compact('user'));
+            $id = $user->id;
+            $client = Employee::where('user_id',$id)->first();
+                if($client){
+                       $medicos = MedicResource::collection(Medic::leftJoin('users', 'medics.user_id', '=', 'users.id')
+                       ->orderBy('name', 'asc')
+                       ->get());
+                       //return $medicos;
+                       return view('Employee.appointment',compact('user','medicos'));
+                }
+                else{
+                    return redirect('/');
+                }
         }
         else{
             return redirect('/');

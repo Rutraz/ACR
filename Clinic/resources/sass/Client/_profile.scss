@@ -6,7 +6,7 @@
     }
 
     section {
-        height: 100vh;
+        height: 101vh;
 
         &:nth-of-type(2n) {
             background-color: lightgray;
@@ -90,6 +90,7 @@
         padding-top: 1%;
         padding-left: 5%;
         padding-right: 8%;
+        height: 100vh;
         .appointmments-name {
             > h1 {
                 color: #333333;
@@ -102,16 +103,18 @@
             }
         }
         .appointmments-table {
-            table, td, th {
+            table,
+            td,
+            th {
                 border: 1px solid black;
-              }
-            table{
+            }
+            table {
                 border-collapse: collapse;
                 width: 100%;
             }
             th {
                 height: 50px;
-              }
+            }
         }
     }
 
