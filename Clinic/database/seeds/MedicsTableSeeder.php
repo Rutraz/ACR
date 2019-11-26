@@ -27,7 +27,7 @@ class MedicsTableSeeder extends Seeder
 
         DB::table('medics')->insert([
             'user_id' => '5',
-            'specialty' => 'pernas',
+            'specialty' => 'tetas',
             'rating' => '3',
             'adse' => '3546',      
         ]);

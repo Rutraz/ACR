@@ -7,36 +7,27 @@ function initPageEmail() {
         console.log(dataToFill);
     });
 
+    $.get("/api/medic/esp", function(data) {});
+
     $("#especialidade").change(function() {
         if ($(this).val() === "" && $("#medico").val() === "") {
             filterSelection("all");
+            filterMedics("all", dataToFill);
         } else {
             filterSelection($(this).val());
             filterMedics($(this).val(), dataToFill);
         }
     });
 
-    /*
-    filterSelection("all");
-    //filterMedics("all");
-    //  $("#addEventBtn").click(sendEmail);
-
-    $("#especialidade").change(function() {
-        if ($(this).val() === "" && $("#medico").val() === "") {
-            filterSelection("all");
-        } else {
-            filterMedics($(this).val());
-            //filterSelection($(this).val());
-        }
-    });
-
     $("#medico").change(function() {
-        if ($(this).val() === "") {
+        if ($(this).val() === "" && $("#especialidade").val() === "") {
             filterSelection("all");
+            filterEsp("all", dataToFill);
         } else {
             filterSelection($(this).val());
+            filterEsp($(this).val(), dataToFill);
         }
-    });*/
+    });
 }
 
 function filterSelection(c) {
@@ -51,18 +42,43 @@ function filterSelection(c) {
 function filterMedics(c, dataToFill) {
     $("#medicos>option").remove();
     console.log(dataToFill);
-    /*var array = [];
-    for (var chave in dataToFill.data) {
-        console.log(chave);
-        if (dataToFill.data[chave].specialty == "Cona") {
-            array.push(dataToFill.data[chave]);
-        }
+
+    if (c == "all") {
+        dataToFill.data.forEach(element => {
+            $("#medicos").append("<option value='" + element.user.name + "' >");
+        });
+    } else {
+        var resultAarray = jQuery.grep(dataToFill.data, function(n) {
+            return n.specialty === c;
+        });
+
+        resultAarray.forEach(element => {
+            $("#medicos").append("<option value='" + element.user.name + "' >");
+        });
     }
-    console.log(array);*/
-    var resultAarray = jQuery.grep(dataToFill.data, function(n) {
-        return n.specialty === c;
-    });
-    console.log(resultAarray);
+}
+
+function filterEsp(c, dataToFill) {
+    $("#especialidades>option").remove();
+    console.log(dataToFill);
+
+    if (c == "all") {
+        dataToFill.data.forEach(element => {
+            $("#especialidades").append(
+                "<option value='" + element.specialty + "' >"
+            );
+        });
+    } else {
+        var resultAarray = jQuery.grep(dataToFill.data, function(n) {
+            return n.user.name === c;
+        });
+
+        resultAarray.forEach(element => {
+            $("#especialidades").append(
+                "<option value='" + element.specialty + "' >"
+            );
+        });
+    }
 }
 
 function Add(element, name) {

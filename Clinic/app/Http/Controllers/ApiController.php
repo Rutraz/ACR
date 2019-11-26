@@ -17,6 +17,8 @@ use App\Http\Resources\MedicAppointmentResource;
 use App\Http\Resources\ClientAppointmentResource;
 use App\Http\Resources\ClientResource;
 use App\Http\Resources\AnalysisResource;
+use App\Http\Resources\SpecialtyResource;
+
 
 class ApiController extends Controller
 {
@@ -29,6 +31,22 @@ class ApiController extends Controller
     public function getAllMedicOrdered(){
         $medicos = MedicResource::collection(Medic::leftJoin('users', 'medics.user_id', '=', 'users.id')
         ->orderBy('rating', 'desc')
+        ->orderBy('name', 'asc')
+        ->get());
+        if($medicos)
+            return $medicos;
+        else{
+            return response()->json([
+                'success' => false,
+                'message' => 'No medic found'
+            ], 404);;
+        }
+    }
+
+    
+    public function getAllMedicBySpec(){
+        $medicos = MedicResource::collection(Medic::leftJoin('users', 'medics.user_id', '=', 'users.id')
+        ->orderBy('specialty')
         ->orderBy('name', 'asc')
         ->get());
         if($medicos)

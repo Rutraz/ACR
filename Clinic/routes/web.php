@@ -86,6 +86,8 @@ Route::post('/api/faq', 'FaqController@insertFaq'); // CRIA UMA FAQ
 
 Route::get('/api/medic/orderer', 'ApiController@getAllMedicOrdered'); // ENVIA A INFORMAÇÃO DE TODOS OS MEDICOS
 
+Route::get('/api/medic/esp', 'ApiController@getAllMedicBySpec'); // ENVIA A INFORMAÇÃO DE TODOS OS MEDICOS
+
 Route::get('/api/medic', 'ApiController@getAllMedic'); // ENVIA A INFORMAÇÃO DE TODOS OS MEDICOS
 
 Route::post('/api/medic', 'ApiController@createMedic'); // CRIAR UM MEDICO
