@@ -364,9 +364,9 @@
 }
 
 .profile #fullpage {
-  height: 100vh;
   overflow: hidden;
-  margin-top: 2%;
+  height: 100vh;
+  margin-top: 18px;
 }
 
 .profile #fullpage section {
@@ -446,7 +446,7 @@
   padding-top: 1%;
   padding-left: 5%;
   padding-right: 8%;
-  height: 100vh;
+  height: 200vh;
 }
 
 .profile .client-appointmments .appointmments-name > h1 {

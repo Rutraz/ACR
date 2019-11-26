@@ -4,16 +4,15 @@
         margin-top: 0;
         padding: 0;
     }
-
-    #fullpage {
-        
+   
+    #fullpage {    
+        overflow:hidden;  
           height:100vh;
-        
-          overflow:hidden;
-          margin-top: 2%;
+         margin-top:18px;
           section {
             
               height:100vh;
+
               &:nth-of-type(2n) {
                 background-color: lightgray;
             }
@@ -21,19 +20,7 @@
         }
     
         
-   /* section {
-        height: 101vh;
 
-        &:nth-of-type(2n) {
-            background-color: lightgray;
-        }
-    }
-
-    .intro {
-        height: 100vh;
-        margin-top: 2%;
-    }
-*/
     .client-info {
         padding-top: 1%;
         padding-left: 5%;
@@ -103,7 +90,7 @@
         padding-top: 1%;
         padding-left: 5%;
         padding-right: 8%;
-        height: 100vh;
+        height: 200vh;
         .appointmments-name {
             > h1 {
                 color: #333333;
@@ -168,7 +155,8 @@
                 tr:hover {background-color: $cyan;}
             }
              
-        }   
+        } 
+          
     }
 
     .client-analysis {
