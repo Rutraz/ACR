@@ -363,17 +363,18 @@
   padding: 0;
 }
 
-.profile section {
-  height: 101vh;
-}
-
-.profile section:nth-of-type(2n) {
-  background-color: lightgray;
-}
-
-.profile .intro {
+.profile #fullpage {
   height: 100vh;
+  overflow: hidden;
   margin-top: 2%;
+}
+
+.profile #fullpage section {
+  height: 100vh;
+}
+
+.profile #fullpage section:nth-of-type(2n) {
+  background-color: lightgray;
 }
 
 .profile .client-info {
@@ -391,6 +392,10 @@
 .profile .client-info .profile-name > hr {
   margin-top: 2%;
   border: 2px solid #6cb2eb;
+}
+
+.profile .client-info .profile-name p {
+  margin-left: 1%;
 }
 
 .profile .client-info .profile-info {
@@ -455,43 +460,90 @@
   border: 2px solid #6cb2eb;
 }
 
-.profile .client-appointmments .appointmments-table table {
-  border-collapse: collapse;
-  width: 100%;
-  text-align: center;
-  background-color: lightgrey;
-  border: 2px solid black;
+.profile .client-appointmments .appointmments-name p {
+  margin-left: 1%;
+}
+
+.profile .client-appointmments .appointmments-table .table-container {
+  padding: 0.3em;
   height: 70vh;
 }
 
-.profile .client-appointmments .appointmments-table table tr div {
-  position: absolute;
+.profile .client-appointmments .appointmments-table table {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-flow: column;
+  height: 70vh;
+  width: 100%;
+  border: 1px solid lightgrey;
 }
 
-.profile .client-appointmments .appointmments-table table tr:nth-child(odd) {
-  background-color: #f2f2f2;
-}
-
-.profile .client-appointmments .appointmments-table table tr:hover {
-  background-color: lightblue;
-}
-
-.profile .client-appointmments .appointmments-table table th,
-.profile .client-appointmments .appointmments-table table td {
-  height: 50px;
-  width: 20px;
-  border: 1px solid black;
+.profile .client-appointmments .appointmments-table table td,
+.profile .client-appointmments .appointmments-table table th {
+  height: 40px;
+  width: 100%;
+  border: 1px solid grey;
+  text-align: center;
 }
 
 .profile .client-appointmments .appointmments-table table th {
   background-color: #6cb2eb;
+  border: 1px solid grey;
 }
 
-.profile .client-appointmments .appointmments-table #scrolltable {
-  margin-top: 20px;
-  height: 70vh;
-  overflow: auto;
-  /* th div { position: absolute; margin-top: -20px; } */
+.profile .client-appointmments .appointmments-table table thead {
+  -webkit-box-flex: 0;
+          flex: 0 0 auto;
+  width: calc(100% - 0.9em);
+  display: table;
+  table-layout: fixed;
+}
+
+.profile .client-appointmments .appointmments-table table tbody {
+  -webkit-box-flex: 1;
+          flex: 1 1 auto;
+  display: block;
+  overflow-y: scroll;
+}
+
+.profile .client-appointmments .appointmments-table table tbody tr {
+  width: 100%;
+}
+
+.profile .client-appointmments .appointmments-table table tbody tr {
+  display: table;
+  table-layout: fixed;
+}
+
+.profile .client-appointmments .appointmments-table table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.profile .client-appointmments .appointmments-table table tr:hover {
+  background-color: #6cb2eb;
+}
+
+.profile .client-analysis {
+  padding-top: 1%;
+  padding-left: 5%;
+  padding-right: 8%;
+}
+
+.profile .client-analysis .anaylsis-name > h1 {
+  color: #333333;
+  font-weight: 600;
+  font-size: 50px;
+}
+
+.profile .client-analysis .anaylsis-name hr {
+  margin-top: 2%;
+  border: 2px solid #6cb2eb;
+}
+
+.profile .client-analysis .anaylsis-name p {
+  margin-left: 1%;
 }
 
 body {

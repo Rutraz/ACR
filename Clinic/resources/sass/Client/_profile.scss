@@ -5,7 +5,23 @@
         padding: 0;
     }
 
-    section {
+    #fullpage {
+        
+          height:100vh;
+        
+          overflow:hidden;
+          margin-top: 2%;
+          section {
+            
+              height:100vh;
+              &:nth-of-type(2n) {
+                background-color: lightgray;
+            }
+             }
+        }
+    
+        
+   /* section {
         height: 101vh;
 
         &:nth-of-type(2n) {
@@ -17,7 +33,7 @@
         height: 100vh;
         margin-top: 2%;
     }
-
+*/
     .client-info {
         padding-top: 1%;
         padding-left: 5%;
@@ -31,6 +47,9 @@
             > hr {
                 margin-top: 2%;
                 border: 2px solid $cyan;
+            }
+            p{
+                margin-left: 1%;
             }
         }
         .profile-info {
@@ -95,54 +114,80 @@
                 margin-top: 2%;
                 border: 2px solid $cyan;
             }
+            p{
+                margin-left: 1%;
+            }
         }
         .appointmments-table {
-            table{
-                border-collapse: collapse;
-                width: 100%;
-                text-align: center;
-                background-color: lightgrey;
-                border: 2px solid black;
+            
+            .table-container {
+                padding: 0.3em;
                 height: 70vh;
+            }
+            table {
+                display: flex;
+                flex-flow: column;
+                height: 70vh;
+                width: 100%;
+                border: 1px solid lightgrey;
 
-               tr{
-                    div{
-                        position: absolute;
-                    }
-               }
+                td,th{
+                    height: 40px; 
+                    width: 100%;    
+                    border: 1px solid grey;
+                    text-align: center;
+                }
 
-           
-               
-              
-                   
-                
-                tr:nth-child(odd){
-                    background-color: #f2f2f2;
-                }
-                tr:hover {
-                    background-color: lightblue;
-                }
-                th,td {
-                    height: 50px;
-                    width: 20px;
-                    border: 1px solid black;
-                }
                 th{
                     background-color: $cyan;
+                    border: 1px solid grey;
                 }
-               
-            }           
-            #scrolltable { 
-                margin-top: 20px; 
-                height: 70vh;
-                overflow: auto; 
-               /* th div { position: absolute; margin-top: -20px; } */
-            }        
-        }
-              
-              
+                thead{
+                    flex: 0 0 auto;
+                    width: calc(100% - 0.9em);
+                    display: table;
+                    table-layout: fixed;
+                    
+                }
+
+                tbody{
+                    flex: 1 1 auto;
+                    display: block;
+                    overflow-y: scroll;
+
+                    tr{
+                        width: 100%;
+                    }
+                    tr{
+                        display: table;
+                        table-layout: fixed;
+                    }
+                   
+                }
+                tr:nth-child(even){background-color: #f2f2f2;}
+                tr:hover {background-color: $cyan;}
+            }
+             
+        }   
     }
 
     .client-analysis {
+        padding-top: 1%;
+        padding-left: 5%;
+        padding-right: 8%;
+        .anaylsis-name{
+            > h1 {
+                color: #333333;
+                font-weight: 600;
+                font-size: 50px;
+            }
+             hr {
+                margin-top: 2%;
+                border: 2px solid $cyan;
+            }
+            p{
+                margin-left: 1%;
+            }
+        }
     }
 }
