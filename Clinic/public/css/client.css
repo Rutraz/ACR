@@ -145,6 +145,39 @@
   margin: 0px;
 }
 
+.welcome .text-focus-in {
+  -webkit-animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+@-webkit-keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
 .welcome #stetho {
   width: 5%;
   position: absolute;
@@ -181,11 +214,128 @@
           justify-content: space-between;
 }
 
-.appointment .medicList {
-  background-color: red;
+.welcome .rotate-vert-center {
+  -webkit-animation: rotate-vert-center 5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 2s infinite;
+  animation: rotate-vert-center 5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 2s infinite;
 }
 
-.appointment .medic {
+@-webkit-keyframes rotate-vert-center {
+  0% {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0);
+  }
+
+  100% {
+    -webkit-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes rotate-vert-center {
+  0% {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0);
+  }
+
+  100% {
+    -webkit-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+  }
+}
+
+.appointment {
+  font-family: "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1em;
+  margin-top: 21px;
+}
+
+.appointment .topnav {
+  border: 1px solid gray;
+  background-color: #e9e9e9;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-flow: row wrap;
+  overflow: hidden;
+  width: 99.8%;
+  height: 100px;
+  font-size: 1.4em;
+}
+
+.appointment .topnav .item {
+  display: block;
+  width: 30%;
+  margin-left: 1%;
+}
+
+.appointment .topnav .item label {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 2%;
+}
+
+.appointment .topnav .item input {
+  padding: 10px 20px;
+  margin-top: 2%;
+  width: 80%;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.appointment .topnav .item input:hover {
+  border: 2px solid #6cb2eb;
+}
+
+.appointment .topnav .flexitem {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-flow: row wrap;
+  margin-top: 1%;
+  width: 100%;
+}
+
+.appointment .topnav .flexitem input {
+  padding: 10px 20px;
+  width: 100%;
+}
+
+.appointment .topnav .flexitem button {
+  margin-top: 6px;
+  margin-left: 11%;
+  width: 15%;
+  height: 45px;
+  font-weight: bold;
+  background-color: #6cb2eb;
+  /* Green */
+  border: none;
+  color: white;
+  text-align: left;
+  -webkit-transition-duration: 0.2s;
+  /* Safari */
+  transition-duration: 0.2s;
+  cursor: pointer;
+  border-radius: 2px;
+  border: #ddd solid 1px;
+}
+
+.appointment .topnav .flexitem button:hover {
+  background-color: #ddd;
+  border: #6cb2eb solid 1px;
+  color: black;
+}
+
+.appointment .topnav .show2 {
+  display: block;
+}
+
+.appointment .medicList {
+  margin-top: 2%;
+}
+
+.appointment .medicList .medic {
   background-color: blue;
   display: -webkit-box;
   display: flex;
@@ -195,10 +345,16 @@
   margin-bottom: 1%;
   border: 1px solid black;
   width: 80%;
+  display: none;
 }
 
-.appointment .medic h2 {
+.appointment .medicList .medic h2 {
   margin-right: 5%;
+}
+
+.appointment .medicList .show {
+  display: -webkit-box;
+  display: flex;
 }
 
 .profile * {

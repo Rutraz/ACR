@@ -41,8 +41,6 @@ class AppointmentController extends Controller
             return redirect('/');
         }
     }
-
- 
     
     public function employee()
     {

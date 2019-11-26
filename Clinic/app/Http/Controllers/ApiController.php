@@ -26,6 +26,21 @@ class ApiController extends Controller
         return MedicResource::collection(Medic::paginate(10));
     }
 
+    public function getAllMedicOrdered(){
+        $medicos = MedicResource::collection(Medic::leftJoin('users', 'medics.user_id', '=', 'users.id')
+        ->orderBy('rating', 'desc')
+        ->orderBy('name', 'asc')
+        ->get());
+        if($medicos)
+            return $medicos;
+        else{
+            return response()->json([
+                'success' => false,
+                'message' => 'No medic found'
+            ], 404);;
+        }
+    }
+
     // APENAS UM MEDICO COM O ID=X
     public function getMedicSingle($id){
         $medico = Medic::find($id);

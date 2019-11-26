@@ -18,6 +18,7 @@ class MedicResource extends JsonResource
         return [
         //    'user' => $this->user,
               'user' => new UserResource($this->user),
+              'id' => $this->id,
             'specialty' => $this->specialty,
             'rating' => $this->rating,
             'adse' => $this->adse,

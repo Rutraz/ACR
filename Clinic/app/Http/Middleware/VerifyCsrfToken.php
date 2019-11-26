@@ -21,6 +21,8 @@ class VerifyCsrfToken extends Middleware
     protected $except = [
         'http://127.0.0.1:8000/api/faq',
         'http://127.0.0.1:8000/api/medic',
-        'http://127.0.0.1:8000/api/client'
+        'http://127.0.0.1:8000/api/client',
+        'http://127.0.0.1:8000/api/medic/orderer',
+        
     ];
 }

@@ -60,13 +60,9 @@ function postPassword(old, newp, comfirms) {
         comfirm: comfirms
     };
 
-    $.post(
-        "http://127.0.0.1:8000/client/profile/edit/password",
-        content,
-        function() {
-            window.location = "http://127.0.0.1:8000/client/profile";
-        }
-    );
+    $.post("/client/profile/edit/password", content, function() {
+        window.location = "/client/profile";
+    });
 }
 
 function sendProfile() {
@@ -209,8 +205,8 @@ function postProfile(name, cellphone, idade, CC, adse, morada) {
         morada: morada
     };
 
-    $.post("http://127.0.0.1:8000/client/profile/edit", content, function() {
-        window.location = "http://127.0.0.1:8000/client/profile";
+    $.post("/client/profile/edit", content, function() {
+        window.location = "/client/profile";
     });
 }
 
