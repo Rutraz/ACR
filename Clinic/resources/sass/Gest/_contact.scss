@@ -1,4 +1,5 @@
 .contactContainer {
+    font-family: "Nunito", sans-serif;
     .header {
         text-align: center;
         background-size: 100%;
@@ -7,7 +8,6 @@
         border-top: groove rgb(39, 189, 240);
         border-bottom: groove rgb(39, 189, 240);
         color: white;
-        font-family: "Times New Roman", Times, serif;
         font-size: 30px;
         padding-top: 100px;
         padding-bottom: 100px;
@@ -16,7 +16,6 @@
     .body {
         h2 {
             text-align: center;
-            font-family: "Times New Roman", Times, serif;
             font-size: 40px;
             display: flex;
             justify-content: center;
@@ -44,8 +43,8 @@
                 display: block;
                 text-align: center;
                 margin-left: 8%;
-                
-                width: 500px;   
+
+                width: 500px;
 
                 > h3 {
                     font-family: "BlinkMacSystemFont", "Segoe UI", "Roboto",
@@ -172,7 +171,6 @@
             }
             p {
                 margin-left: 20%;
-                font-family: "Times New Roman", Times, serif;
                 font-size: 18px;
             }
         }

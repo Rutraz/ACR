@@ -1,13 +1,13 @@
 // Estilo do cabeçalho
 
 .headerhelp {
+    font-family: "Nunito", sans-serif;
     //text-align: center;
     background-size: 100%;
     background-position: center;
     border-top: groove rgb(39, 189, 240);
     border-bottom: groove rgb(39, 189, 240);
     color: white;
-    font-family: "Times New Roman", Times, serif;
     //font-size: 30px;
     //padding-top: 100px;
     //padding-bottom: 100px ;
@@ -38,10 +38,11 @@
 }
 
 .helpContainer {
+    font-family: "Nunito", sans-serif;
     // Estilo do corpo da página
     width: 80%;
     margin-left: 10%;
-    font-family: "Futura", "Trebuchet MS", "Arial", sans-serif;
+    //font-family: "Futura", "Trebuchet MS", "Arial", sans-serif;
 
     // Estilo da pergunta
     .question {

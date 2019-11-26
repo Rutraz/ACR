@@ -11,7 +11,6 @@
         <section>
             <div class="client-info">
                 <div class="profile-name">
-                    <br>
                     <h1>{{$user->name}}</h1>
                     <p>Actualize as informações do seu perfil e as definições.</p>
                     <hr>
@@ -43,7 +42,6 @@
         <section>
             <div class="client-appointmments">
                 <div class="appointmments-name">
-                    <br>
                     <h1>Consultas</h1>
                     <p>Consulte as suas Consultas.</p>
                     <hr>
@@ -71,10 +69,11 @@
                                 <td>{{$appointment->medic->specialty}}</td>
                                 <td>{{$appointment->medic->user->name}}</td>
                                 <td>{{$appointment->comments}}</td>
-                                <td>{{$appointment->rating}}</td>
-                                <td>{{$appointment->state}}</td>
+                                <td>{{$appointment->medic->rating}}</td>
+                                @if ($appointment->state == 2)
+                                <td>Aceite</td>
+                                @endif
                             </tr>
-
 
                             @endforeach
                             <tr>
@@ -195,7 +194,6 @@
         <section>
             <div class="client-analysis">
                 <div class="anaylsis-name">
-                    <br>
                     <h1>Analises</h1>
                     <p>Consulte as suas Analises</p>
                     <hr>
