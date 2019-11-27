@@ -8,6 +8,8 @@ use App\Medic;
 use App\Client;
 use App\Appointment;
 use App\Analysis;
+use App\Specialty;
+
 use DB;
 use Validator;
 
@@ -45,10 +47,7 @@ class ApiController extends Controller
 
     
     public function getAllMedicBySpec(){
-        $medicos = MedicResource::collection(Medic::leftJoin('users', 'medics.user_id', '=', 'users.id')
-        ->orderBy('specialty')
-        ->orderBy('name', 'asc')
-        ->get());
+        $medicos = SpecialtyResource::collection(Specialty::orderBy("specialty","asc")->get());
         if($medicos)
             return $medicos;
         else{

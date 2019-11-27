@@ -2,30 +2,44 @@ function initPageEmail() {
     filterSelection("all");
 
     var dataToFill = [];
+    var dataToFillEsp = [];
     $.get("/api/medic/orderer", function(data) {
-        dataToFill = data;
-        console.log(dataToFill);
+        dataToFill = data.data;
+        filterMedics("all", dataToFill);
     });
 
-    $.get("/api/medic/esp", function(data) {});
+    $.get("/api/medic/esp", function(data) {
+        dataToFillEsp = data.data;
+        filterEsp("all", dataToFillEsp);
+    });
 
     $("#especialidade").change(function() {
         if ($(this).val() === "" && $("#medico").val() === "") {
             filterSelection("all");
             filterMedics("all", dataToFill);
+            filterEsp("all", dataToFillEsp);
         } else {
-            filterSelection($(this).val());
-            filterMedics($(this).val(), dataToFill);
+            if ($(this).val() === "") {
+                filterSelection($("#medico").val());
+            } else {
+                filterSelection($(this).val());
+                filterMedics($(this).val(), dataToFill);
+            }
         }
     });
 
     $("#medico").change(function() {
         if ($(this).val() === "" && $("#especialidade").val() === "") {
             filterSelection("all");
-            filterEsp("all", dataToFill);
+            filterMedics("all", dataToFill);
+            filterEsp("all", dataToFillEsp);
         } else {
-            filterSelection($(this).val());
-            filterEsp($(this).val(), dataToFill);
+            if ($(this).val() === "") {
+                filterSelection($("#especialidade").val());
+            } else {
+                filterSelection($(this).val());
+                filterEsp($(this).val(), dataToFillEsp);
+            }
         }
     });
 }
@@ -41,17 +55,15 @@ function filterSelection(c) {
 
 function filterMedics(c, dataToFill) {
     $("#medicos>option").remove();
-    console.log(dataToFill);
 
     if (c == "all") {
-        dataToFill.data.forEach(element => {
+        dataToFill.forEach(element => {
             $("#medicos").append("<option value='" + element.user.name + "' >");
         });
     } else {
-        var resultAarray = jQuery.grep(dataToFill.data, function(n) {
-            return n.specialty === c;
+        var resultAarray = jQuery.grep(dataToFill, function(n) {
+            return n.specialty.specialty === c;
         });
-
         resultAarray.forEach(element => {
             $("#medicos").append("<option value='" + element.user.name + "' >");
         });
@@ -60,23 +72,19 @@ function filterMedics(c, dataToFill) {
 
 function filterEsp(c, dataToFill) {
     $("#especialidades>option").remove();
-    console.log(dataToFill);
 
     if (c == "all") {
-        dataToFill.data.forEach(element => {
+        dataToFill.forEach(element => {
             $("#especialidades").append(
                 "<option value='" + element.specialty + "' >"
             );
         });
     } else {
-        var resultAarray = jQuery.grep(dataToFill.data, function(n) {
-            return n.user.name === c;
+        var resultAarray = jQuery.grep(dataToFill, function(n) {
+            return n.specialty.specialty === c;
         });
-
         resultAarray.forEach(element => {
-            $("#especialidades").append(
-                "<option value='" + element.specialty + "' >"
-            );
+            $("#medicos").append("<option value='" + element.user.name + "' >");
         });
     }
 }

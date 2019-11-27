@@ -10,11 +10,6 @@
             <label for="medico">Especialidade </label>
             <input id="especialidade" list="especialidades" placeholder="Especialidade" name="especialidade">
             <datalist id="especialidades">
-                @if ($medicos->isNotEmpty())
-                @foreach($medicos as $medico)
-                <option value="{{$medico->specialty}}">
-                    @endforeach
-                    @endif
             </datalist>
         </div>
 
@@ -22,11 +17,6 @@
             <label for="medico">Medico </label>
             <input id="medico" list="medicos" name="medico" placeholder="Medico">
             <datalist id="medicos">
-                @if ($medicos->isNotEmpty())
-                @foreach($medicos as $medico)
-                <option class="medicOption" value="{{$medico->user->name}}">
-                    @endforeach
-                    @endif
             </datalist>
         </div>
 
@@ -43,9 +33,9 @@
     <div class="medicList">
         @if ($medicos->isNotEmpty())
         @foreach($medicos as $medico)
-        <button class="medic {{$medico->specialty}} {{$medico->user->name}}" type="button">
+        <button class="medic {{$medico->specialty->specialty}} {{$medico->user->name}}" type="button">
             <h2>{{$medico->rating}}</h2>
-            <h2>{{$medico->specialty}}</h2>
+            <h2>{{$medico->specialty->specialty}}</h2>
             <h2>{{$medico->user->name}}</h2>
         </button>
         @endforeach

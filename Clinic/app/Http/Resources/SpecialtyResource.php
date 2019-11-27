@@ -3,9 +3,10 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
-use App\Http\Resources\UserResource;
+use App\Http\Resources\MedicResource;
+use App\Medic;
 
-class MedicResource extends JsonResource
+class SpecialtyResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,12 +17,10 @@ class MedicResource extends JsonResource
     public function toArray($request)
     {
         return [
-        //    'user' => $this->user,
-            'id' => $this->id,
-            'user' => new UserResource($this->user),
+            //    'user' => $this->user,
+            //'id' => $this->id,
             'specialty' => $this->specialty,
-            'rating' => $this->rating,
-            'adse' => $this->adse,
-        ];
+            'user' => MedicResource::collection( Medic::where('specialty_id',$this->id)->get() ),
+                ];
     }
 }

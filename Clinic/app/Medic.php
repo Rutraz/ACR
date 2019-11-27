@@ -23,4 +23,9 @@ class Medic extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    public function specialty()
+    {
+        return $this->belongsTo('App\Specialty');
+    }
 }

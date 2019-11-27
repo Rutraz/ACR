@@ -18,7 +18,8 @@ class CreateMedicsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned()->index();  
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->string('specialty');
+            $table->integer('specialty_id')->unsigned()->index();  
+            $table->foreign('specialty_id')->references('id')->on('specialtys')->onDelete('cascade');
             $table->integer('rating');
             $table->string('adse')->nullable();
             $table->timestamps();
