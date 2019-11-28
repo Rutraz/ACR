@@ -39,16 +39,16 @@
             </div>
         </section>
 
-        <section style="background-image:url('{{ asset('assets/Gest/test.jpg') }}')">
-            <div class="client-appointmments" >
+        <section>
+            <div class="client-appointmments">
                 <div class="appointmments-name">
                     <h1>Consultas</h1>
                     <p>Consulte as suas Consultas.</p>
                     <hr>
                 </div>
                 <br>
-                <div  class="appointmments-table">
-                    <table id="myID"  class="table-container">
+                <div class="appointmments-table">
+                    <table id="myID" class="table-container">
                         <thead>
                             <tr>
                                 <th> Data </th>
@@ -72,11 +72,11 @@
                                 <td>{{$appointment->medic->rating}}</td>
                                 @if ($appointment->state == 1)
                                 <td>Aceite</td>
-                                @elseif  ($appointment->state == 3)
+                                @elseif ($appointment->state == 3)
                                 <td>Negativo</td>
-                                @elseif  ($appointment->state == 2)
+                                @elseif ($appointment->state == 2)
                                 <td>Morreu</td>
-                                @else    ($appointment->state == 4)
+                                @else ($appointment->state == 4)
                                 @endif
                             </tr>
 

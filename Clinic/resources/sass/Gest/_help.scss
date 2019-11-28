@@ -40,17 +40,19 @@
 .helpContainer {
     font-family: "Nunito", sans-serif;
     // Estilo do corpo da página
-    width: 80%;
-    margin-left: 10%;
-    //font-family: "Futura", "Trebuchet MS", "Arial", sans-serif;
+    width: 100%;
+    margin-left: auto;
+    text-align: center;
+    margin-right: auto;
 
+    //font-family: "Futura", "Trebuchet MS", "Arial", sans-serif;
     // Estilo da pergunta
     .question {
         background-color: white;
         color: #444;
         cursor: pointer;
         padding: 26px;
-        width: 100%;
+        width: 80%;
         border: none;
         text-align: left;
         outline: none;
@@ -81,10 +83,17 @@
 
     // Estilo da resposta que está escondida por defeito
     .answer {
-        padding: 0 18px;
+        width: 80%;
+        margin-left: auto;
+
+        text-align: left;
+        margin-right: auto;
         font-size: 1.2em;
         display: none;
         overflow: hidden;
         background-color: #f1f1f1;
+        p {
+            padding: 0px 15px;
+        }
     }
 }

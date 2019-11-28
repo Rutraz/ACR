@@ -129,7 +129,7 @@
   display: block;
   font-family: "Nunito", sans-serif;
   font-size: 1em;
-  height: 99vh;
+  height: 100vh;
   position: relative;
 }
 
@@ -182,7 +182,7 @@
   width: 5%;
   position: absolute;
   left: 15px;
-  top: 30px;
+  top: 20px;
 }
 
 .welcome .text {

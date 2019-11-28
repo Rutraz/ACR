@@ -1,10 +1,8 @@
 @extends('layouts.client')
 
-
-<
 @section('content')
 <script src="{{ asset('js/utils.js')}}" defer></script>
-<div class="welcome" >
+<div class="welcome">
     <img id="stetho" class="rotate-vert-center" src="{{asset('assets/Gest/healthcare-logo.png')}}" />
     <br>
     <h1>Bem vindo ao</h1>
