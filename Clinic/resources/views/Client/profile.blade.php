@@ -69,14 +69,16 @@
                                 <td>{{$appointment->medic->specialty->specialty}}</td>
                                 <td>{{$appointment->medic->user->name}}</td>
                                 <td>{{$appointment->comments}}</td>
-                                <td>{{$appointment->medic->rating}}</td>
-                                @if ($appointment->state == 1)
-                                <td>Aceite</td>
+                                <td>{{$appointment->rating}}</td>
+
+                                @if ($appointment->state == 2)
+                                <td style="background-color: yellow">Em espera</td>
                                 @elseif ($appointment->state == 3)
-                                <td>Negativo</td>
-                                @elseif ($appointment->state == 2)
-                                <td>Morreu</td>
-                                @else ($appointment->state == 4)
+                                <td style="background-color: green">Aceite</td>
+                                @elseif ($appointment->state == 4)
+                                <td style="background-color: #6cb2eb">Concluido</td>
+                                @else
+                                <td style="background-color: red">Cancelado</td>
                                 @endif
                             </tr>
 

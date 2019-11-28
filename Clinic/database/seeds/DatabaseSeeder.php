@@ -19,7 +19,8 @@ class DatabaseSeeder extends Seeder
              EmployeesTableSeeder::class,
              FaqsTableSeeder::class,
              AnalysisTableSeeder::class,
-             SpecialtysTableSeeder:: class
+             SpecialtysTableSeeder:: class,
+             StatesTableSeeder::class
                  ]);
 
     }

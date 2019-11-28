@@ -58,6 +58,7 @@ class ClientController extends Controller
                     //$appointments = Appointment::where('client_id', $client->id)->latest('date')->get(); APENAS TRAZ A TAbela consultas
                     $analysis = Analysis::where('client_id', $client->id)->latest('date')->get();
                     $appointments = ClientAppointmentResource::collection(Appointment::where('client_id', $client->id)->latest('date')->get());
+                  // return $appointments;
                     return view('Client.profile',compact('user','client','appointments','analysis'));
                 }
                 else{

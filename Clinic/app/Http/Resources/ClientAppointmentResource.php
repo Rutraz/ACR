@@ -4,6 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Http\Resources\MedicResource;
+use App\Http\Resources\StateResource;
 
 class ClientAppointmentResource extends JsonResource
 {
@@ -18,7 +19,7 @@ class ClientAppointmentResource extends JsonResource
         return [
             'id' => $this->id,
             'date' => $this->date,
-            'state' => $this->state,
+            'state' => new StateResource($this->state),
             'comments' => $this->comments,
             'medic' => new MedicResource($this->medic),
         ];

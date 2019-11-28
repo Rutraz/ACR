@@ -19,28 +19,28 @@ class UsersTableSeeder extends Seeder
         ]); 
 
         DB::table('users')->insert([
-            'name' => 'Cliente1',
+            'name' => 'Antonio da Serra',
             'email' => 'client1@gmail.com',
             'cellphone' => '923232697' ,
             'password' => bcrypt('12345678'),
         ]);
 
         DB::table('users')->insert([
-            'name' => 'Cliente2',
+            'name' => 'Deusivaldo Jesus',
             'email' => 'client2@gmail.com',
             'cellphone' => '923232696' ,
             'password' => bcrypt('12345678'),
         ]);
 
         DB::table('users')->insert([
-            'name' => 'medic1',
+            'name' => 'Bonifacio Pedra',
             'email' => 'medic1@gmail.com',
             'cellphone' => '923232695' ,
             'password' => bcrypt('12345678'),
         ]);
 
         DB::table('users')->insert([
-            'name' => 'medic2',
+            'name' => 'Antonieta Paixão',
             'email' => 'medic2@gmail.com',
             'cellphone' => '923232694' ,
             'password' => bcrypt('12345678'),
@@ -61,7 +61,7 @@ class UsersTableSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
-            'name' => 'medic3',
+            'name' => 'Filipe Corneto',
             'email' => 'medic3@gmail.com',
             'cellphone' => '923234694' ,
             'password' => bcrypt('12345678'),

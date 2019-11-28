@@ -14,5 +14,8 @@ class Appointment extends Model
     {
         return $this->belongsTo('App\Medic');
     }
+    public function state(){
+        return $this->belongsTo('App\State');
+    }
 
 }

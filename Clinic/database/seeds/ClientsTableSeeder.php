@@ -13,20 +13,20 @@ class ClientsTableSeeder extends Seeder
     {
         DB::table('clients')->insert([
             'user_id' => '2',
-            'CC' => '6969',
-            'adse' => '2345',
-            'morada' => 'Casa da tua prima nº69',
-            'idade' => '1996-02-16',
+            'CC' => '14471858',
+            'adse' => '006776769',
+            'morada' => 'Caminho do jamboto nº8, St Antonio',
+            'idade' => '1997-05-07',
            
         ]);
 
         
         DB::table('clients')->insert([
             'user_id' => '3',
-            'CC' => '6869',
-            'adse' => '3345',
-            'morada' => 'Casa da teu primo nº69',
-            'idade' => '1996-02-16',
+            'CC' => '12345678',
+            'adse' => '006996869',
+            'morada' => 'Casa em banda nº3, Matur, Agua de Pena, Machico',
+            'idade' => '1995-06-30',
             
         ]);
     }
