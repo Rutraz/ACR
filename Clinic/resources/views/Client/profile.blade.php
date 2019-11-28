@@ -39,16 +39,16 @@
             </div>
         </section>
 
-        <section>
-            <div class="client-appointmments">
+        <section style="background-image:url('{{ asset('assets/Gest/test.jpg') }}')">
+            <div class="client-appointmments" >
                 <div class="appointmments-name">
                     <h1>Consultas</h1>
                     <p>Consulte as suas Consultas.</p>
                     <hr>
                 </div>
                 <br>
-                <div class="appointmments-table">
-                    <table class="table-container">
+                <div  class="appointmments-table">
+                    <table id="myID"  class="table-container">
                         <thead>
                             <tr>
                                 <th> Data </th>
@@ -66,12 +66,17 @@
                             @foreach($appointments as $appointment)
                             <tr>
                                 <td>{{$appointment->date}}</td>
-                                <td>{{$appointment->medic->specialty}}</td>
+                                <td>{{$appointment->medic->specialty->specialty}}</td>
                                 <td>{{$appointment->medic->user->name}}</td>
                                 <td>{{$appointment->comments}}</td>
                                 <td>{{$appointment->medic->rating}}</td>
-                                @if ($appointment->state == 2)
+                                @if ($appointment->state == 1)
                                 <td>Aceite</td>
+                                @elseif  ($appointment->state == 3)
+                                <td>Negativo</td>
+                                @elseif  ($appointment->state == 2)
+                                <td>Morreu</td>
+                                @else    ($appointment->state == 4)
                                 @endif
                             </tr>
 
@@ -213,7 +218,6 @@
 
     <script>
         $('#fullpage').fullpage();
-
     </script>
 
 

@@ -9,7 +9,7 @@
         <p>A Equipa Médica da Healthcare Privada de Guimarães assume-se como pautada pela experiência e qualidade de serviço contudo diferenciada por centrar a totalidade da sua atenção em dar uma resposta global e integrada ao doente. As necessidades dos nossos doentes são o cerne da atenção de todos os nossos colaboradores.</p>
             <div class="sub-body">
                 <h2>Missão</h2> 
-                <div class="m-b-md" style="margin-left:auto; margin-right:auto">                
+                <div class="m-b-md" >                
                     <img   src="{{asset('assets/Gest/healthcare.png')}}"/>                
                     <p >Prestação de cuidados de saúde de excelência potenciadores de bem-estar, oferecendo assistência médica especializada e integrada, em ambiente institucional, ambulatório, e domiciliário, promovendo a prevenção e educação, integrando Medicinas Convencionais e Alternativas.
                     A Clínica pretende posicionar-se como a Unidade de Saúde reconhecida pela <b>CONFIANÇA.</b>

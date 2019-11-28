@@ -14,7 +14,7 @@
 </head>
 
 <body style="background-color:white">
-<div class="containerGuestWelcome">
+<div class="containerGuestWelcome"  style="background-image:url('{{ asset('assets/Gest/test.jpg') }}')"> 
     <div class="full-height">
         @if (Route::has('login'))
         <div class="links">
@@ -29,7 +29,7 @@
         <div class="content">
             <div class="m-b-md">
                 <div class="image-logo">
-                    <img  id="stetho" src="{{asset('assets/Gest/healthcare-logo1.png')}}" />
+                    <img  id="stetho" src="{{asset('assets/Gest/healthcare-logo1.png')}}"  />
                 </div>       
                 <img class="rotate-vert-center" id="stetho" src="{{asset('assets/Gest/healthcare-logo2.png')}}" />   
                     <h1 class="title text-focus-in"> HealthCare </h1>

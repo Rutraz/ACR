@@ -1,5 +1,6 @@
 .containerGuestWelcome {
     font-family: "Nunito", sans-serif;
+    height: 100vh;
     body {
         background-color: white;
         color: $welcomeColor;
@@ -103,11 +104,11 @@
     }
 
     footer {
-        position: absolute;
+       
         right: 0;
         bottom: 0;
         left: 0;
-        background-color: #efefef;
+        background: transparent;
         text-align: center;
     }
 

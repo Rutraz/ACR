@@ -5,10 +5,10 @@
 <script src="https://smtpjs.com/v3/smtp.js"></script>
 <div class="contactContainer">
     <div class="header" style="background-image:url('{{ asset('assets/Gest/contact.jpg') }}')"> </div>
-    <div class="body">
+    <div class="body" >
     <h2>Contactos</h2>
     
-        <div class="midleLinks">
+        <div class="midleLinks" >
             <div class="item">
                 <h3>Contacte-nos</h3>
                 <form id="myForm" method =""  action="">
