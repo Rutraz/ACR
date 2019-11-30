@@ -1,6 +1,4 @@
 function initPageEmail() {
-    filterSelection("all");
-
     var dataToFill = [];
     var dataToFillEsp = [];
     $.get("/api/medic/orderer", function(data) {
@@ -13,44 +11,32 @@ function initPageEmail() {
         filterEsp("all", dataToFillEsp);
     });
 
+    $("#searchBtn").click(askSearch);
+
     $("#especialidade").change(function() {
         if ($(this).val() === "" && $("#medico").val() === "") {
-            filterSelection("all");
             filterMedics("all", dataToFill);
             filterEsp("all", dataToFillEsp);
         } else {
-            if ($(this).val() === "") {
-                filterSelection($("#medico").val());
-            } else {
-                filterSelection($(this).val());
-                filterMedics($(this).val(), dataToFill);
-            }
+            filterMedics($(this).val(), dataToFill);
         }
     });
 
     $("#medico").change(function() {
         if ($(this).val() === "" && $("#especialidade").val() === "") {
-            filterSelection("all");
             filterMedics("all", dataToFill);
             filterEsp("all", dataToFillEsp);
         } else {
-            if ($(this).val() === "") {
-                filterSelection($("#especialidade").val());
-            } else {
-                filterSelection($(this).val());
-                filterEsp($(this).val(), dataToFillEsp);
-            }
+            filterEsp($(this).val(), dataToFillEsp);
         }
     });
 }
 
-function filterSelection(c) {
-    var x = $(".medic");
-    if (c == "all") c = "";
-    for (var i = 0; i < x.length; i++) {
-        Remove(x[i], "show");
-        if (x[i].className.indexOf(c) > -1) Add(x[i], "show");
-    }
+function askSearch() {
+    var adse = $("#adse option:selected").val();
+    var esp = $("#especialidade").val();
+    var medic = $("#medico").val();
+    console.log(adse);
 }
 
 function filterMedics(c, dataToFill) {
@@ -72,20 +58,23 @@ function filterMedics(c, dataToFill) {
 
 function filterEsp(c, dataToFill) {
     $("#especialidades>option").remove();
-
+    console.log(dataToFill);
     if (c == "all") {
         dataToFill.forEach(element => {
             $("#especialidades").append(
                 "<option value='" + element.specialty + "' >"
             );
         });
-    } else {
-        var resultAarray = jQuery.grep(dataToFill, function(n) {
-            return n.specialty.specialty === c;
-        });
-        resultAarray.forEach(element => {
-            $("#medicos").append("<option value='" + element.user.name + "' >");
-        });
+    }
+}
+/*
+
+function filterSelection(c) {
+    var x = $(".medic");
+    if (c == "all") c = "";
+    for (var i = 0; i < x.length; i++) {
+        Remove(x[i], "show");
+        if (x[i].className.indexOf(c) > -1) Add(x[i], "show");
     }
 }
 
@@ -109,5 +98,5 @@ function Remove(element, name) {
     }
     element.className = arr1.join(" ");
 }
-
+*/
 $(document).ready(initPageEmail);

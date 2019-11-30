@@ -14,22 +14,22 @@ class MedicsTableSeeder extends Seeder
         DB::table('medics')->insert([
             'user_id' => '4',
             'specialty_id' => '1',
-            'rating' => '3',
-            'adse' => '3545',       
+            'rating' => '5',
+            'adse' => true,       
         ]);
 
         DB::table('medics')->insert([
             'user_id' => '8',
             'specialty_id' => '2',
             'rating' => '3',
-            'adse' => '3546',      
+            'adse' => false,      
         ]);
 
         DB::table('medics')->insert([
             'user_id' => '5',
             'specialty_id' => '2',
             'rating' => '3',
-            'adse' => '3546',      
+            'adse' => true,      
         ]);
 
         

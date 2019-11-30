@@ -9,12 +9,12 @@
         flex-flow: row wrap;
         overflow: hidden;
         width: 99.8%;
-        height: 100px;
+        height: 6rem;
         font-size: 1.4em;
 
         .item {
             display: block;
-            width: 30%;
+            width: 25%;
             margin-left: 1%;
             label {
                 text-align: center;
@@ -32,36 +32,24 @@
                 border: 2px solid $cyan;
             }
         }
-        .flexitem {
-            display: flex;
-            flex-flow: row wrap;
-            margin-top: 1%;
-            width: 100%;
-            input {
+        .special {
+            width: 15%;
+            select {
                 padding: 10px 20px;
+                margin-top: 2.5%;
                 width: 100%;
+                font-size: 0.8em;
             }
-            button {
-                margin-top: 6px;
-                margin-left: 11%;
-                width: 15%;
-                height: 45px;
-                font-weight: bold;
-                background-color: $cyan; /* Green */
-                border: none;
-                color: white;
-                text-align: left;
-                -webkit-transition-duration: 0.2s; /* Safari */
-                transition-duration: 0.2s;
-                cursor: pointer;
-                border-radius: 2px;
-                border: #ddd solid 1px;
+            select:hover {
+                border: 2px solid $cyan;
             }
-            button:hover {
-                background-color: #ddd;
-                border: $cyan solid 1px;
-                color: black;
-            }
+        }
+        .buttonItem {
+            margin-top: 2.7%;
+            width: 10%;
+            height: 45%;
+            font-size: 1em;
+            margin-left: 1%;
         }
 
         .show2 {
@@ -70,6 +58,7 @@
     }
     .medicList {
         margin-top: 2%;
+        overflow: auto;
         .medic {
             background-color: blue;
             display: flex;
@@ -79,13 +68,10 @@
             margin-bottom: 1%;
             border: 1px solid black;
             width: 80%;
-            display: none;
+            display: flex;
             h2 {
                 margin-right: 5%;
             }
-        }
-        .show {
-            display: flex;
         }
     }
 }

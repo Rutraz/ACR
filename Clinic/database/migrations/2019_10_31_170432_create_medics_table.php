@@ -21,7 +21,7 @@ class CreateMedicsTable extends Migration
             $table->integer('specialty_id')->unsigned()->index();  
             $table->foreign('specialty_id')->references('id')->on('specialtys')->onDelete('cascade');
             $table->integer('rating');
-            $table->string('adse')->nullable();
+            $table->boolean('adse');
             $table->timestamps();
         });
     }

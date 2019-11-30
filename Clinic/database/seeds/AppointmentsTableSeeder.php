@@ -40,7 +40,7 @@ class AppointmentsTableSeeder extends Seeder
             'date' => '2019-11-18 11:15:06',
             'state_id' => '2',
             'rating' => '0',
-            'comments' => 'irei voltar a clinica',
+            'comments' => '',
             'medic_id' => '1',
             'client_id' => '1',
         ]);

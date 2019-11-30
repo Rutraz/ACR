@@ -54,9 +54,9 @@
                                 <th> Data </th>
                                 <th> Especialização </th>
                                 <th> Médico </th>
-                                <th> Observação </th>
+                                <th> Comentário </th>
                                 <th> Rating </th>
-                                <th> State </th>
+                                <th> Estado </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -70,16 +70,9 @@
                                 <td>{{$appointment->medic->user->name}}</td>
                                 <td>{{$appointment->comments}}</td>
                                 <td>{{$appointment->rating}}</td>
+                                <td style="background-color:{{$appointment->state->color}}">
+                                    {{$appointment->state->state}}</td>
 
-                                @if ($appointment->state == 2)
-                                <td style="background-color: yellow">Em espera</td>
-                                @elseif ($appointment->state == 3)
-                                <td style="background-color: green">Aceite</td>
-                                @elseif ($appointment->state == 4)
-                                <td style="background-color: #6cb2eb">Concluido</td>
-                                @else
-                                <td style="background-color: red">Cancelado</td>
-                                @endif
                             </tr>
 
                             @endforeach
