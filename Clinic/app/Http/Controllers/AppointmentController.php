@@ -10,6 +10,8 @@ use DB;
 use App\Employee;
 use App\Client;
 use App\Appointment;
+use App\Specialty;
+use App\Http\Resources\SpecialtyResource;
 use Validator;
 
 class AppointmentController extends Controller
@@ -26,12 +28,86 @@ class AppointmentController extends Controller
             $id = $user->id;
             $client = Client::where('user_id',$id)->first();
                 if($client){
-                       $medicos = MedicResource::collection(Medic::leftJoin('users', 'medics.user_id', '=', 'users.id')
-                       ->orderBy('rating', 'desc')
-                       ->orderBy('name', 'asc')
+                       return view('Client.appointment',compact('user'));
+                }
+                else{
+                    return redirect('/');
+                }
+        }
+        else{
+            return redirect('/');
+        }
+    }
+
+    public function clientSearch(Request $request){
+        
+        $user = Auth::user();
+        if($user){
+            $id = $user->id;
+            $client = Client::where('user_id',$id)->first();
+                if($client){
+                    $esp = $request->esp;
+                    $medic = $request->medic;
+                    $order = "";
+                    $type = "";
+                    if($request->order ==1){
+                        $order = "rating";
+                        $type = "desc";
+                    }
+                    elseif($request->order ==2)
+                    {
+                        $order = "rating";
+                        $type = "asc";
+                    }
+                    elseif($request->order ==3){
+                        $order = "name";
+                        $type = "asc";
+                    }
+                    else{
+                        $order = "name";
+                        $type = "desc";
+                    }
+                    
+                    if(!empty($medic)){
+                        $medicos = MedicResource::collection(Medic::leftJoin('users', 'medics.user_id', '=', 'users.id')
+                       ->where('users.name',$medic)
                        ->get());
-                       //return $medicos;
-                       return view('Client.appointment',compact('user','medicos'));
+                       return $medicos;
+                    }
+
+                    if(!empty($esp)){
+                        if($order ==="rating"){
+                            $medicos = MedicResource::collection(Medic::leftjoin('specialties', 'medics.specialty_id', '=', 'specialties.id')
+                            ->leftjoin('users', 'medics.user_id', '=', 'users.id')
+                            ->where('specialties.specialty',$esp)
+                            ->orderBy($order, $type)
+                            ->orderBy('name', 'asc')
+                            ->get());
+                        }
+                        else{
+                            $medicos = MedicResource::collection(Medic::leftjoin('specialties', 'medics.specialty_id', '=', 'specialties.id')
+                            ->leftjoin('users', 'medics.user_id', '=', 'users.id')
+                            ->where('specialties.specialty',$esp)
+                            ->orderBy($order, $type)
+                            ->get());
+                        }
+
+                        return $medicos;
+                    }
+                    else{
+                        if($order ==="rating"){
+                            $medicos = MedicResource::collection(Medic::leftJoin('users', 'medics.user_id', '=', 'users.id')
+                            ->orderBy($order, $type)
+                            ->orderBy('name', 'asc')
+                            ->get());
+                        }
+                        else{
+                            $medicos = MedicResource::collection(Medic::leftJoin('users', 'medics.user_id', '=', 'users.id')
+                            ->orderBy($order, $type)
+                            ->get());
+                        }
+                        return $medicos;
+                    }
                 }
                 else{
                     return redirect('/');
@@ -42,6 +118,32 @@ class AppointmentController extends Controller
         }
     }
     
+    
+    public function clientMedic($id){
+        $user = Auth::user();
+        if($user){
+            $idC = $user->id;
+            $client = Client::where('user_id',$idC)->first();
+            if($client){
+                $medicos = MedicResource::collection(Medic::leftjoin('specialties', 'medics.specialty_id', '=', 'specialties.id')
+                ->where('user_id',$id)
+                ->get());
+                
+                if($medicos)
+                    return view('Client.medic',compact('user','medicos'));
+                else
+                    return redirect('/client/appointment');
+            }
+            else{
+                return redirect('/');
+            }
+        }
+            else{
+                return redirect('/');
+            }  
+    }
+
+
     public function employee()
     {
         $user = Auth::user();

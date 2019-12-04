@@ -23,9 +23,9 @@
         <div class="item special">
             <label for="adse">Adse </label>
             <select id="adse" name="adse">
-                <option value="1">Ambos</option>
-                <option value="2">Sim</option>
-                <option value="3">Não</option>
+                <option value="">Ambos</option>
+                <option value="1">Sim</option>
+                <option value="0">Não</option>
             </select>
         </div>
 
@@ -37,8 +37,8 @@
                     <option value="2">Rating &#8599;</option>
                 </optgroup>
                 <optgroup label="Nome">
-                    <option value="1">Nome A-Z</option>
-                    <option value="2">Nome Z-A</option>
+                    <option value="3">Nome A-Z</option>
+                    <option value="4">Nome Z-A</option>
                 </optgroup>
             </select>
         </div>
@@ -49,23 +49,8 @@
 
     </div>
     <div class="medicList">
-        @if ($medicos->isNotEmpty())
-        @foreach($medicos as $medico)
-        <button class="medic" type="button">
-            <h2>{{$medico->rating}}</h2>
-            <h2>{{$medico->specialty->specialty}}</h2>
-            <h2>{{$medico->user->name}}</h2>
-            @if ($medico->adse == 1)
-            <h2>Sim</h2>
-            @else
-            <h2>Não</h2>
-            @endif
-        </button>
-        @endforeach
 
-        @else
-        <h1> Nao existe medicos com os atributos da sua pesquisa</h1>
-        @endif
+
     </div>
 
 </div>

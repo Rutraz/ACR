@@ -18,7 +18,7 @@ class SpecialtyResource extends JsonResource
     {
         return [
             //    'user' => $this->user,
-            //'id' => $this->id,
+            'id' => $this->id,
             'specialty' => $this->specialty,
             'user' => MedicResource::collection( Medic::where('specialty_id',$this->id)->get() ),
                 ];

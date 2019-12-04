@@ -52,6 +52,9 @@ Route::post('/client/profile/erase','ClientController@eraseProfile'); // ELIMINA
 //--------CONSULTAS
 Route::get('/client/appointment','AppointmentController@client');
 
+Route::get('/client/appointment/search','AppointmentController@clientSearch');
+
+Route::get('/client/appointment/medic/{id}','AppointmentController@clientMedic');
 //--------ANALISES
 Route::get('/client/analysis','AnalysisController@clientAnalysis'); // ENVIA AS ANÁLISES MARCADAS
 

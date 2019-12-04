@@ -329,6 +329,8 @@
   border: 1px solid black;
   width: 80%;
   display: flex;
+  text-decoration: none;
+  color: white;
 }
 
 .appointment .medicList .medic h2 {

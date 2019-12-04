@@ -1,8 +1,10 @@
 function initPageEmail() {
     var dataToFill = [];
     var dataToFillEsp = [];
+
     $.get("/api/medic/orderer", function(data) {
         dataToFill = data.data;
+        startFilling(dataToFill, "");
         filterMedics("all", dataToFill);
     });
 
@@ -36,7 +38,47 @@ function askSearch() {
     var adse = $("#adse option:selected").val();
     var esp = $("#especialidade").val();
     var medic = $("#medico").val();
-    console.log(adse);
+    var order = $("#order").val();
+    console.log("ADSE: " + adse);
+    console.log("ESP: " + esp);
+    console.log("Medic: " + medic);
+    console.log("Order: " + order);
+
+    if (!esp && !medic && !adse) {
+        $(".medicList>a").remove();
+        start();
+    }
+    var dataToSend = "?esp=" + esp + "&medic=" + medic + "&order=" + order;
+    $.ajax({
+        url: "/client/appointment/search" + dataToSend,
+        type: "GET",
+        async: true,
+        success: function(data, statuTxt, xhr) {
+            $(".medicList>a").remove();
+            startFilling(data.data, adse);
+        }
+    });
+}
+
+function start() {
+    $.ajax({
+        url: "/api/medic/orderer",
+        type: "GET",
+        async: true,
+        success: function(data, statuTxt, xhr) {
+            startFilling(data.data, "");
+            filterMedics("all", data.data);
+        }
+    });
+
+    $.ajax({
+        url: "/api/medic/esp",
+        type: "GET",
+        async: true,
+        success: function(data, statuTxt, xhr) {
+            filterEsp("all", data.data);
+        }
+    });
 }
 
 function filterMedics(c, dataToFill) {
@@ -58,45 +100,80 @@ function filterMedics(c, dataToFill) {
 
 function filterEsp(c, dataToFill) {
     $("#especialidades>option").remove();
-    console.log(dataToFill);
     if (c == "all") {
         dataToFill.forEach(element => {
             $("#especialidades").append(
-                "<option value='" + element.specialty + "' >"
+                "<option value='" + element.specialty + "' > </option>"
             );
         });
     }
 }
-/*
 
-function filterSelection(c) {
-    var x = $(".medic");
-    if (c == "all") c = "";
-    for (var i = 0; i < x.length; i++) {
-        Remove(x[i], "show");
-        if (x[i].className.indexOf(c) > -1) Add(x[i], "show");
+function startFilling(dataToFill, adse) {
+    console.log(dataToFill);
+
+    if (dataToFill.length != 0 && dataToFill) {
+        dataToFill.forEach(element => {
+            var resultSpe = element.specialty.specialty
+                ? element.specialty.specialty
+                : element.specialty;
+            var x = "";
+            if (element.adse == 1) {
+                x = "Sim";
+            } else {
+                x = "Não";
+            }
+            if (adse == "") {
+                $(".medicList").append(
+                    "<a id='" +
+                        element.id +
+                        "' class='medic' href='/client/appointment/medic/" +
+                        element.id +
+                        "' >" +
+                        "<h2>" +
+                        element.rating +
+                        "</h2>" +
+                        "<h2>" +
+                        resultSpe +
+                        "</h2>" +
+                        "<h2>" +
+                        element.user.name +
+                        "</h2>" +
+                        "<h2>" +
+                        x +
+                        "</h2>" +
+                        "</a>"
+                );
+            } else {
+                if (element.adse == adse) {
+                    $(".medicList").append(
+                        "<a id='" +
+                            element.id +
+                            "' class='medic' href='/client/appointment/medic/" +
+                            element.id +
+                            "' >" +
+                            "<h2>" +
+                            element.rating +
+                            "</h2>" +
+                            "<h2>" +
+                            resultSpe +
+                            "</h2>" +
+                            "<h2>" +
+                            element.user.name +
+                            "</h2>" +
+                            "<h2>" +
+                            x +
+                            "</h2>" +
+                            "</a>"
+                    );
+                }
+            }
+        });
+    } else {
+        $(".medicList").append(
+            "<h1> Nao existe medicos com os atributos da sua pesquisa</h1>"
+        );
     }
 }
 
-function Add(element, name) {
-    var arr1 = element.className.split(" ");
-    var arr2 = name.split(" ");
-    for (var i = 0; i < arr2.length; i++) {
-        if (arr1.indexOf(arr2[i]) == -1) {
-            element.className += " " + arr2[i];
-        }
-    }
-}
-
-function Remove(element, name) {
-    var arr1 = element.className.split(" ");
-    var arr2 = name.split(" ");
-    for (var i = 0; i < arr2.length; i++) {
-        while (arr1.indexOf(arr2[i]) > -1) {
-            arr1.splice(arr1.indexOf(arr2[i]), 1);
-        }
-    }
-    element.className = arr1.join(" ");
-}
-*/
 $(document).ready(initPageEmail);
