@@ -33,8 +33,11 @@ class SelectController extends Controller
   
             if($client)
                 return redirect('/client');
-            else if($emplo)
+            else if($emplo){
+                if($emplo->admin == 1)
+                    return redirect('/admin');
                 return redirect('/employee');
+            }
             else
                 return redirect('/');
             

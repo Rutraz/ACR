@@ -10,6 +10,24 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+//ROTAS PARA ADMIN
+
+Route::get("/admin", 'AdminController@index' );// VIEW PRINCIPAL
+//--------CLientes
+Route::get('/admin/clients','AdminController@getAllClients');
+Route::post("/admin/client/{id}",'AdminController@EraseClient');
+
+//--------Medicos
+Route::get("/admin/medics","AdminController@getAllMedics");
+Route::get("/admin/medics/create","AdminController@CreateMedic");
+Route::post("/admin/medics/{id}","AdminController@EraseMedic");
+
+//--------Funcionarios
+Route::get("/admin/employees","AdminController@getAllEmployees");
+Route::get("/admin/employees/create","AdminController@CreateEmployee");
+Route::post("/admin/employees/create","AdminController@AddEmployee");
+Route::post("/admin/employee/{id}/erase", "AdminController@EraseEmployee");
+
 
 //ROTAS PARA GEST
 Route::get('/', function () {

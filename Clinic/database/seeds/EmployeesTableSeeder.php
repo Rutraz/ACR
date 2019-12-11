@@ -13,14 +13,17 @@ class EmployeesTableSeeder extends Seeder
     {
         DB::table('employees')->insert([
            'user_id' => '1',
+           'admin' => true,
         ]);
 
         DB::table('employees')->insert([
             'user_id' => '6',
+            'admin' => false,
          ]);
 
          DB::table('employees')->insert([
             'user_id' => '7',
+            'admin' => false,
          ]);
     }
 }

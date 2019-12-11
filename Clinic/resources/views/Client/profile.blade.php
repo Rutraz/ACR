@@ -4,8 +4,6 @@
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <script src="{{ asset('js/jquery.fullpage.js')}}"></script>
 
-
-
 <div class="profile">
     <div id="fullpage">
         <section>

@@ -16,6 +16,7 @@ class CreateEmployeesTable extends Migration
         if(!Schema::hasTable('employees')) {
         Schema::create('employees', function (Blueprint $table) {
             $table->increments('id');
+            $table->boolean('admin');
             $table->integer('user_id')->unsigned()->index(); 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();

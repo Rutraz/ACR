@@ -13,9 +13,9 @@ class UsersTableSeeder extends Seeder
     {
         DB::table('users')->insert([
             'name' => 'Joao Fernandes',
-            'email' => 'employee1@gmail.com',
+            'email' => 'admin@admin.com',
             'cellphone' => '291775123' ,
-            'password' => bcrypt('12345678'),
+            'password' => bcrypt('admin123'),
         ]); 
 
         DB::table('users')->insert([
@@ -48,14 +48,14 @@ class UsersTableSeeder extends Seeder
 
         DB::table('users')->insert([
             'name' => 'Maria Alberta',
-            'email' => 'employee2@gmail.com',
+            'email' => 'employee1@gmail.com',
             'cellphone' => '291775124' ,
             'password' => bcrypt('12345678'),
         ]);
 
         DB::table('users')->insert([
             'name' => 'Albertino Rocha',
-            'email' => 'employee3@gmail.com',
+            'email' => 'employee2@gmail.com',
             'cellphone' => '291775125' ,
             'password' => bcrypt('12345678'),
         ]);
