@@ -127,16 +127,14 @@
                         border: 1px solid grey;
                     }
                     thead {
-                        flex: 0 0 auto;
-                        width: calc(100% - 0.9em);
+                        width: 98.5%;
                         display: table;
                         table-layout: fixed;
                     }
 
                     tbody {
-                        flex: 1 1 auto;
                         display: block;
-                        overflow: auto;
+                        overflow-y: scroll;
 
                         tr {
                             width: 100%;
@@ -173,7 +171,61 @@
                 p {
                     margin-left: 1%;
                 }
+                
             }
+        
+            .anaylsis-table{
+                .table-container {
+                    padding: 0.3em;
+                    height: 70vh;
+                }
+                table{
+                    display: flex;
+                    flex-flow: column;
+                    width: 100%;
+                   
+                   
+
+                    td,
+                    th {
+                        height: 40px;
+                        width: 100%;
+                        border: 1px solid grey;
+                        text-align: center;
+                    }
+
+                    th {
+                        background-color: $cyan;
+                        border: 1px solid grey;
+                    }
+                    thead {
+                        width: 98.5%;
+                        display: table;
+                        table-layout: fixed;
+                    }
+
+                    tbody {
+                      
+                        display: block;
+                        overflow-y: scroll;
+
+                        tr {
+                            width: 100%;
+                        }
+                        tr {
+                            display: table;
+                            table-layout: fixed;
+                        }
+                    }
+                    tr:nth-child(even) {
+                        background-color: #f2f2f2;
+                    }
+                    tr:hover {
+                        background-color: $cyan;
+                    }
+                }
+            }
+           
         }
     }
 }

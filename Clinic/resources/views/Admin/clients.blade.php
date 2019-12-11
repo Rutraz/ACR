@@ -1,20 +1,11 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="container">
 
-    <div class="card-body">
-        @if (session('status'))
-        <div class="alert alert-success" role="alert">
-            {{ session('status') }}
-        </div>
-        @endif
-
-        <h1> Clientes</h1>
-
-        <h3> Lista de clientes </h3>
-
-        @if ($clients->isNotEmpty())
+<div class="admin">
+     
+    <div class="admin-table">
+    @if ($clients->isNotEmpty())
         <table>
             <thead>
                 <tr>
@@ -56,4 +47,10 @@
     </div>
 
 </div>
+
+       
+
+       
+
+
 @endsection

@@ -212,7 +212,7 @@ class ApiController extends Controller
 
             $medic = Medic::create([
                 'user_id' =>  $user->id,
-                'specialty' => $request->specialty,
+                'specialty_id' => $request->specialty,
                 'rating' => '0',
                 'adse' => $request->adse,   
             ]);

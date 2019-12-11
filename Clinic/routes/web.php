@@ -19,7 +19,6 @@ Route::post("/admin/client/{id}",'AdminController@EraseClient');
 
 //--------Medicos
 Route::get("/admin/medics","AdminController@getAllMedics");
-Route::get("/admin/medics/create","AdminController@CreateMedic");
 Route::post("/admin/medics/{id}","AdminController@EraseMedic");
 
 //--------Funcionarios

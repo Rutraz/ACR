@@ -477,18 +477,14 @@
 }
 
 .profile #fullpage .client-appointmments .appointmments-table table thead {
-  -webkit-box-flex: 0;
-          flex: 0 0 auto;
-  width: calc(100% - 0.9em);
+  width: 98.5%;
   display: table;
   table-layout: fixed;
 }
 
 .profile #fullpage .client-appointmments .appointmments-table table tbody {
-  -webkit-box-flex: 1;
-          flex: 1 1 auto;
   display: block;
-  overflow: auto;
+  overflow-y: scroll;
 }
 
 .profile #fullpage .client-appointmments .appointmments-table table tbody tr {
@@ -527,6 +523,61 @@
 
 .profile #fullpage .client-analysis .anaylsis-name p {
   margin-left: 1%;
+}
+
+.profile #fullpage .client-analysis .anaylsis-table .table-container {
+  padding: 0.3em;
+  height: 70vh;
+}
+
+.profile #fullpage .client-analysis .anaylsis-table table {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-flow: column;
+  width: 100%;
+}
+
+.profile #fullpage .client-analysis .anaylsis-table table td,
+.profile #fullpage .client-analysis .anaylsis-table table th {
+  height: 40px;
+  width: 100%;
+  border: 1px solid grey;
+  text-align: center;
+}
+
+.profile #fullpage .client-analysis .anaylsis-table table th {
+  background-color: #6cb2eb;
+  border: 1px solid grey;
+}
+
+.profile #fullpage .client-analysis .anaylsis-table table thead {
+  width: 98.5%;
+  display: table;
+  table-layout: fixed;
+}
+
+.profile #fullpage .client-analysis .anaylsis-table table tbody {
+  display: block;
+  overflow-y: scroll;
+}
+
+.profile #fullpage .client-analysis .anaylsis-table table tbody tr {
+  width: 100%;
+}
+
+.profile #fullpage .client-analysis .anaylsis-table table tbody tr {
+  display: table;
+  table-layout: fixed;
+}
+
+.profile #fullpage .client-analysis .anaylsis-table table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.profile #fullpage .client-analysis .anaylsis-table table tr:hover {
+  background-color: #6cb2eb;
 }
 
 .editProfile {

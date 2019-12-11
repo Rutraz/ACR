@@ -59,7 +59,6 @@
                         </thead>
                         <tbody>
 
-
                             @if ($appointments->isNotEmpty())
                             @foreach($appointments as $appointment)
                             <tr>
@@ -74,110 +73,7 @@
                             </tr>
 
                             @endforeach
-                            <tr>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                            </tr>
-                            <tr>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                            </tr>
-                            <tr>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                            </tr>
-                            <tr>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                            </tr>
-                            <tr>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                            </tr>
-                            <tr>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                            </tr>
-                            <tr>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                            </tr>
-                            <tr>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                            </tr>
-                            <tr>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                            </tr>
-                            <tr>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                            </tr>
-                            <tr>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                            </tr>
-                            <tr>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                            </tr>
-                            <tr>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                            </tr>
+                            
                             @else
                             <h1> Nao tem consultas marcadas ou realizadas </h1>
                             @endif
@@ -191,21 +87,36 @@
         </section>
         <section>
             <div class="client-analysis">
-                <div class="anaylsis-name">
-                    <h1>Analises</h1>
-                    <p>Consulte as suas Analises</p>
-                    <hr>
+                    <div class="anaylsis-name">
+                        <h1>Analises</h1>
+                        <p>Consulte as suas Analises</p>
+                        <hr>
+                    </div>
+                    <br>
+                <div class = "anaylsis-table">
+                    @if ($analysis->isNotEmpty())
+                    <table class="table-container">
+                        <thead>
+                            <tr> 
+                                <th>Data</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($analysis as $analyse)
+                            <tr>                   
+                                <td>{{$analyse->date}}</td>
+                                <td>{{$analyse->state}}</td>                    
+                            </tr>
+                        @endforeach
+                        
+                        </tbody>
+                    </table>           
+                    @else
+                    <h1> Nao tem analises marcadas ou realizadas </h1>
+                    @endif
                 </div>
             </div>
-
-            @if ($analysis->isNotEmpty())
-            @foreach($analysis as $analyse)
-            <h1>{{$analyse->date}}</h1>
-            <h2>{{$analyse->state}}</h2>
-            @endforeach
-            @else
-            <h1> Nao tem analises marcadas ou realizadas </h1>
-            @endif
         </section>
     </div>
 
