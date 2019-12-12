@@ -57,20 +57,47 @@
         }
     }
     .medicList {
-        margin-top: 2%;
         overflow: auto;
+        margin: 3em auto;
+        a:link{
+            background-image: -webkit-linear-gradient(top, #0962BA, #0650AB);
+            background-image: linear-gradient(top, #0962BA, #0650AB);
+            border-radius: 4px;
+            box-shadow: 0px 8px 12px 0px rgba(0, 0, 0, .4), inset 0px 4px 1px 1px #5391CF, inset 0px -4px 1px 1px #023494;
+            -webkit-transition: all .1s linear;
+            transition: all .1s linear;
+            text-decoration: none;
+            color: #FFF;
+            text-align: center;
+            font-size: 18px;
+            text-transform: uppercase;
+            padding: 32px;
+            }        
+            a:link:hover{
+                background-image: -webkit-linear-gradient(top, #085AB3, #0546A3);
+                background-image: linear-gradient(top, #085AB3, #0546A3);
+                color: #FFF;
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .6), inset 0 4px 1px 1px #2E7AC4, inset 0 -3px 1px 1px #022F8C;
+            }
+            a:link:active{
+                background-image: -webkit-linear-gradient(top, #0546A3, #023494);
+                      background-image: linear-gradient(top, #0546A3, #023494);
+                      /*background: #023494;*/
+                      box-shadow: 0 0 0 1px rgba(0, 0, 0, .9), inset 0 1px 1px 2px #012781, inset 1px 0 1px 1px rgba(0,0,0,.9);
+                color:#F0F6FB;
+               padding: 31px 32px 33px; 
+                /*  margin-top: 1px; */
+                  }
         .medic {
-            background-color: blue;
             display: flex;
             margin-left: auto;
             margin-right: auto;
             margin-top: 1%;
             margin-bottom: 1%;
-            border: 1px solid black;
-            width: 80%;
-            display: flex;
-            text-decoration: none;
+            justify-content: center; 
             color: white;
+            width:80%;
+          
             h2 {
                 margin-right: 5%;
             }

@@ -20,6 +20,7 @@ function inserir(){
     var pass = sendmedic.password.value;
     var adse = sendmedic.adse.value;
     var esp = $("#especialidades option:selected").val();
+    console.log("Valor que passa pelo value ");
     console.log(esp);
    
     var erro = "";
@@ -32,6 +33,7 @@ function inserir(){
         "adse" : adse,
         "specialty" : esp
     };
+    console.log("Dados para enviar em json");
     console.log(dataToSend);
 
     $.ajax({

@@ -13,7 +13,7 @@
                 Adse: <input type="radio" name="adse" id="adse" value="1"> Sim
                       <input type="radio" name="adse" value="0"> Não
                       <br>
-                Especialidade: <select name="specialty" id="especialidades">
+                Especialidade: <select name="specialty" id="especialidades" value="">
                                 
                                 </select>
                                 <br>
