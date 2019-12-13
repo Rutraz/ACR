@@ -76,6 +76,7 @@
   -webkit-box-direction: normal;
           flex-flow: column;
   width: 100%;
+  height: 65vh;
 }
 
 .admin .admin-table table td,
@@ -125,6 +126,121 @@
 
 .admin .admin-table table tr:hover {
   background-color: #6cb2eb;
+}
+
+.admin #sendmedic fieldset {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 2%;
+}
+
+.admin #sendmedic input {
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid grey;
+  font-size: 15px;
+}
+
+.admin #sendmedic label {
+  font-size: 20px;
+  color: grey;
+}
+
+.admin #sendmedic textarea:focus,
+.admin #sendmedic input:focus {
+  outline: none;
+}
+
+.admin #sendmedic .container {
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+
+.admin #sendmedic .container .item {
+  display: -webkit-box;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.admin #sendmedic .container .item .ajust-left {
+  margin-left: 11rem;
+}
+
+.admin #sendmedic .container .item .ajust-left1 {
+  margin-left: 16.3rem;
+}
+
+.admin #sendemployee fieldset {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.admin #sendemployee input {
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid grey;
+  font-size: 15px;
+}
+
+.admin #sendemployee label {
+  font-size: 20px;
+  color: grey;
+}
+
+.admin #sendemployee textarea:focus,
+.admin #sendemployee input:focus {
+  outline: none;
+}
+
+.admin #sendemployee .container {
+  padding: 1rem;
+  padding-left: 2rem;
+  display: block;
+}
+
+.admin #sendemployee .container .item {
+  display: -webkit-box;
+  display: flex;
+  margin-left: 1rem;
+}
+
+.admin #sendemployee .container .item .ajust-left {
+  margin-left: 11rem;
+}
+
+.admin .test {
+  margin-top: 0.5rem;
+}
+
+.admin .test button {
+  width: 10rem;
+  box-shadow: inset 0px 1px 0px 0px #bbdaf7;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #79bbff), to(#378de5));
+  background: linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+  background-color: #79bbff;
+  border-radius: 3px;
+  border: 1px solid #84bbf3;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 5px 15px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #528ecc;
+}
+
+.admin .test button:hover {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #378de5), to(#79bbff));
+  background: linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+  background-color: #378de5;
+}
+
+.admin .test button:active {
+  position: relative;
+  top: 1px;
 }
 
 body {
@@ -221,5 +337,25 @@ body {
 main {
   margin-left: 17%;
   overflow: auto;
+}
+
+.adminHome {
+  font-family: "Nunito", sans-serif;
+  text-align: center;
+}
+
+.adminHome .text {
+  width: 70%;
+  margin: auto;
+  margin-top: 1%;
+}
+
+.adminHome .text h3 {
+  text-align: justify;
+}
+
+.adminHome .text h3 > strong {
+  font-weight: bold;
+  text-decoration: underline;
 }
 

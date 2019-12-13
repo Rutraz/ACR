@@ -7,19 +7,33 @@
    
   <div class="admin">
         <form method="post" action="" id="sendemployee">
+            <h3>Adicionar Funcionário</h3>
             <fieldset>
-                <legend>Adicionar Funcionário</legend>
-                    <input type="hidden" name="_token" value="{{csrf_token()}}"> 
-                    Nome:<input type="text" name="name" > <br>
-                    Email: <input type="text" name="email"  > <br>
-                    Telefone: <input type="text" name="cellphone"  > <br>
-                   
+               <div class = "container">
+
+                    <div class = "item">
+                        <label for="name" >{{ __('Nome: ') }}</label>
+                        <input type="text" name="name" > 
+                        <div class="ajust-left">
+                            <label for="name" >{{ __('Email: ') }}</label>
+                            <input type="text" name="email"  > 
+                        </div>
+                        <div class="ajust-left">
+                            <label for="name" >{{ __('Telefone: ') }}</label>
+                            <input type="text" name="cellphone"  >
+                        </div>                  
+                    </div>
+               </div>
+                <input type="hidden" name="_token" value="{{csrf_token()}}">         
             </fieldset>
         </form>
-                        <button id="inserirFunc"> Inserir </button>
+        <div class="test">
+            <button id="inserirFunc"> Inserir </button>
+        </div>
+        <br>          
         <br>
         <div class="admin-table">
-            @if ($allemplos->isNotEmpty())
+      
                 <table>
                     <thead>
                         <tr>
@@ -31,8 +45,9 @@
                             <th class="size" > Eliminar </th>
                         </tr>
                     </thead>
+                
                     <tbody id="tbdoyemployee">
-
+                    @if ($allemplos->isNotEmpty())
                         @foreach($allemplos as $emplo)
                         <tr>
                             <td class="size" > {{$emplo->id}} </td>
@@ -52,12 +67,12 @@
                                 </form>
                             </td>
                         </tr>
-                        @endforeach
+                        @endforeach              
+                    @else            
+                     <tr id="trEmpty" > <td> Tem tem funcionários registados no website </td></tr>       
+                    @endif
                     </tbody>
                 </table>
-                @else
-                <h1> Tem tem clientes registados no website </h1>
-                @endif
         </div>
     </div>
 

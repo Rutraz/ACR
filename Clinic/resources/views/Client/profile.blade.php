@@ -71,7 +71,46 @@
                                     {{$appointment->state->state}}</td>
 
                             </tr>
+                            <tr>
+                                <td>teste</td>
+                                <td>teste</td> 
+                                <td>teste</td> 
+                                <td>teste</td> 
+                                <td>teste</td> 
+                                <td>teste</td>  
 
+                            </tr>
+                            <tr>
+                                <td>teste</td>
+                                <td>teste</td> 
+                                <td>teste</td> 
+                                <td>teste</td> 
+                                <td>teste</td> 
+                                <td>teste</td>  
+
+                            </tr>
+                            <tr>
+                                <td>teste</td>
+                                <td>teste</td> 
+                                <td>teste</td> 
+                                <td>teste</td> 
+                                <td>teste</td> 
+                                <td>teste</td>  
+
+                            </tr>
+                            <tr>
+                                <td>teste</td>
+                                <td>teste</td> 
+                                <td>teste</td> 
+                                <td>teste</td> 
+                                <td>teste</td> 
+                                <td>teste</td>  
+
+                            </tr>
+                            
+                       
+                          
+                          
                             @endforeach
                             
                             @else
@@ -84,6 +123,15 @@
                 </div>
             </div>
 
+            <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>Some text in the Modal..</p>
+                </div>
+
+            </div>
         </section>
         <section>
             <div class="client-analysis">

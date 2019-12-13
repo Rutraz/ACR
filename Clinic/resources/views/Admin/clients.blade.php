@@ -5,7 +5,7 @@
 <div class="admin">
      
     <div class="admin-table">
-    @if ($clients->isNotEmpty())
+  
         <table>
             <thead>
                 <tr>
@@ -19,7 +19,7 @@
                 </tr>
             </thead>
             <tbody>
-
+            @if ($clients->isNotEmpty())
                 @foreach($clients as $client)
                 <tr>
                     <td> {{$client->id}} </td>
@@ -36,13 +36,12 @@
 
                     </td>
                 </tr>
-                @endforeach
-            </tbody>
-        </table>
+                @endforeach     
         @else
-        <h1> Tem tem clientes registados no website </h1>
+       <tr><td>  Não têm clientes registados no website </td></tr> 
         @endif
-
+        </tbody>
+        </table>
 
     </div>
 

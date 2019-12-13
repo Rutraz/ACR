@@ -20,12 +20,10 @@ function inserir(){
     var name = sendmedic.name.value;
     var email = sendmedic.email.value;
     var cell = sendmedic.cellphone.value;
-    var pass = sendmedic.password.value;
+    var pass = name + '123';
     var adse = sendmedic.adse.value;
     var esp = $("#especialidades option:selected").val();
-    console.log("Valor que passa pelo value ");
-    console.log(esp);
-   
+    
     var erro = "";
     
     var dataToSend = {
@@ -51,19 +49,26 @@ function inserir(){
           }
               alert( erro);
           }else{
-            $('#tbdoymedic').append(
-                "<tr>" 
-                + "<td class='size'>"+ data.data.id +"</td>"
-                + "<td>"+ data.data.user.name +"</td>"
-                + "<td>"+ data.data.user.email +"</td>"
-                + "<td>"+ data.data.user.cellphone +"</td>"
-                + "<td class='size'>"+ data.data.rating+"</td>"
-                + "<td class='size'>"+ data.data.adse +"</td>"
-                + "<td>"+ data.data.specialty.specialty +"</td>" 
-                + "<td class='size' >"+ "<form action='/admin/medics/"+ data.data.id +"' method='POST'>"+ "<input type='hidden' name='_token' value="+ _token +">" + "<button type='submit'>Editar</button>" +"</form>" +"</td>" 
-                + "<td class='size' >"+ "<form action='/admin/medics/"+ data.data.id +"' method='POST'>"+ "<input type='hidden' name='_token' value="+ _token +">" + "<button type='submit'>Eliminar</button>" +"</form>" +"</td>" 
-                +"</tr>"
-            )
+              if($('#trEmpty')) {
+
+                $('#trEmpty').remove();
+              }
+
+                $('#tbdoymedic').append(
+                    "<tr>" 
+                    + "<td class='size'>"+ data.data.id +"</td>"
+                    + "<td>"+ data.data.user.name +"</td>"
+                    + "<td>"+ data.data.user.email +"</td>"
+                    + "<td>"+ data.data.user.cellphone +"</td>"
+                    + "<td class='size'>"+ data.data.rating+"</td>"
+                    + "<td class='size'>"+ data.data.adse +"</td>"
+                    + "<td>"+ data.data.specialty.specialty +"</td>" 
+                    + "<td class='size' >"+ "<form action='/admin/medics/"+ data.data.id +"' method='POST'>"+ "<input type='hidden' name='_token' value="+ _token +">" + "<button type='submit'>Editar</button>" +"</form>" +"</td>" 
+                    + "<td class='size' >"+ "<form action='/admin/medics/"+ data.data.id +"' method='POST'>"+ "<input type='hidden' name='_token' value="+ _token +">" + "<button type='submit'>Eliminar</button>" +"</form>" +"</td>" 
+                    +"</tr>"
+                )
+              
+            
           }
 
         }

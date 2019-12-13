@@ -5,29 +5,50 @@
 <script src="{{asset('js/inserirMedico.js')}}" defer ></script>
 <div class="admin">
     <form method="post" action="" id="sendmedic">
-        <fieldset>
-            <legend>Adicionar Médico</legend>
-                <input type="hidden" name="_token" value="{{csrf_token()}}"> 
-                Nome:<input type="text" name="name" > <br>
-                Email: <input type="text" name="email"  > <br>
-                Telefone: <input type="text" name="cellphone"  > <br>
-                <input type="hidden" name="password" value='12345678'>
-                Adse: <input type="radio" name="adse" id="adse" value="1"> Sim
-                      <input type="radio" name="adse" value="0"> Não
-                      <br>
-                Especialidade: <select name="specialty" id="especialidades" value="">
-                                
-                                </select>
-                                <br>
+        <h3>Adicionar Médico</h3>
+        <fieldset class ="container">
+        <input type="hidden" name="_token" value="{{csrf_token()}}"> 
+            <div class ="item">
+                <label for="name" >{{ __('Nome: ') }}</label>
+                <input  type="text" name="name"> 
+                
+                <div class="ajust-left">
+                    <label for="name" >{{ __('Email: ') }}</label>
+                    <input    type="text" name="email"> 
+               </div>
+               
+               <div class="ajust-left">
+                <label for="name" >{{ __(' Telefone: ') }}</label>
+                <input type="text" name="cellphone"  > <br>
+               </div>
+            </div>
+                <br>
+            <div class ="item" >
+               
+            
+                <label for="name" >{{ __('Adse: ') }}</label>  
+                <input type="radio" name="adses" id="adse" value="1"> Sim
+                <input type="radio" name="adse" value="0"> Não
+              
+                <div class="ajust-left1">
+                <label for="name" >{{ __(' Especialidade: ') }}</label>  
+                    <select name="specialty" id="especialidades" value=""> </select>
+                </div>   
+            </div>   
+              
+                
                             </fieldset>
                         </form>
+                   
+                        <div class="test">
                         <button id="inserirMedico"> Inserir </button>
+                        </div>
+                        
 
     <br>
       
-    <br>
     <div class="admin-table">
-            @if ($medicos->isNotEmpty())
+        
             <table>
                 <thead>
                     <tr>
@@ -44,7 +65,7 @@
                     </tr>
                 </thead>
                 <tbody id="tbdoymedic">
-
+                @if ($medicos->isNotEmpty())
                     @foreach($medicos as $medico)
                     <tr>
                         <td class="size"> {{$medico->id}} </td>
@@ -72,12 +93,11 @@
                         </td>
                     </tr>
                     @endforeach
+                @else
+                <tr id="trEmpty"  ><td>Não têm Medicos no Website</td></tr>
+                @endif
                 </tbody>
             </table>
-            @else
-            <h1> Tem tem clientes registados no website </h1>
-            @endif
-
     </div>
 </div>
        

@@ -38,6 +38,11 @@ function inserir(){
           }
               alert( erro);
           }else{
+            if($('#trEmpty')) {
+
+                $('#trEmpty').remove();
+              }
+
             $('#tbdoyemployee').append(
                 "<tr>" 
                 + "<td class='size'>"+ data.data.id +"</td>"
