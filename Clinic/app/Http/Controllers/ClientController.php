@@ -16,6 +16,7 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Resources\ClientAppointmentResource;
 use App\Http\Resources\ClientResource;
+use App\Http\Resources\AnalysisResource;
 
 
 class ClientController extends Controller
@@ -55,10 +56,8 @@ class ClientController extends Controller
             $id = $user->id;
             $client = Client::where('user_id',$id)->first();
                 if($client){
-                    //$appointments = Appointment::where('client_id', $client->id)->latest('date')->get(); APENAS TRAZ A TAbela consultas
-                    $analysis = Analysis::where('client_id', $client->id)->latest('date')->get();
+                    $analysis = AnalysisResource::collection(Analysis::where('client_id', $client->id)->latest('date')->get());
                     $appointments = ClientAppointmentResource::collection(Appointment::where('client_id', $client->id)->latest('date')->get());
-                  // return $appointments;
                     return view('Client.profile',compact('user','client','appointments','analysis'));
                 }
                 else{

@@ -65,8 +65,14 @@
                                 <td>{{$appointment->date}}</td>
                                 <td>{{$appointment->medic->specialty->specialty}}</td>
                                 <td>{{$appointment->medic->user->name}}</td>
+                                @if($appointment->comments == "" && $appointment->rating == 0 &&
+                                $appointment->state->state == 4)
+                                <td> <button id="comment">Comentar consulta</button> </td>
+                                <td> <button id="rate">Avaliação</button> </td>
+                                @else
                                 <td>{{$appointment->comments}}</td>
                                 <td>{{$appointment->rating}}</td>
+                                @endif
                                 <td style="background-color:{{$appointment->state->color}}">
                                     {{$appointment->state->state}}</td>
 
@@ -112,7 +118,7 @@
                           
                           
                             @endforeach
-                            
+
                             @else
                             <h1> Nao tem consultas marcadas ou realizadas </h1>
                             @endif
@@ -135,31 +141,31 @@
         </section>
         <section>
             <div class="client-analysis">
-                    <div class="anaylsis-name">
-                        <h1>Analises</h1>
-                        <p>Consulte as suas Analises</p>
-                        <hr>
-                    </div>
-                    <br>
-                <div class = "anaylsis-table">
+                <div class="anaylsis-name">
+                    <h1>Analises</h1>
+                    <p>Consulte as suas Analises</p>
+                    <hr>
+                </div>
+                <br>
+                <div class="anaylsis-table">
                     @if ($analysis->isNotEmpty())
                     <table class="table-container">
                         <thead>
-                            <tr> 
+                            <tr>
                                 <th>Data</th>
                                 <th>Estado</th>
                             </tr>
                         </thead>
                         <tbody>
-                        @foreach($analysis as $analyse)
-                            <tr>                   
+                            @foreach($analysis as $analyse)
+                            <tr>
                                 <td>{{$analyse->date}}</td>
-                                <td>{{$analyse->state}}</td>                    
+                                <td style="background-color:{{$analyse->state->color}}">{{$analyse->state->state}}</td>
                             </tr>
-                        @endforeach
-                        
+                            @endforeach
+
                         </tbody>
-                    </table>           
+                    </table>
                     @else
                     <h1> Nao tem analises marcadas ou realizadas </h1>
                     @endif

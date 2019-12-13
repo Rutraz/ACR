@@ -45,7 +45,7 @@ function askSearch() {
     console.log("Order: " + order);
 
     if (!esp && !medic && !adse) {
-        $(".medicList>a").remove();
+        $("#tbody").empty();
         start();
     }
     var dataToSend = "?esp=" + esp + "&medic=" + medic + "&order=" + order;
@@ -54,7 +54,7 @@ function askSearch() {
         type: "GET",
         async: true,
         success: function(data, statuTxt, xhr) {
-            $(".medicList>a").remove();
+            $("#tbody").empty();
             startFilling(data.data, adse);
         }
     });
@@ -110,7 +110,7 @@ function filterEsp(c, dataToFill) {
 }
 
 function startFilling(dataToFill, adse) {
-    console.log(dataToFill);
+    console.log("DATA TO FILL " + dataToFill.length);
 
     if (dataToFill.length != 0 && dataToFill) {
         dataToFill.forEach(element => {
@@ -124,56 +124,49 @@ function startFilling(dataToFill, adse) {
                 x = "Não";
             }
             if (adse == "") {
-                $(".medicList").append(
-                    "<a id='" +
+                $("#tbody").append(
+                    " <tr  class='clickable' data-href='/client/appointment/medic/" +
                         element.id +
-                        "' class='medic' href='/client/appointment/medic/" +
-                        element.id +
-                        "' >" +
-                        "<h2>" +
+                        "' > <td class='size'>" +
                         element.rating +
-                        "</h2>" +
-                        "<h2>" +
-                        resultSpe +
-                        "</h2>" +
-                        "<h2>" +
+                        "</td> <td>" +
                         element.user.name +
-                        "</h2>" +
-                        "<h2>" +
+                        " </td> <td>" +
+                        resultSpe +
+                        "</td> <td class='size'>" +
                         x +
-                        "</h2>" +
-                        "</a>"
+                        "</td> </tr>"
                 );
             } else {
                 if (element.adse == adse) {
-                    $(".medicList").append(
-                        "<a id='" +
+                    $("#tbody").append(
+                        " <tr  class='clickable' data-href='/client/appointment/medic/" +
                             element.id +
-                            "' class='medic' href='/client/appointment/medic/" +
-                            element.id +
-                            "' >" +
-                            "<h2>" +
+                            "' > <td class='size'>" +
                             element.rating +
-                            "</h2>" +
-                            "<h2>" +
-                            resultSpe +
-                            "</h2>" +
-                            "<h2>" +
+                            "</td> <td>" +
                             element.user.name +
-                            "</h2>" +
-                            "<h2>" +
+                            " </td> <td>" +
+                            resultSpe +
+                            "</td> <td class='size'>" +
                             x +
-                            "</h2>" +
-                            "</a>"
+                            "</td> </tr>"
                     );
                 }
             }
         });
     } else {
-        $(".medicList").append(
-            "<h1> Nao existe medicos com os atributos da sua pesquisa</h1>"
+        $("#tbody").append(
+            "<tr> <td>Nao existe medicos com os filtros da sua pesquisa </td></tr>"
         );
     }
+
+    $("#tbody .clickable").click(function() {
+        var thisdata = $(this).attr("data-href");
+        console.log(thisdata);
+
+        window.location.href = thisdata;
+    });
 }
 
 $(document).ready(initPageEmail);

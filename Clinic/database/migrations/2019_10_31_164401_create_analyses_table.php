@@ -18,7 +18,8 @@ class CreateAnalysesTable extends Migration
             $table->increments('id');
             $table->integer('client_id')->unsigned()->index(); 
             $table->foreign('client_id')->references('id')->on('clients');
-            $table->integer('state');
+            $table->integer('state_id')->unsigned();
+            $table->foreign('state_id')->references('id')->on('states');
             $table->dateTime('date');
             $table->timestamps();
         });

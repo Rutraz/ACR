@@ -14,17 +14,17 @@ class AnalysisTableSeeder extends Seeder
         DB::table('analyses')->insert([
             'client_id' => '1',
             'date' => '2019-11-1 16:15:06',
-            'state' => '2',
+            'state_id' => '4',
         ]);
         DB::table('analyses')->insert([
             'client_id' => '1',
             'date' => '2019-11-12 16:15:06',
-            'state' => '2',
+            'state_id' => '4',
         ]);
         DB::table('analyses')->insert([
             'client_id' => '2',
             'date' => '2019-11-1 16:15:06',
-            'state' => '2',
+            'state_id' => '5',
         ]);
     }
 }

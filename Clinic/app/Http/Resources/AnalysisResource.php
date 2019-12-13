@@ -17,7 +17,7 @@ class AnalysisResource extends JsonResource
         return [
             'id' => $this->id,
             'date' => $this->date,
-            'state' => $this->state,
+            'state' => new StateResource($this->state),
         ];
     }
 }

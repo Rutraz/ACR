@@ -10,4 +10,8 @@ class Analysis extends Model
     {
         return $this->belongsTo('App\Client');
     }
+
+    public function state(){
+        return $this->belongsTo('App\State');
+    }
 }

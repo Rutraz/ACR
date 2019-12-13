@@ -48,10 +48,21 @@
 
 
     </div>
-    <div class="medicList">
-                
 
-    </div>
+    <table id="myID">
+        <thead>
+            <tr>
+                <th class="size"> Rating </th>
+                <th> Médico </th>
+                <th> Especialidade </th>
+                <th class="size"> ADSE </th>
+            </tr>
+        </thead>
+
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
 
 </div>
 @endsection
