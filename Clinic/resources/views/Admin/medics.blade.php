@@ -1,11 +1,13 @@
 @extends('layouts.admin')
 
 @section('content')
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <script src="{{asset('js/inserirMedico.js')}}" defer ></script>
 <div class="admin">
     <form method="post" action="" id="sendmedic">
         <fieldset>
             <legend>Adicionar Médico</legend>
+                <input type="hidden" name="_token" value="{{csrf_token()}}"> 
                 Nome:<input type="text" name="name" > <br>
                 Email: <input type="text" name="email"  > <br>
                 Telefone: <input type="text" name="cellphone"  > <br>
@@ -17,9 +19,9 @@
                                 
                                 </select>
                                 <br>
-        </fieldset>
-    </form>
-    <button id="inserirMedico"> Inserir </button>
+                            </fieldset>
+                        </form>
+                        <button id="inserirMedico"> Inserir </button>
 
     <br>
       
@@ -41,7 +43,7 @@
 
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="tbdoymedic">
 
                     @foreach($medicos as $medico)
                     <tr>

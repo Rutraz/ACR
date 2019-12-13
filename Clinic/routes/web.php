@@ -23,9 +23,7 @@ Route::post("/admin/medics/{id}","AdminController@EraseMedic");
 
 //--------Funcionarios
 Route::get("/admin/employees","AdminController@getAllEmployees");
-Route::get("/admin/employees/create","AdminController@CreateEmployee");
-Route::post("/admin/employees/create","AdminController@AddEmployee");
-Route::post("/admin/employee/{id}/erase", "AdminController@EraseEmployee");
+Route::post("/admin/employee/{id}", "AdminController@EraseEmployee");
 
 
 //ROTAS PARA GEST
@@ -117,6 +115,8 @@ Route::get('/api/medic/{id}', 'ApiController@getMedicSingle'); // ENVIA A INFORM
 Route::get('/api/medic/{id}/appointments', 'ApiController@getMedicAppoint'); // ENVIA A INFORMAÇÃO DAS CONSULTAS DO MEDICO ID=X
 
 Route::post('/api/client', 'ApiController@createClient'); // CRIAR UM CLIENTE
+
+Route::post('/api/employee/create', 'ApiController@createEmployee'); // CRIAR UM FUNCIONARIO
 
 Route::get('/api/client/{id}', 'ApiController@getClientSingle'); // ENVIA A INFORMAÇÃO DO CLIENTE ID=X
 

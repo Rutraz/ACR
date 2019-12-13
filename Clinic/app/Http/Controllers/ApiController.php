@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Medic;
+use App\Employee;
 use App\Client;
 use App\Appointment;
 use App\Analysis;
@@ -20,6 +21,7 @@ use App\Http\Resources\ClientAppointmentResource;
 use App\Http\Resources\ClientResource;
 use App\Http\Resources\AnalysisResource;
 use App\Http\Resources\SpecialtyResource;
+use App\Http\Resources\EmployeeResource;
 
 
 class ApiController extends Controller
@@ -224,9 +226,54 @@ class ApiController extends Controller
             else{
                 return response()->json([
                     'success' => false,
-                'message' => 'Insert failed'
+                    'menssage' => 'Insert failed'
                 ], 201);
             }         
         }
+    }
+
+    //Create Funcionario
+
+    public function createEmployee(Request $request){
+
+
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:8',
+            'cellphone' => 'required|string|regex:/^[0-9]{9}$/|unique:users',
+    ]);
+
+    if ($validator->fails()) {
+        return response()->json([
+            'success' => false,
+            'menssage' =>  $validator->errors(),
+        ], 201);
+    }else{
+        DB::beginTransaction();
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'cellphone' => $request->cellphone,
+        ]);
+
+        $employee = Employee::create([
+            'user_id' =>  $user->id,
+            'admin' => 0
+        ]);
+
+        DB::commit();
+
+        if($employee)
+                return new EmployeeResource($employee);
+            else{
+                return response()->json([
+                    'success' => false,
+                    'menssage' => 'Insert failed'
+                ], 201);
+            }      
+    }
+
     }
 }

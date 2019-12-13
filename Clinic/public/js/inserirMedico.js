@@ -14,6 +14,9 @@ function initPage() {
 
 function inserir(){
 
+    var _token = sendmedic._token.value;
+        console.log(_token);
+
     var name = sendmedic.name.value;
     var email = sendmedic.email.value;
     var cell = sendmedic.cellphone.value;
@@ -33,8 +36,7 @@ function inserir(){
         "adse" : adse,
         "specialty" : esp
     };
-    console.log("Dados para enviar em json");
-    console.log(dataToSend);
+
 
     $.ajax({
         url: "/api/medic",
@@ -42,14 +44,26 @@ function inserir(){
         data : dataToSend, 
         async: true,
         success: function(data, statuTxt, xhr) {
-            console.log(data);
+        
           if(data.success == false){
           for(var x in data.menssage){
               erro += data.menssage[x] + "\n";
           }
               alert( erro);
           }else{
-              alert("inserido com sucesso");
+            $('#tbdoymedic').append(
+                "<tr>" 
+                + "<td class='size'>"+ data.data.id +"</td>"
+                + "<td>"+ data.data.user.name +"</td>"
+                + "<td>"+ data.data.user.email +"</td>"
+                + "<td>"+ data.data.user.cellphone +"</td>"
+                + "<td class='size'>"+ data.data.rating+"</td>"
+                + "<td class='size'>"+ data.data.adse +"</td>"
+                + "<td>"+ data.data.specialty.specialty +"</td>" 
+                + "<td class='size' >"+ "<form action='/admin/medics/"+ data.data.id +"' method='POST'>"+ "<input type='hidden' name='_token' value="+ _token +">" + "<button type='submit'>Editar</button>" +"</form>" +"</td>" 
+                + "<td class='size' >"+ "<form action='/admin/medics/"+ data.data.id +"' method='POST'>"+ "<input type='hidden' name='_token' value="+ _token +">" + "<button type='submit'>Eliminar</button>" +"</form>" +"</td>" 
+                +"</tr>"
+            )
           }
 
         }
