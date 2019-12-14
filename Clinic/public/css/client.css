@@ -387,6 +387,8 @@
 .profile #fullpage {
   overflow: hidden;
   height: 100vh;
+  /* Modal Content */
+  /* The Close Button */
 }
 
 .profile #fullpage section {
@@ -463,64 +465,31 @@
 }
 
 .profile #fullpage .client-appointmments {
-  /* Modal Content */
-  /* The Close Button */
   padding-top: 1%;
   padding-left: 5%;
   padding-right: 8%;
 }
 
-.profile #fullpage .client-appointmments button {
-  background: transparent;
-  border: none;
-  background-color: lightcyan;
-  width: 100%;
+.profile #fullpage .client-appointmments .change {
+  width: 90%;
   height: 100%;
-}
-
-.profile #fullpage .client-appointmments .modal {
-  display: none;
-  /* Hidden by default */
-  position: fixed;
-  /* Stay in place */
-  z-index: 1;
-  /* Sit on top */
-  padding-top: 100px;
-  /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%;
-  /* Full width */
-  height: 100%;
-  /* Full height */
-  overflow: auto;
-  /* Enable scroll if needed */
-  background-color: black;
-  /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4);
-  /* Black w/ opacity */
-}
-
-.profile #fullpage .client-appointmments .modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
-
-.profile #fullpage .client-appointmments .close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.profile #fullpage .client-appointmments .close:hover,
-.profile #fullpage .client-appointmments .close:focus {
-  color: #000;
-  text-decoration: none;
+  box-shadow: inset 0px 1px 0px 0px #bbdaf7;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #79bbff), to(#378de5));
+  background: linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+  background-color: #79bbff;
+  border: 1px solid #84bbf3;
+  display: inline-block;
   cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 1em;
+  text-shadow: 0px 1px 0px #528ecc;
+}
+
+.profile #fullpage .client-appointmments .change:hover {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #378de5), to(#79bbff));
+  background: linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+  color: black;
 }
 
 .profile #fullpage .client-appointmments .appointmments-name > h1 {
@@ -670,6 +639,76 @@
 
 .profile #fullpage .client-analysis .anaylsis-table table tr:hover {
   background-color: #6cb2eb;
+}
+
+.profile #fullpage .modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+.profile #fullpage .modal-content {
+  text-align: center;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+}
+
+.profile #fullpage .close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.profile #fullpage .close:hover,
+.profile #fullpage .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.profile #fullpage .show {
+  display: block;
+}
+
+.profile #fullpage .notShow {
+  display: none;
+}
+
+.profile #fullpage .modal-header {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+.profile #fullpage .modal-body {
+  padding: 2px 16px;
+}
+
+.profile #fullpage .modal-footer {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
 }
 
 .editProfile {

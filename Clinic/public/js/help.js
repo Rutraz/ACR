@@ -8,14 +8,8 @@ function initPage() {
             var content = this.nextElementSibling;
             if (content.style.display === "block") {
                 content.style.display = "none";
-                /*  $(".question")
-                    .find("img")
-                    .attr("src", "../assets/Gest/plus.svg");*/
             } else {
                 content.style.display = "block";
-                /* $(".question.active")
-                    .find("img")
-                    .attr("src", "../assets/Gest/minus.svg");*/
             }
         });
     }

@@ -70,6 +70,11 @@ Route::get('/client/appointment','AppointmentController@client');
 Route::get('/client/appointment/search','AppointmentController@clientSearch');
 
 Route::get('/client/appointment/medic/{id}','AppointmentController@clientMedic');
+
+Route::post('/client/appointment/comment','AppointmentController@modifyComment');
+
+Route::post('/client/appointment/rate','AppointmentController@modifyRating');
+
 //--------ANALISES
 Route::get('/client/analysis','AnalysisController@clientAnalysis'); // ENVIA AS ANÁLISES MARCADAS
 

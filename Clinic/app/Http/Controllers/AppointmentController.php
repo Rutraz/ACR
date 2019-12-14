@@ -165,4 +165,93 @@ class AppointmentController extends Controller
             return redirect('/');
         }
     }
+
+    public function modifyComment(Request $request){
+        $user = Auth::user();
+        if($user){
+            $ids = $user->id;
+            $client = Client::where('user_id',$ids)->first();
+            if($client){
+                
+                $validator = Validator::make($request->all(), [
+                        'comment' => 'required|string|max:255',]);
+
+                if ($validator->fails()) {
+                    return response()->json([
+                        'success' => false,
+                        'message' =>  $validator->errors(),
+                    ], 201);
+                }else{
+                    
+                    $message = Appointment::where('id',$request->id)->update(['comments' => $request->comment]);   
+                    if($message){
+
+                        return response()->json([
+                            'success' => true,
+                            'message' =>  $request->comment,
+                        ], 201);
+                    }
+                    else{
+                        return response()->json([
+                            'success' => false,
+                            'message' => "Insert error",
+                        ], 201);
+                    }
+                }                 
+
+            }
+            else{
+                return redirect('/');
+            }  
+        }
+        else{
+            return redirect('/');
+        }
+    }
+
+    public function modifyRating(Request $request){
+        $user = Auth::user();
+        if($user){
+            $ids = $user->id;
+            $client = Client::where('user_id',$ids)->first();
+            if($client){
+                
+                $validator = Validator::make($request->all(), [
+                        'rating' => 'required|string|regex:/[1-5]{1}/',]);
+
+                if ($validator->fails()) {
+                    return response()->json([
+                        'success' => false,
+                        'message' =>  $validator->errors(),
+                    ], 201);
+                }else{
+                    
+                    $message = Appointment::where('id',$request->id)->update(['rating' => $request->rating]);   
+                    if($message){
+
+                        return response()->json([
+                            'success' => true,
+                            'message' =>  $request->rating,
+                        ], 201);
+                    }
+                    else{
+                        return response()->json([
+                            'success' => false,
+                            'message' => "Insert error",
+                        ], 201);
+                    }
+                }                 
+
+            }
+            else{
+                return redirect('/');
+            }  
+        }
+        else{
+            return redirect('/');
+        }
+    }
+
+
+
 }

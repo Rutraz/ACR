@@ -14,8 +14,8 @@ class AppointmentsTableSeeder extends Seeder
         DB::table('appointments')->insert([
             'date' => '2019-11-1 16:15:06',
             'state_id' => '4',
-            'rating' => '5',
-            'comments' => 'Gostei da Consulta, maos leves',
+            'rating' => '0',
+            'comments' => '',
             'medic_id' => '1',
             'client_id' => '1',
         ]);
