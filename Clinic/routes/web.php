@@ -23,7 +23,9 @@ Route::post("/admin/medics/{id}","AdminController@EraseMedic");
 
 //--------Funcionarios
 Route::get("/admin/employees","AdminController@getAllEmployees");
+Route::post("/admin/employee/edit", "AdminController@modifyEmployees"); //MODIFICA A INFORMAÇÃO DO EMPLOYEE
 Route::post("/admin/employee/{id}", "AdminController@EraseEmployee");
+
 
 
 //ROTAS PARA GEST
@@ -100,6 +102,9 @@ Route::get('/employee/medic/{id}','MedicController@EmployeeMedic');
 
 //--------HORARIOS
 Route::get('/employee/schedule','MedicController@schedule'); // ENVIA A HORARIOS DOS MEDICOS
+
+
+
 
 //----------------------------------------------
 //ROTAS PARA API -> IR AO VerifyCsrfToken para retirar a token 

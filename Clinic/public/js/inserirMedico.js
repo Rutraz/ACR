@@ -1,4 +1,6 @@
 function initPage() {
+    var obj= {};
+    //vai buscar a speciality dos medicos
     $.get("/api/medic/esp", function(data){
         console.log(data.data);
         data.data.forEach(element => {
@@ -6,10 +8,17 @@ function initPage() {
             $("#especialidades").append(
                 "<option value=" + element.id + " > "+element.specialty+" </option>"
             );
+            $("#especialidadesModal").append(
+                "<option value=" + element.id + " > "+element.specialty+" </option>"
+            );
         });
         
      })
+
+     //Insere um Médico
     $("#inserirMedico").click(inserir);
+
+    EditarMedico();
 }
 
 function inserir(){
@@ -73,6 +82,55 @@ function inserir(){
 
         }
     });
+}
+
+function EditarMedico(){
+
+    $(".edit").click(function(){
+        $("#error").empty();
+        var id = this.id;
+        console.log(id);
+
+
+        var modal = document.getElementById("modalEditar");
+        modal.style.display = "block";
+
+        var span = document.getElementsByClassName("close")[0];
+
+        span.onclick = function() {
+            modal.style.display = "none";
+            
+        };
+        
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        };
+
+       
+
+        var name = $("#name"+id).val();
+        var email = $("#email"+id).val();
+        var cell = $("#cellphone"+id).val();
+        var adse = $("#adse"+id).val();
+        var esp = $("#esp"+id).val();
+        
+
+        $("#names").val(name);
+        $("#emails").val(email);
+        $("#cellphones").val(cell);
+        $("#adses").val(adse);
+        $('#especialidadesModal option[value=2]').attr('selected','selected');
+        
+      
+        
+
+        console.log(name, email, cell, adse , esp);
+    });
+
+    
+
 }
 
 $(document).ready(initPage);

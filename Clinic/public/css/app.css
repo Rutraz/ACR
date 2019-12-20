@@ -104,15 +104,19 @@
   text-align: right;
   max-width: 900px;
   max-height: 225px;
+  position: relative;
 }
 
-.containerGuestWelcome .image-logo {
+.containerGuestWelcome #image-logo {
   position: absolute;
-  left: -127px;
-  width: 800px;
+  left: -1.4em;
 }
 
-.containerGuestWelcome #stetho {
+.containerGuestWelcome #size {
+  width: 20%;
+}
+
+.containerGuestWelcome .stetho {
   width: 25%;
   margin-right: 10%;
   margin-left: 7%;

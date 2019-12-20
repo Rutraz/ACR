@@ -24,8 +24,6 @@
             </div>
                 <br>
             <div class ="item" >
-               
-            
                 <label for="name" >{{ __('Adse: ') }}</label>  
                 <input type="radio" name="adses" id="adse" value="1"> Sim
                 <input type="radio" name="adse" value="0"> Não
@@ -46,6 +44,39 @@
                         
 
     <br>
+
+    <!--****************************MODAL**************************-->
+    <div id="modalEditar" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                    <div class="changedContent">
+                    <input type="hidden" name="_token" id="token" value="{{csrf_token()}}">
+                        <h1> Editar Médico </h1>
+                        <br>
+                        <div class="container">
+                            <div class="item">
+                                <label for="name" >{{ __('Nome: ') }}</label>
+                                <input type="text" id="names" ></input>
+                                <label for="name" >{{ __('Email: ') }}</label>
+                                <input type="text" id="emails" ></input>
+                                <label for="name" >{{ __('Telefone: ') }}</label>
+                                <input type="text" id="cellphones"></input>
+                            </div>
+                            <br>
+                            <div class="item">
+                            <label for="name" >{{ __('Adse: ') }}</label>  
+                            <input type="radio" name="adses" id="adses" value="1"> Sim
+                            <input type="radio" name="adse" value="0"> Não
+                            <label for="name" >{{ __(' Especialidade: ') }}</label>  
+                            <select name="specialty" id="especialidadesModal"> </select>
+                            </div>
+                        </div>
+                        <div id="error"></div>
+                        <button id="sendEditar">Enviar </button>
+                        
+                    </div>
+            </div>          
+    </div>
       
     <div class="admin-table">
         
@@ -80,10 +111,13 @@
                         @endif
                         <td>{{$medico->specialty->specialty}}</td>
                         <td  class="size" >
-                            <form action="/admin/medics/{{$medico->id}}" method="POST">
-                                @csrf
-                                <button type="submit">Editar</button>
-                            </form>
+                                <input type="hidden" id="name{{$medico->id}}" value="{{$medico->user->name}}">
+                                <input type="hidden" id="email{{$medico->id}}" value="{{$medico->user->email}}">
+                                <input type="hidden" id="cellphone{{$medico->id}}" value="{{$medico->user->cellphone}}">
+                                <input type="hidden" id="adse{{$medico->id}}" value="{{$medico->adse}}">
+                                <input type="hidden" id="esp{{$medico->id}}" value="{{$medico->specialty->specialty}}">
+
+                                <button id="{{$medico->id}}"  class="edit" type="submit">Editar</button>
                         </td>
                         <td  class="size">
                             <form action="/admin/medics/{{$medico->id}}" method="POST">

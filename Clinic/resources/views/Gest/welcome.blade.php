@@ -28,10 +28,10 @@
 
         <div class="content">
             <div class="m-b-md">
-                <div class="image-logo">
-                    <img  id="stetho" src="{{asset('assets/Gest/healthcare-logo1.png')}}"  />
-                </div>       
-                <img class="rotate-vert-center" id="stetho" src="{{asset('assets/Gest/healthcare-logo2.png')}}" />   
+               
+                <img id="image-logo"  class="stetho" src="{{asset('assets/Gest/healthcare-logo1.png')}}"  />
+                   
+                <img id="size" class="rotate-vert-center stetho"  src="{{asset('assets/Gest/healthcare-logo2.png')}}" />   
                     <h1 class="title text-focus-in"> HealthCare </h1>
                     
             </div>

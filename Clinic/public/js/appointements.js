@@ -103,7 +103,7 @@ function filterEsp(c, dataToFill) {
     if (c == "all") {
         dataToFill.forEach(element => {
             $("#especialidades").append(
-                "<option value='" + element.specialty + "' > </option>"
+                "<option value= '" + element.specialty + "' > </option>"
             );
         });
     }

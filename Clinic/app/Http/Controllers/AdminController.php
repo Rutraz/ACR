@@ -99,11 +99,11 @@ class AdminController extends Controller
             return redirect('/');
         }
     }
-
     public function EraseEmployee($id){
         $user = Auth::user();
         if($user)
         {
+           
             $employee = Employee::find($id);
             $userToDelete = User::find($employee->user_id);
             $employee->delete();
@@ -114,4 +114,61 @@ class AdminController extends Controller
             return redirect('/');
         }
     }
+    public function modifyEmployees(Request $request){
+        $user = Auth::user();
+       
+        if($user){
+            $id = $user->id;
+            $emplo = Employee::where('user_id',$id)->first();
+
+            if($emplo){
+
+                $validator = Validator::make($request->all(), [
+                    'name' => 'required|string|max:255',
+                    'email' => 'required|string|email|max:255',
+                    'cellphone' => 'required|string|regex:/^[0-9]{9}$/',
+                    
+                    ]);   
+
+                if ($validator->fails()) {
+                    return response()->json([
+                        'success' => false,
+                        'menssage' =>  $validator->errors(),
+                    ], 201);
+                }else{
+                                       
+                    $employee = Employee::where('id',$request->id)->first();
+                   
+                    $user = User::where('id', $employee->user_id)->update([
+                            'name' => $request ->name,
+                            'email' => $request->email,
+                            'cellphone' => $request->cellphone,                   
+                            ]);
+                 
+                    if($user){
+                        
+                        return response()->json([
+                            'success' => true,
+                            'data' => new EmployeeResource($employee)
+                        ], 201); 
+                    }
+                    else{
+                        return response()->json([
+                            'success' => false,
+                            'menssage' => "Insert error",
+                        ], 201);
+                    }
+                }
+            }  
+            else{
+                return redirect('/');
+                }      
+
+            }else
+                return redirect('/');
+    }
+
+
+
+   
 }

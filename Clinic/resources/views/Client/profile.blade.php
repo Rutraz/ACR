@@ -58,7 +58,7 @@
                 <div class="modal-content">
                     <span class="close">&times;</span>
                     <div class="changedContent">
-                        <h1> Comentar consulta </h1>
+                        <h1> Rating </h1>
                         <input type="number" id="rating" min="1" max="5">
                         <div id="error2"></div>
                         <button id="sendRating">Enviar </button>
@@ -254,7 +254,7 @@
                       success: function(data, statuTxt, xhr) {
                           console.log(data);
                           if(data.success){
-                              $(".rate#"+id+"").replaceWith(data.message);;
+                              $(".rate#"+id+"").replaceWith(data.message);
                               modal.style.display = "none";
                               $("#rating").val("");
                           }

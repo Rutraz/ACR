@@ -90,14 +90,19 @@
         text-align: right;
         max-width: 900px;
         max-height: 225px;
-    }
-    .image-logo {
-        position: absolute;
-        left: -127px;
-        width: 800px;
+        position: relative;
     }
 
-    #stetho {
+    #image-logo {
+        position: absolute;
+        left: -1.4em;
+    }
+
+    #size{
+        width: 20%;
+    }
+
+    .stetho {
         width: 25%;
         margin-right: 10%;
         margin-left: 7%;
