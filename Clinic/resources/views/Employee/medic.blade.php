@@ -1,13 +1,68 @@
 @extends('layouts.employee')
 
 @section('content')
-<div>
-    
-    <h1> Medicos page</h1>
+<script src="{{ asset('js/employeeMedic.js')}}" defer></script>
+<div class="medics">
+    <div></div>
+    <div class="topnav">
 
-    <h1>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem, ea omnis esse dolorum quisquam numquam quae accusamus quia repellat odit! Sed beatae rerum quibusdam vitae minus voluptates dignissimos illum numquam!</h1>
-    <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus, repellat sunt facilis magnam quos, ab cupiditate aliquid quod odio exercitationem quibusdam minima nostrum vel nihil, accusamus recusandae fugit. Placeat, quisquam.</h1>
-    <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet pariatur quaerat accusamus praesentium sed, itaque alias quia magnam? Maxime quaerat possimus dolorem fugit nobis numquam repellat repudiandae tempora magnam illum.</h1>
+        <div class="item">
+            <label for="medico">Especialidade </label>
+            <input id="especialidade" list="especialidades" placeholder="Especialidade" name="especialidade">
+            <datalist id="especialidades">
+            </datalist>
+        </div>
+
+        <div class="item">
+            <label for="medico">Medico </label>
+            <input id="medico" list="medicos" name="medico" placeholder="Medico">
+            <datalist id="medicos">
+            </datalist>
+        </div>
+
+        <div class="item special">
+            <label for="adse">Adse </label>
+            <select id="adse" name="adse">
+                <option value="">Ambos</option>
+                <option value="1">Sim</option>
+                <option value="0">Não</option>
+            </select>
+        </div>
+
+        <div class="item special">
+            <label for="order">Ordenar por</label>
+            <select id="order" name="order">
+                <optgroup label="Rating">
+                    <option value="1">Rating &#8600;</option>
+                    <option value="2">Rating &#8599;</option>
+                </optgroup>
+                <optgroup label="Nome">
+                    <option value="3">Nome A-Z</option>
+                    <option value="4">Nome Z-A</option>
+                </optgroup>
+            </select>
+        </div>
+
+
+        <button id="searchBtn" class="buttonItem" type=button>&#9773;</button>
+
+
+    </div>
+
+    <table id="myID">
+        <thead>
+            <tr>
+                <th class="size"> Rating </th>
+                <th> Médico </th>
+                <th> Especialidade </th>
+                <th class="size"> ADSE </th>
+            </tr>
+        </thead>
+
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
 
 </div>
 @endsection

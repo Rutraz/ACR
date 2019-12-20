@@ -67,9 +67,7 @@ Route::post('/client/profile/erase','ClientController@eraseProfile'); // ELIMINA
 //--------CONSULTAS
 Route::get('/client/appointment','AppointmentController@client');
 
-Route::get('/client/appointment/search','AppointmentController@clientSearch');
-
-Route::get('/client/appointment/medic/{id}','AppointmentController@clientMedic');
+Route::get('/client/appointment/medic/{id}','MedicController@clientMedic');
 
 Route::post('/client/appointment/comment','AppointmentController@modifyComment');
 
@@ -94,8 +92,11 @@ Route::get('/employee/appointment','AppointmentController@employee');
 //--------ANALISES
 Route::get('/employee/analysis','AnalysisController@employeeAnalysis'); // ENVIA A INFORMAÇÃO DE TODAS AS ANÁLISES
 
+
 //--------MEDICOS
 Route::get('/employee/medic','MedicController@getAllMedic'); // ENVIA A INFORMAÇÃO DE TODOS OS MEDICOS
+Route::get('/employee/medic/{id}','MedicController@EmployeeMedic');
+
 
 //--------HORARIOS
 Route::get('/employee/schedule','MedicController@schedule'); // ENVIA A HORARIOS DOS MEDICOS
@@ -129,6 +130,7 @@ Route::get('/api/client/{id}/appointments', 'ApiController@getClientAppoint'); /
 
 Route::get('/api/client/{id}/analysis', 'ApiController@getClientAnalysis'); //ENVIA A INFORMAÇÃO DAS ANALISES DO CLIENTE X
 
+Route::get('/medic/search','MedicController@clientSearch');
 
 
 

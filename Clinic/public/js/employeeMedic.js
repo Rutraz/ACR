@@ -2,7 +2,7 @@ function initPageEmail() {
     var dataToFill = [];
     var dataToFillEsp = [];
 
-    $.get("/api/medic/orderer", function(data) {
+    $.get("/api/medic", function(data) {
         dataToFill = data.data;
         startFilling(dataToFill, "");
         filterMedics("all", dataToFill);
@@ -62,7 +62,7 @@ function askSearch() {
 
 function start() {
     $.ajax({
-        url: "/api/medic/orderer",
+        url: "/api/medic",
         type: "GET",
         async: true,
         success: function(data, statuTxt, xhr) {
@@ -125,7 +125,7 @@ function startFilling(dataToFill, adse) {
             }
             if (adse == "") {
                 $("#tbody").append(
-                    " <tr  class='clickable' data-href='/client/appointment/medic/" +
+                    " <tr  class='clickable' data-href='/employee/medic/" +
                         element.id +
                         "' > <td class='size'>" +
                         element.rating +
@@ -140,7 +140,7 @@ function startFilling(dataToFill, adse) {
             } else {
                 if (element.adse == adse) {
                     $("#tbody").append(
-                        " <tr  class='clickable' data-href='/client/appointment/medic/" +
+                        " <tr  class='clickable' data-href='/employee/medic/" +
                             element.id +
                             "' > <td class='size'>" +
                             element.rating +

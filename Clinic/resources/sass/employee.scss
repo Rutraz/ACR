@@ -3,6 +3,7 @@
 
 // Variables
 @import "variables";
+@import "Employee/medics";
 
 body {
     margin: 0px;
@@ -87,6 +88,6 @@ body {
 }
 
 main {
-    margin-left: 18%;
+    margin-left: 17%;
     overflow: auto;
 }
