@@ -71,12 +71,14 @@ class MedicController extends Controller
     public function EmployeeMedic($id){
         $user = Auth::user();
         if($user){
-            $medicos = MedicResource::collection(Medic::leftjoin('specialties', 'medics.specialty_id', '=', 'specialties.id')
+            $medicos = MedicResource::collection(Medic::with('specialty')
             ->where('medics.id',$id)
             ->get());
            
+            $getMedic = $medicos[0]; 
+
             if($medicos)
-                return view('Employee.singleMedic',compact('user','medicos'));
+                return view('Employee.singleMedic',compact('user','getMedic'));
             else
                 return redirect('/employee/medic');
         }
