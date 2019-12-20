@@ -19,11 +19,13 @@ Route::post("/admin/client/{id}",'AdminController@EraseClient');
 
 //--------Medicos
 Route::get("/admin/medics","AdminController@getAllMedics");
+Route::post("/admin/medics/edit","AdminController@modifyMedic");
 Route::post("/admin/medics/{id}","AdminController@EraseMedic");
+
 
 //--------Funcionarios
 Route::get("/admin/employees","AdminController@getAllEmployees");
-Route::post("/admin/employee/edit", "AdminController@modifyEmployees"); //MODIFICA A INFORMAÇÃO DO EMPLOYEE
+Route::post("/admin/employee/edit", "AdminController@modifyEmployees");
 Route::post("/admin/employee/{id}", "AdminController@EraseEmployee");
 
 

@@ -85,20 +85,7 @@ class AdminController extends Controller
         }
     }
 
-    public function EraseMedic($id){
-        $user = Auth::user();
-        if($user)
-        {
-            $medic = Medic::find($id);
-            $userToDelete = User::find($medic->user_id);
-            $medic->delete();
-            $userToDelete->delete();
-            return redirect("/admin/medics");
-        }
-        else{
-            return redirect('/');
-        }
-    }
+   
     public function EraseEmployee($id){
         $user = Auth::user();
         if($user)
@@ -114,6 +101,22 @@ class AdminController extends Controller
             return redirect('/');
         }
     }
+
+    public function EraseMedic($id){
+        $user = Auth::user();
+        if($user)
+        {
+            $medic = Medic::find($id);
+            $userToDelete = User::find($medic->user_id);
+            $medic->delete();
+            $userToDelete->delete();
+            return redirect("/admin/medics");
+        }
+        else{
+            return redirect('/');
+        }
+    }
+
     public function modifyEmployees(Request $request){
         $user = Auth::user();
        
@@ -127,7 +130,6 @@ class AdminController extends Controller
                     'name' => 'required|string|max:255',
                     'email' => 'required|string|email|max:255',
                     'cellphone' => 'required|string|regex:/^[0-9]{9}$/',
-                    
                     ]);   
 
                 if ($validator->fails()) {
@@ -137,7 +139,7 @@ class AdminController extends Controller
                     ], 201);
                 }else{
                                        
-                    $employee = Employee::where('id',$request->id)->first();
+                    $employee = Employee::find($request->id);
                    
                     $user = User::where('id', $employee->user_id)->update([
                             'name' => $request ->name,
@@ -168,6 +170,66 @@ class AdminController extends Controller
                 return redirect('/');
     }
 
+    public function modifyMedic(Request $request){
+        $user = Auth::user();
+       
+        if($user){
+            $id = $user->id;
+            $emplo = Employee::where('user_id',$id)->first();
+
+            if($emplo){
+
+                $validator = Validator::make($request->all(), [
+                    'name' => 'required|string|max:255',
+                    'email' => 'required|string|email|max:255',
+                    'cellphone' => 'required|string|regex:/^[0-9]{9}$/',
+                    'adse' => 'required|string|regex:/[0-1]{1}/',
+                    'specialty_id' => 'required',
+                    ]);   
+
+                if ($validator->fails()) {
+                    return response()->json([
+                        'success' => false,
+                        'message' =>  $validator->errors(),
+                    ], 201);
+                }else{
+                                     
+                    $medicos = Medic::find($request->id);
+
+                    $medicUpdated = Medic::where('id',$request->id)->update([
+                        'adse' => $request->adse,
+                        'specialty_id' =>$request->specialty_id
+                    ]);
+
+                    $user = User::where('id', $medicos->user_id)->update([
+                            'name' => $request ->name,
+                            'email' => $request->email,
+                            'cellphone' => $request->cellphone,                   
+                            ]);
+                    
+                    $getMedico = Medic::find($request->id);
+                    if($user){
+                        
+                        return response()->json([
+                            'success' => true,
+                            'data' => new MedicResource($getMedico)
+                        ], 201); 
+                    }
+                    else{
+                        return response()->json([
+                            'success' => false,
+                            'message' => "Insert error",
+                        ], 201);
+                    }
+                }
+            }  
+            else{
+                return redirect('/');
+                }      
+
+            }else
+                return redirect('/');
+    }
 
 
    
