@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Medic;
 use App\Client;
+use App\Specialty;
+
 
 use App\User;
 
@@ -34,13 +36,15 @@ class MedicController extends Controller
         if($user){
             $idC = $user->id;
             $client = Client::where('user_id',$idC)->first();
-            if($client){
-                $medicos = MedicResource::collection(Medic::leftjoin('specialties', 'medics.specialty_id', '=', 'specialties.id')
-                ->where('medics.id',$id)
+            if($client){                
+                $medicos = MedicResource::collection(Medic::with('specialty')
+                ->where('user_id',$id)
                 ->get());
-                
+
+                $getMedic = $medicos[0]; 
+               
                 if($medicos)
-                    return view('Client.medic',compact('user','medicos'));
+                  return view('Client.medic', compact('user', 'getMedic'));
                 else
                     return redirect('/client/appointment');
             }
