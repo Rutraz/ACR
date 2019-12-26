@@ -49539,11 +49539,11 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\rutra\Documents\Github\ACR\Clinic\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\Users\rutra\Documents\Github\ACR\Clinic\resources\sass\app.scss */"./resources/sass/app.scss");
-__webpack_require__(/*! C:\Users\rutra\Documents\Github\ACR\Clinic\resources\sass\client.scss */"./resources/sass/client.scss");
-__webpack_require__(/*! C:\Users\rutra\Documents\Github\ACR\Clinic\resources\sass\employee.scss */"./resources/sass/employee.scss");
-module.exports = __webpack_require__(/*! C:\Users\rutra\Documents\Github\ACR\Clinic\resources\sass\admin.scss */"./resources/sass/admin.scss");
+__webpack_require__(/*! D:\Universidade\MEI-1\ACR\Projeto1\ACR\Clinic\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! D:\Universidade\MEI-1\ACR\Projeto1\ACR\Clinic\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\Universidade\MEI-1\ACR\Projeto1\ACR\Clinic\resources\sass\client.scss */"./resources/sass/client.scss");
+__webpack_require__(/*! D:\Universidade\MEI-1\ACR\Projeto1\ACR\Clinic\resources\sass\employee.scss */"./resources/sass/employee.scss");
+module.exports = __webpack_require__(/*! D:\Universidade\MEI-1\ACR\Projeto1\ACR\Clinic\resources\sass\admin.scss */"./resources/sass/admin.scss");
 
 
 /***/ })

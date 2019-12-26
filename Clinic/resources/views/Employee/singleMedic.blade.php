@@ -4,7 +4,7 @@
 <div>
 
     <h1> Single Medic Employee page</h1>
-
+    {{$getMedic->id}}
     <h1>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem, ea omnis esse dolorum quisquam numquam
         quae accusamus quia repellat odit! Sed beatae rerum quibusdam vitae minus voluptates dignissimos illum numquam!
     </h1>

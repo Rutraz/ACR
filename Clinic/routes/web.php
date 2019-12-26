@@ -77,6 +77,8 @@ Route::post('/client/appointment/comment','AppointmentController@modifyComment')
 
 Route::post('/client/appointment/rate','AppointmentController@modifyRating');
 
+
+
 //--------ANALISES
 Route::get('/client/analysis','AnalysisController@clientAnalysis'); // ENVIA AS ANÁLISES MARCADAS
 
@@ -88,7 +90,8 @@ Route::get('/client/support','EmployeeController@support'); // ENVIA A INFORMAÇ
 Route::get('/employee', 'EmployeeController@index'); // ENVIA A INFORMAÇÃO DO FUNCIONARIO
 
 //--------CLIENTES
-Route::get('/employee/client','ClientController@getAllClients'); // ENVIA A INFORMAÇÃO DE TODOS OS CLIENTE
+Route::get('/employee/client','ClientController@getAllClients'); 
+Route::get('/api/employee/client','ClientController@getAllCliApi'); // ENVIA A INFORMAÇÃO DE TODOS OS CLIENTE
 
 //--------CONSULTAS
 Route::get('/employee/appointment','AppointmentController@employee');
@@ -107,6 +110,8 @@ Route::get('/employee/schedule','MedicController@schedule'); // ENVIA A HORARIOS
 
 
 
+Route::get('/medic/search','MedicController@medicSearch');
+Route::get('/client/search','ClientController@clientSearch');
 
 //----------------------------------------------
 //ROTAS PARA API -> IR AO VerifyCsrfToken para retirar a token 
@@ -114,6 +119,8 @@ Route::get('/employee/schedule','MedicController@schedule'); // ENVIA A HORARIOS
 Route::get('/api/faq', 'FaqController@getAllFaq'); // ENVIA A INFORMAÇÃO DAS FAQ
 
 Route::post('/api/faq', 'FaqController@insertFaq'); // CRIA UMA FAQ
+
+Route::post('/api/faq/erase/{id}', 'FaqController@eraseFaq'); // CRIA UMA FAQ
 
 Route::get('/api/medic/orderer', 'ApiController@getAllMedicOrdered'); // ENVIA A INFORMAÇÃO DE TODOS OS MEDICOS
 
@@ -137,8 +144,7 @@ Route::get('/api/client/{id}/appointments', 'ApiController@getClientAppoint'); /
 
 Route::get('/api/client/{id}/analysis', 'ApiController@getClientAnalysis'); //ENVIA A INFORMAÇÃO DAS ANALISES DO CLIENTE X
 
-Route::get('/medic/search','MedicController@clientSearch');
 
-
+Route::get('/api/client/user/{id}', 'ApiController@getClientSingleUser'); // ENVIA A INFORMAÇÃO DO CLIENTE ID=X
 
 

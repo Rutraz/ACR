@@ -1,0 +1,57 @@
+.appointmentPage {
+    .same {
+        height: 100vh;
+    }
+
+    #middle {
+        background-color: brown;
+    }
+
+    table {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2%;
+        display: flex;
+        flex-flow: column;
+        width: 90%;
+        padding: 0.3em;
+        height: 75vh;
+        td,
+        th {
+            height: 40px;
+            width: 100%;
+            border: 1px solid grey;
+            text-align: center;
+        }
+
+        th {
+            background-color: $cyan;
+            border: 1px solid grey;
+        }
+        thead {
+            width: 99.25%;
+            display: table;
+            table-layout: fixed;
+        }
+
+        tbody {
+            display: block;
+            overflow-y: scroll;
+
+            tr {
+                width: 100%;
+                display: table;
+                table-layout: fixed;
+            }
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: $cyan;
+        }
+        .size {
+            width: 15%;
+        }
+    }
+}

@@ -3,6 +3,7 @@
 
 // Variables
 @import "variables";
+@import "modalAndTable";
 
 @import "Gest/welcome";
 
@@ -42,4 +43,5 @@
 }
 body {
     margin: 0px;
+    font-family: "Nunito", sans-serif;
 }

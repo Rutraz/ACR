@@ -1,4 +1,96 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);.support {
+@import url(https://fonts.googleapis.com/css?family=Nunito);.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+/* Modal Content */
+
+.modal-content {
+  text-align: center;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 1%;
+  border: 1px solid #888;
+  width: 50%;
+}
+
+/* The Close Button */
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.show {
+  display: block;
+}
+
+.notShow {
+  display: none;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+.modal-body {
+  padding: 2px 16px;
+}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 0.5em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: darkslategrey;
+  border-radius: 0.5em;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #36383a;
+}
+
+.support {
   text-align: center;
   display: block;
   font-family: "Nunito", sans-serif;
@@ -347,7 +439,7 @@
 }
 
 .appointment table thead {
-  width: 98.5%;
+  width: 99.25%;
   display: table;
   table-layout: fixed;
 }
@@ -381,14 +473,11 @@
 .profile * {
   margin-bottom: 0;
   margin-top: 0;
-  padding: 0;
 }
 
 .profile #fullpage {
   overflow: hidden;
   height: 100vh;
-  /* Modal Content */
-  /* The Close Button */
 }
 
 .profile #fullpage section {
@@ -538,7 +627,7 @@
 }
 
 .profile #fullpage .client-appointmments .appointmments-table table thead {
-  width: 98.5%;
+  width: 99.25%;
   display: table;
   table-layout: fixed;
 }
@@ -614,7 +703,7 @@
 }
 
 .profile #fullpage .client-analysis .anaylsis-table table thead {
-  width: 98.5%;
+  width: 99.25%;
   display: table;
   table-layout: fixed;
 }
@@ -639,76 +728,6 @@
 
 .profile #fullpage .client-analysis .anaylsis-table table tr:hover {
   background-color: #6cb2eb;
-}
-
-.profile #fullpage .modal {
-  display: none;
-  /* Hidden by default */
-  position: fixed;
-  /* Stay in place */
-  z-index: 1;
-  /* Sit on top */
-  padding-top: 100px;
-  /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%;
-  /* Full width */
-  height: 100%;
-  /* Full height */
-  overflow: auto;
-  /* Enable scroll if needed */
-  background-color: black;
-  /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4);
-  /* Black w/ opacity */
-}
-
-.profile #fullpage .modal-content {
-  text-align: center;
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 50%;
-}
-
-.profile #fullpage .close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.profile #fullpage .close:hover,
-.profile #fullpage .close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.profile #fullpage .show {
-  display: block;
-}
-
-.profile #fullpage .notShow {
-  display: none;
-}
-
-.profile #fullpage .modal-header {
-  padding: 2px 16px;
-  background-color: #5cb85c;
-  color: white;
-}
-
-.profile #fullpage .modal-body {
-  padding: 2px 16px;
-}
-
-.profile #fullpage .modal-footer {
-  padding: 2px 16px;
-  background-color: #5cb85c;
-  color: white;
 }
 
 .editProfile {
@@ -861,6 +880,7 @@
 
 body {
   margin: 0px;
+  font-family: "Nunito", sans-serif;
 }
 
 .sidenav {

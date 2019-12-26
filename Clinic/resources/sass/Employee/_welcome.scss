@@ -1,0 +1,69 @@
+.welcomePage {
+    text-align: center;
+    .cred {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        h2 {
+            margin-left: 1em;
+            margin-right: 1em;
+        }
+    }
+    table {
+        margin-left: auto;
+        margin-right: auto;
+
+        display: flex;
+        flex-flow: column;
+        width: 90%;
+        padding: 0.3em;
+        height: 75vh;
+        td,
+        th {
+            height: 40px;
+            width: 100%;
+            border: 1px solid grey;
+            text-align: center;
+        }
+
+        th {
+            background-color: $cyan;
+            border: 1px solid grey;
+        }
+        thead {
+            width: 99.25%;
+            display: table;
+            table-layout: fixed;
+        }
+
+        tbody {
+            display: block;
+            overflow-y: scroll;
+
+            tr {
+                width: 100%;
+                display: table;
+                table-layout: fixed;
+            }
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: $cyan;
+        }
+        .size {
+            width: 15%;
+        }
+    }
+
+    .changedContent {
+        input {
+            width: 80%;
+            height: 2em;
+            margin-bottom: 1em;
+        }
+    }
+}

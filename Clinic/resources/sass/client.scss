@@ -4,6 +4,8 @@
 // Variables
 @import "variables";
 
+@import "modalAndTable";
+
 @import "Client/support";
 
 @import "Client/welcome";
@@ -16,6 +18,7 @@
 
 body {
     margin: 0px;
+    font-family: "Nunito", sans-serif;
 }
 .sidenav {
     font-family: "Nunito", sans-serif;

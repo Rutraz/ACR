@@ -29,7 +29,7 @@ class ApiController extends Controller
 
     // TODOS OS MEDICOS
     public function getAllMedic(){
-        return MedicResource::collection(Medic::paginate(10));
+        return MedicResource::collection(Medic::all());
     }
 
     public function getAllMedicOrdered(){
@@ -76,6 +76,19 @@ class ApiController extends Controller
     //APENAS UM CLIENTE COM ID=X
     public function getClientSingle($id){
         $client = Client::find($id);
+        if($client)
+            return new ClientResource($client);
+        else{
+
+            return response()->json([
+                'success' => false,
+                'message' => 'No client found'
+            ], 404);;
+        }
+    }
+
+    public function getClientSingleUser($id){
+        $client = Client::where('user_id',$id)->first();
         if($client)
             return new ClientResource($client);
         else{

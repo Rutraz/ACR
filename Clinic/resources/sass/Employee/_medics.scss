@@ -1,6 +1,5 @@
 .medics {
-    font-family: "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
-        "Cantarell", "Open Sans", "Helvetica Neue", sans-serif;
+    font-family: "Nunito", sans-serif;
     font-size: 1em;
     .topnav {
         border: 1px solid gray;
@@ -15,6 +14,26 @@
         .item {
             display: block;
             width: 25%;
+            margin-left: 1%;
+            label {
+                text-align: center;
+                font-weight: bold;
+                margin-bottom: 2%;
+            }
+            input {
+                padding: 10px 20px;
+                margin-top: 2%;
+                width: 80%;
+                font-size: 0.8em;
+                font-weight: bold;
+            }
+            input:hover {
+                border: 2px solid $cyan;
+            }
+        }
+        .item2 {
+            display: block;
+            width: 20%;
             margin-left: 1%;
             label {
                 text-align: center;
@@ -66,12 +85,12 @@
     table {
         margin-left: auto;
         margin-right: auto;
-        margin-top: 2%;
+
         display: flex;
         flex-flow: column;
         width: 90%;
         padding: 0.3em;
-        height: 78vh;
+        height: 75vh;
         td,
         th {
             height: 40px;
@@ -85,7 +104,7 @@
             border: 1px solid grey;
         }
         thead {
-            width: 98.5%;
+            width: 99.25%;
             display: table;
             table-layout: fixed;
         }
@@ -96,8 +115,6 @@
 
             tr {
                 width: 100%;
-            }
-            tr {
                 display: table;
                 table-layout: fixed;
             }
@@ -108,5 +125,24 @@
         tr:hover {
             background-color: $cyan;
         }
+        .size {
+            width: 15%;
+        }
+    }
+
+    .element {
+        font-weight: bold;
+    }
+    .data {
+        margin-left: 1%;
+        margin-right: auto;
+    }
+
+    .changedContent {
+        margin-bottom: 1em;
+        font-size: 1.5em;
+    }
+    .changedContent2 {
+        font-size: 1.5em;
     }
 }

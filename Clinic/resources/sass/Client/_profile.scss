@@ -3,7 +3,6 @@
     * {
         margin-bottom: 0;
         margin-top: 0;
-        padding: 0;
     }
 
     #fullpage {
@@ -155,7 +154,7 @@
                         border: 1px solid grey;
                     }
                     thead {
-                        width: 98.5%;
+                        width: 99.25%;
                         display: table;
                         table-layout: fixed;
                     }
@@ -224,7 +223,7 @@
                         border: 1px solid grey;
                     }
                     thead {
-                        width: 98.5%;
+                        width: 99.25%;
                         display: table;
                         table-layout: fixed;
                     }
@@ -249,67 +248,6 @@
                     }
                 }
             }
-        }
-
-        .modal {
-            display: none; /* Hidden by default */
-            position: fixed; /* Stay in place */
-            z-index: 1; /* Sit on top */
-            padding-top: 100px; /* Location of the box */
-            left: 0;
-            top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            overflow: auto; /* Enable scroll if needed */
-            background-color: rgb(0, 0, 0); /* Fallback color */
-            background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-        }
-
-        /* Modal Content */
-        .modal-content {
-            text-align: center;
-            background-color: #fefefe;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 50%;
-        }
-
-        /* The Close Button */
-        .close {
-            color: #aaaaaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: #000;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        .show {
-            display: block;
-        }
-        .notShow {
-            display: none;
-        }
-
-        .modal-header {
-            padding: 2px 16px;
-            background-color: #5cb85c;
-            color: white;
-        }
-
-        .modal-body {
-            padding: 2px 16px;
-        }
-
-        .modal-footer {
-            padding: 2px 16px;
-            background-color: #5cb85c;
-            color: white;
         }
     }
 }

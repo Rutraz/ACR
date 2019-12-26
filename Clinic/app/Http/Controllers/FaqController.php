@@ -16,7 +16,26 @@ class FaqController extends Controller
     }
 
     public function getAllFaq(){
-        return FaqResource::collection(Faq::paginate(5));
+        return FaqResource::collection(Faq::all());
+    }
+    public function eraseFaq($id){
+       
+        $faq = Faq::find($id);    
+        $faq->delete();    
+        
+        if($faq){
+            return response()->json([
+                'success' => true,
+                'message' =>   "Eliminação com sucesso",
+            ], 201);
+        }
+        else{
+            return response()->json([
+                'success' => false,
+                'message' =>  "Eliminação com insucesso"
+            ], 201);
+        }
+        
     }
 
     //INSERIR UM NOVO FAQ
@@ -41,7 +60,11 @@ class FaqController extends Controller
             $faqs->save();
 
             if($faqs)
-                return new FaqResource($faqs);
+            return response()->json([
+                'success' => true,
+                'data' =>  new FaqResource($faqs),
+            ], 201);
+               
             else{
                 return response()->json([
                     'success' => false,

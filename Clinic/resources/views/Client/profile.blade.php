@@ -6,6 +6,36 @@
 <script src="{{ asset('js/jquery.fullpage.js')}}"></script>
 
 <div class="profile">
+
+    <div id="modalComent" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="changedContent">
+                <input type="hidden" name="_token" id="token" value="{{csrf_token()}}">
+                <h1> Comentar consulta </h1>
+                <textarea id="commentary" rows='8' style='width:80%; margin-top:0.5em'></textarea>
+                <div id="error"></div>
+                <button id="sendComment">Enviar </button>
+                <br>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="modalRating" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="changedContent">
+                <h1> Rating </h1>
+                <input type="number" id="rating" min="1" max="5">
+                <div id="error2"></div>
+                <button id="sendRating">Enviar </button>
+                <br>
+
+            </div>
+        </div>
+    </div>
+
     <div id="fullpage">
         <section>
             <div class="client-info">
@@ -39,34 +69,7 @@
         </section>
 
         <section id="test">
-            <div id="modalComent" class="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <div class="changedContent">
-                        <input type="hidden" name="_token" id="token" value="{{csrf_token()}}">
-                        <h1> Comentar consulta </h1>
-                        <textarea id="commentary" rows='8' style='width:80%; margin-top:0.5em'></textarea>
-                        <div id="error"></div>
-                        <button id="sendComment">Enviar </button>
-                        <br>
 
-                    </div>
-                </div>
-            </div>
-
-            <div id="modalRating" class="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <div class="changedContent">
-                        <h1> Rating </h1>
-                        <input type="number" id="rating" min="1" max="5">
-                        <div id="error2"></div>
-                        <button id="sendRating">Enviar </button>
-                        <br>
-
-                    </div>
-                </div>
-            </div>
 
             <div class="client-appointmments">
                 <div class="appointmments-name">

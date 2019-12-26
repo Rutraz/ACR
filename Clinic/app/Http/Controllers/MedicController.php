@@ -87,7 +87,7 @@ class MedicController extends Controller
         }
     }
      
-    public function clientSearch(Request $request){
+    public function medicSearch(Request $request){
         
         $user = Auth::user();
         if($user){

@@ -7,6 +7,8 @@ use App\Client;
 use App\Employee;
 use App\Analysis;
 use Validator;
+use App\Http\Resources\AnalysisEmployeeResource;
+
 
 class AnalysisController extends Controller
 {
@@ -41,7 +43,8 @@ class AnalysisController extends Controller
             $id = $user->id;
             $emplo = Employee::where('user_id',$id)->first();
             if($emplo){
-                $analysis = Analysis::Select('*')->latest('date')->get();
+                $analysis = AnalysisEmployeeResource::collection(Analysis::Select('*')->latest('date')->get());
+              
                 return view('Employee.analysis',compact('user','emplo','analysis'));
             }
             else{

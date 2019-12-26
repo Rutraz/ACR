@@ -1,13 +1,82 @@
 @extends('layouts.employee')
 
 @section('content')
-<div>
-    
-    <h1> Clientes page</h1>
+<script src="{{ asset('js/searchClient.js')}}" defer></script>
+<div class="medics">
 
-    <h1>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem, ea omnis esse dolorum quisquam numquam quae accusamus quia repellat odit! Sed beatae rerum quibusdam vitae minus voluptates dignissimos illum numquam!</h1>
-    <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus, repellat sunt facilis magnam quos, ab cupiditate aliquid quod odio exercitationem quibusdam minima nostrum vel nihil, accusamus recusandae fugit. Placeat, quisquam.</h1>
-    <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet pariatur quaerat accusamus praesentium sed, itaque alias quia magnam? Maxime quaerat possimus dolorem fugit nobis numquam repellat repudiandae tempora magnam illum.</h1>
+    <div class="topnav">
+
+
+        <div class="item2">
+            <label for="medico">Nome </label>
+            <input id="cliente" list="clientes" name="cliente" placeholder="Cliente">
+            <datalist id="clientes">
+            </datalist>
+        </div>
+
+
+        <div class="item2">
+            <label for="medico">Cartao de Cidadão</label>
+            <input id="cc" list="ccs" placeholder="cartao de cidadao" name="cc">
+            <datalist id="ccs">
+            </datalist>
+        </div>
+        <div class="item2">
+            <label for="medico">Telemovel </label>
+            <input id="telemovel" list="telemovels" name="telemovel" placeholder="Telemovel">
+            <datalist id="telemovels">
+            </datalist>
+        </div>
+
+        <div class="item2 special">
+            <label for="order">Ordenar por</label>
+            <select id="order" name="order">
+                <optgroup label="Nome">
+                    <option value="1">Nome A-Z</option>
+                    <option value="2">Nome Z-A</option>
+                </optgroup>
+                <optgroup label="Cartao de Cidadao">
+                    <option value="3">Cc &#8600;</option>
+                    <option value="4">Cc &#8599;</option>
+                </optgroup>
+                <optgroup label="Data de Nascimento">
+                    <option value="5">Data &#8600;</option>
+                    <option value="6">Data &#8599;</option>
+                </optgroup>
+            </select>
+        </div>
+
+
+        <button id="searchBtn" class="buttonItem" type=button>&#9773;</button>
+
+
+    </div>
+
+    <div id="modalComent" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="changedContent">
+            </div>
+            <hr>
+            <div class="changedContent2">
+            </div>
+        </div>
+    </div>
+
+    <table id="myID">
+        <thead>
+            <tr>
+                <th> Nome </th>
+                <th> Cartao de Cidadão </th>
+                <th> Data de Nascimento </th>
+                <th> ADSE </th>
+            </tr>
+        </thead>
+
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
 
 </div>
 @endsection

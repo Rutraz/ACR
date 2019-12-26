@@ -3,10 +3,14 @@
 
 // Variables
 @import "variables";
+@import "modalAndTable";
 @import "Employee/medics";
+@import "Employee/appointment";
+@import "Employee/welcome";
 
 body {
     margin: 0px;
+    font-family: "Nunito", sans-serif;
 }
 
 .sidenav {

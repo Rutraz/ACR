@@ -8,6 +8,8 @@ use App\User;
 use App\Client;
 use App\Analysis;
 use App\Appointment;
+use App\Employee;
+
 use Validator;
 use DB;
 
@@ -41,8 +43,28 @@ class ClientController extends Controller
     {
         $user = Auth::user();
         if($user){
-            $allusers = Client::all();
-            return view('Employee.client',compact('user','allusers'));
+            return view('Employee.client',compact('user'));
+        }
+        else{
+            return redirect('/');
+        }
+       
+    }
+
+    public function getAllCliApi(){
+        $user = Auth::user();
+        if($user){
+            $clients = ClientResource::collection(Client::leftJoin('users', 'users.id','=','clients.user_id')->orderBy('name', 'asc')
+            ->get());
+            if($clients){
+                return $clients;
+            }
+            else{
+                return response()->json([
+                    'success' => false,
+                    'message' => 'No clients found'
+                ], 404);;
+            }
         }
         else{
             return redirect('/');
@@ -271,5 +293,134 @@ class ClientController extends Controller
             else
                 return redirect('/');
     }
-    
+ 
+    public function clientSearch(Request $request){
+        
+        $user = Auth::user();
+        if($user){
+            $id = $user->id;
+            $emplo = Employee::where('user_id',$id)->first();
+                if($emplo){
+                    
+                    $cli = $request->cli;
+                    $cc = $request->cc;
+                    $cell = $request->cell;
+                    $order = "";
+                    $type = "";
+                    if($request->order ==1){
+                        $order = "name";
+                        $type = "asc";
+                    }
+                    elseif($request->order ==2)
+                    {
+                        $order = "name";
+                        $type = "desc";
+                    }
+                    elseif($request->order ==3){
+                        $order = "CC";
+                        $type = "asc";
+                    }
+                    elseif($request->order == 4){
+                        $order = "CC";
+                        $type = "desc";
+                    }
+                    elseif($request->order == 5){
+                        $order = "idade";
+                        $type = "asc";
+                    }
+                    else{
+                        $order = "idade";
+                        $type = "desc";
+                    }
+                    if(!empty($cli)){
+                        if($order ==="idade"){
+                            if($type == "desc"){
+                                $client = ClientResource::collection(Client::leftJoin('users', 'users.id','=','clients.user_id')
+                                ->where("users.name",$cli)
+                                ->oldest('idade')
+                                ->orderBy($order, $type)
+                                ->get());
+                            }
+                            else{
+                                $client = ClientResource::collection(Client::leftJoin('users', 'users.id','=','clients.user_id')
+                                ->where("users.name",$cli)
+                                ->latest('idade')
+                                ->orderBy($order, $type)
+                                ->get());
+                            }
+                        }
+                        else{
+                            $client = ClientResource::collection(Client::leftJoin('users', 'users.id','=','clients.user_id')
+                            ->where("users.name",$cli)
+                            ->orderBy($order, $type)
+                            ->get());
+                        }                       
+                        if($client)
+                            return $client;
+                        else{
+                            return response()->json([
+                                'success' => false,
+                                'message' => 'Cliente não encontrado'
+                            ], 404);;
+                        }
+                    }
+                    if(!empty($cc)){
+                        $client = ClientResource::collection(Client::leftJoin('users', 'users.id','=','clients.user_id')
+                        ->where("clients.CC",$cc)
+                        ->orderBy($order, $type)
+                        ->get());
+                        if($client)
+                            return $client;
+                        else{
+                            return response()->json([
+                                'success' => false,
+                                'message' => 'Cliente não encontrado'
+                            ], 404);;
+                        }
+                    }
+                    if(!empty($cell)){
+                        $client = ClientResource::collection(Client::leftJoin('users', 'users.id','=','clients.user_id')
+                        ->where("users.cellphone",$cell)
+                        ->orderBy($order, $type)
+                        ->get());
+                        if($client)
+                            return $client;
+                        else{
+                            return response()->json([
+                                'success' => false,
+                                'message' => 'Cliente não encontrado'
+                            ], 404);;
+                        }
+                    }
+                    else{
+                        if($order ==="idade"){
+                            if($type == "desc"){
+                                $client = ClientResource::collection(Client::leftJoin('users', 'users.id','=','clients.user_id')
+                                ->oldest('idade')
+                                ->get());
+                            }
+                            else{
+                                $client = ClientResource::collection(Client::leftJoin('users', 'users.id','=','clients.user_id')
+                                ->latest('idade')
+                                ->get());
+                            }
+                        }
+                        else{
+                            $client = ClientResource::collection(Client::leftJoin('users', 'users.id','=','clients.user_id')
+                            ->orderBy($order, $type)
+                            ->get());
+                        }
+                        return $client;
+                    }
+        }
+        else{
+            return redirect('/');
+        }
+    }
+        else{
+            return redirect('/');
+        }
+    }
+
+
 }
