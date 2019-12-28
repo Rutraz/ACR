@@ -33,6 +33,7 @@
     </div>
 
     <div class="emailSend">
+
         <h2>Envie diretamente um email</h2>
         <form id="myForm" method="" action="">
             <input type="text" placeholder=" Nome" name="name" id="name" required>

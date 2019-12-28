@@ -95,9 +95,13 @@ Route::get('/api/employee/client','ClientController@getAllCliApi'); // ENVIA A I
 
 //--------CONSULTAS
 Route::get('/employee/appointment','AppointmentController@employee');
+Route::post('/employee/appointment/change','AppointmentController@employeeChangeStatus');
+Route::get('/employee/appointment/{id}','AppointmentController@singleAppointment');
+Route::get('/employee/appointment/medic/{id}','MedicController@EmployeeMedicAppoint');
 
 //--------ANALISES
 Route::get('/employee/analysis','AnalysisController@employeeAnalysis'); // ENVIA A INFORMAÇÃO DE TODAS AS ANÁLISES
+Route::post('/employee/analysis/change','AnalysisController@employeeChangeStatus');
 
 
 //--------MEDICOS

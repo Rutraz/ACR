@@ -86,6 +86,24 @@ class MedicController extends Controller
             return redirect('/');
         }
     }
+
+    public function EmployeeMedicAppoint($id){
+        $user = Auth::user();
+        if($user){
+            $medico = MedicResource::collection(Medic::with('specialty')
+            ->where('user_id',$id)
+            ->get());
+            $getMedic = $medico[0]; 
+            if($medico)
+                return view('Employee.appointmentMedic',compact('user','getMedic'));
+            else
+                return redirect('/employee');
+        }
+        else{
+            return redirect('/');
+        }
+    }
+     
      
     public function medicSearch(Request $request){
         

@@ -11,7 +11,11 @@ use App\Employee;
 use App\Client;
 use App\Appointment;
 use App\Specialty;
+use App\State;
 use App\Http\Resources\SpecialtyResource;
+use App\Http\Resources\AppointmentResource;
+use App\Http\Resources\StateResource;
+
 use Validator;
 
 class AppointmentController extends Controller
@@ -50,8 +54,47 @@ class AppointmentController extends Controller
                        $medicos = MedicResource::collection(Medic::leftJoin('users', 'medics.user_id', '=', 'users.id')
                        ->orderBy('name', 'asc')
                        ->get());
-                       //return $medicos;
-                       return view('Employee.appointment',compact('user','medicos'));
+                      
+                       $appointments = AppointmentResource::collection(Appointment::with('client')->with('medic')->with('state')
+                       ->latest('date')
+                       
+                       ->get());
+                      // return $appointments;
+                       return view('Employee.appointment',compact('user','medicos','appointments'));
+                }
+                else{
+                    return redirect('/');
+                }
+        }
+        else{
+            return redirect('/');
+        }
+    }
+
+    public function singleAppointment($id)
+    {
+        $user = Auth::user();
+        if($user){
+            $ids = $user->id;
+            $client = Employee::where('user_id',$ids)->first();
+                if($client){
+                                             
+                    $appointments = new AppointmentResource(Appointment::where('id',$id)->with('client')->with('medic')->with('state')
+                    ->first());
+                    
+                    if($appointments){
+
+                        return response()->json([
+                            'success' => true,
+                            'message' =>  $appointments,
+                        ], 201);
+                    }
+                    else{
+                        return response()->json([
+                            'success' => false,
+                            'message' => "Nao existe",
+                        ], 201);
+                    }
                 }
                 else{
                     return redirect('/');
@@ -148,6 +191,59 @@ class AppointmentController extends Controller
         }
     }
 
+    public function employeeChangeStatus(Request $request)
+    {
+        $user = Auth::user();
+        if($user){
+            $id = $user->id;
+            $emplo = Employee::where('user_id',$id)->first();
+            if($emplo){
+                $anal = Appointment::where('id',$request->id)->update(['state_id' => $request->state_id]);   
+                if($anal){
+                    $ids = $request->state_id;
+                    $an = State::find($ids);
+                   
+                    return response()->json([
+                        'success' => true,
+                        'message' =>  new StateResource($an),
+                    ], 201);
+                }
+                else{
+                    return response()->json([
+                        'success' => false,
+                        'message' => "Insert error",
+                    ], 201);
+                }
+            }
+            else{
+                return redirect('/');
+            }
+        }
+        else{
+            return redirect('/');
+        }
+    }
 
 
 }
+
+/*
+    {
+            id: 3,
+            date: "2019-11-30 16:15:06",
+            state: "Em espera",
+            comments: "Nao gosto dele",
+            rating: 3,
+            client: {
+            name: "Deusivaldo Jesus",
+            email: "client2@gmail.com"
+            },
+            medic: {
+            id: 1,
+            name: "Bonifacio Pedra",
+            specialty: "pernas",
+            rating: 5
+}
+},
+
+*/

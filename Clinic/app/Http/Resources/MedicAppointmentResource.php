@@ -21,6 +21,7 @@ class MedicAppointmentResource extends JsonResource
             'date' => $this->date,
             'state' => new StateResource($this->state),
             'comments' => $this->comments,
+            'rating' => $this->rating,
             'client' => new ClientResource($this->client),
         ];
     }

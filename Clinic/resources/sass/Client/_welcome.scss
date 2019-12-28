@@ -3,11 +3,17 @@
     display: block;
     font-family: "Nunito", sans-serif;
     font-size: 1em;
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%232ccccc' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%230a1caa' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%232ec5aa' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%230c3289' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%2331be88' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%230d4768' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%2333b867' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%230f5d48' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%2336b145' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%23107227' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%2338aa23' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23128806' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
 
     height: 100vh;
     position: relative;
     h1 {
-        margin-top: 5%;
+        margin-top: 1%;
         margin-bottom: 0px;
     }
     .title {
@@ -52,13 +58,14 @@
         width: 5%;
         position: absolute;
         left: 15px;
-        top: 20px;
+        top: 10px;
     }
 
     .text {
-        width: 70%;
+        width: 75%;
         margin: auto;
         margin-top: 1%;
+
         h3 {
             text-align: justify;
             > strong {

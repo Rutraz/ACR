@@ -97,7 +97,7 @@
 
 .medics .topnav {
   border: 1px solid gray;
-  background-color: #e9e9e9;
+  background-color: #6cb2eb;
   display: -webkit-box;
   display: flex;
   -webkit-box-orient: horizontal;
@@ -193,6 +193,7 @@
 .medics table {
   margin-left: auto;
   margin-right: auto;
+  margin-top: 2%;
   display: -webkit-box;
   display: flex;
   -webkit-box-orient: vertical;
@@ -257,18 +258,29 @@
 .medics .changedContent {
   margin-bottom: 1em;
   font-size: 1.5em;
+  text-align: left;
 }
 
 .medics .changedContent2 {
   font-size: 1.5em;
+  text-align: left;
 }
 
 .appointmentPage .same {
   height: 100vh;
 }
 
+.appointmentPage #top {
+  background-color: #2b9faa;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 2 1'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='1' gradientTransform='rotate(0,0.5,0.5)'%3E%3Cstop offset='0' stop-color='%232b9faa'/%3E%3Cstop offset='1' stop-color='%234fd'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23cf8' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23cf8' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='c' gradientUnits='userSpaceOnUse' x1='0' y1='0' x2='2' y2='2'%3E%3Cstop offset='0' stop-color='%23cf8' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23cf8' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='2' height='1'/%3E%3Cg fill-opacity='0.42'%3E%3Cpolygon fill='url(%23b)' points='0 1 0 0 2 0'/%3E%3Cpolygon fill='url(%23c)' points='2 1 2 0 0 0'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .appointmentPage #middle {
-  background-color: brown;
+  background-color: #f1f1f1;
 }
 
 .appointmentPage table {
@@ -282,7 +294,7 @@
           flex-flow: column;
   width: 90%;
   padding: 0.3em;
-  height: 75vh;
+  height: 80vh;
 }
 
 .appointmentPage table td,
@@ -313,6 +325,7 @@
   width: 100%;
   display: table;
   table-layout: fixed;
+  background-color: white;
 }
 
 .appointmentPage table tr:nth-child(even) {
@@ -324,11 +337,178 @@
 }
 
 .appointmentPage table .size {
+  width: 20%;
+}
+
+.appointmentPage table .mediumSize {
+  width: 50%;
+}
+
+.appointmentPage .header {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  position: relative;
+}
+
+.appointmentPage .header h1 {
+  margin-left: 2%;
+}
+
+.appointmentPage .header .float {
+  position: absolute;
+  top: 1.5em;
+  right: 2em;
+}
+
+.appointmentPage .header .float button {
+  box-shadow: inset 0px 1px 0px 0px #bbdaf7;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #79bbff), to(#378de5));
+  background: linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+  background-color: #79bbff;
+  border-radius: 3px;
+  border: 1px solid #84bbf3;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #528ecc;
+}
+
+.appointmentPage .header .float button:hover {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #378de5), to(#79bbff));
+  background: linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+  background-color: #378de5;
+}
+
+.appointmentPage .content {
+  text-align: center;
+}
+
+.appointmentPage .content .title {
+  margin-top: 3em;
+  font-size: 5em;
+  font-weight: lighter;
+  font-family: "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.appointmentPage .content .midleLinks {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  margin-top: 4em;
+}
+
+.appointmentPage .content .midleLinks .item {
+  text-align: center;
+  size: auto;
+  margin-right: 3%;
+  margin-left: 3%;
+}
+
+.appointmentPage .special {
+  width: 98%;
+}
+
+.appointmentPage .Content {
+  margin-bottom: 1em;
+  font-size: 1.5em;
+  text-align: left;
+}
+
+.appointmentPage .Content2 {
+  font-size: 1.5em;
+  text-align: left;
+}
+
+.appointmentPage .element {
+  font-weight: bold;
+}
+
+.appointmentPage .data {
+  margin-left: 1%;
+  margin-right: auto;
+}
+
+.appointmentPage .topnav {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-flow: row wrap;
+  overflow: hidden;
+  width: 100%;
+  height: 6rem;
+  font-size: 1.4em;
+  margin-left: 1%;
+}
+
+.appointmentPage .topnav .item {
+  display: block;
+  width: 25%;
+  margin-left: 1%;
+}
+
+.appointmentPage .topnav .item label {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 2%;
+}
+
+.appointmentPage .topnav .item input {
+  padding: 10px 20px;
+  margin-top: 2%;
+  width: 80%;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.appointmentPage .topnav .item input:hover {
+  border: 2px solid #6cb2eb;
+}
+
+.appointmentPage .topnav .special {
   width: 15%;
+}
+
+.appointmentPage .topnav .special select {
+  padding: 10px 20px;
+  margin-top: 2.6%;
+  width: 100%;
+  font-size: 0.8em;
+}
+
+.appointmentPage .topnav .special select:hover {
+  border: 2px solid #6cb2eb;
+}
+
+.appointmentPage .topnav .buttonItem {
+  margin-top: 2.7%;
+  width: 10%;
+  height: 45%;
+  font-size: 1em;
+  margin-left: 2%;
+}
+
+.appointmentPage .topnav .show2 {
+  display: block;
+}
+
+.appointmentPage .specialTabel {
+  padding: 0.3em;
+  margin-top: 0px;
+  height: 72vh;
 }
 
 .welcomePage {
   text-align: center;
+  background-color: #ffffff;
 }
 
 .welcomePage .cred {

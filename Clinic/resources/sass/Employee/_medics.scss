@@ -3,7 +3,7 @@
     font-size: 1em;
     .topnav {
         border: 1px solid gray;
-        background-color: #e9e9e9;
+        background-color: $cyan;
         display: flex;
         flex-flow: row wrap;
         overflow: hidden;
@@ -85,6 +85,7 @@
     table {
         margin-left: auto;
         margin-right: auto;
+        margin-top: 2%;
 
         display: flex;
         flex-flow: column;
@@ -141,8 +142,10 @@
     .changedContent {
         margin-bottom: 1em;
         font-size: 1.5em;
+        text-align: left;
     }
     .changedContent2 {
         font-size: 1.5em;
+        text-align: left;
     }
 }
