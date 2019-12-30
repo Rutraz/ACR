@@ -354,12 +354,7 @@
 
 .appointment .topnav {
   border: 1px solid gray;
-  background-color: #ffffff;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg stroke='%23fffefc' stroke-width='0' stroke-opacity='0' %3E%3Ccircle fill='%23ffffff' cx='0' cy='0' r='1800'/%3E%3Ccircle fill='%23f7f7fd' cx='0' cy='0' r='1700'/%3E%3Ccircle fill='%23eff0fb' cx='0' cy='0' r='1600'/%3E%3Ccircle fill='%23e7e8f9' cx='0' cy='0' r='1500'/%3E%3Ccircle fill='%23dfe1f7' cx='0' cy='0' r='1400'/%3E%3Ccircle fill='%23d7d9f4' cx='0' cy='0' r='1300'/%3E%3Ccircle fill='%23cfd2f2' cx='0' cy='0' r='1200'/%3E%3Ccircle fill='%23c7cbf0' cx='0' cy='0' r='1100'/%3E%3Ccircle fill='%23bfc4ee' cx='0' cy='0' r='1000'/%3E%3Ccircle fill='%23b7bcec' cx='0' cy='0' r='900'/%3E%3Ccircle fill='%23afb5e9' cx='0' cy='0' r='800'/%3E%3Ccircle fill='%23a6aee7' cx='0' cy='0' r='700'/%3E%3Ccircle fill='%239ea7e5' cx='0' cy='0' r='600'/%3E%3Ccircle fill='%2395a0e2' cx='0' cy='0' r='500'/%3E%3Ccircle fill='%238c99e0' cx='0' cy='0' r='400'/%3E%3Ccircle fill='%238392de' cx='0' cy='0' r='300'/%3E%3Ccircle fill='%237a8cdb' cx='0' cy='0' r='200'/%3E%3Ccircle fill='%237085d9' cx='0' cy='0' r='100'/%3E%3C/g%3E%3C/svg%3E");
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: #6c7ae0;
   display: -webkit-box;
   display: flex;
   -webkit-box-orient: horizontal;
@@ -424,8 +419,6 @@
 
 .appointment .size {
   width: 30%;
-  border: 1px solid grey;
-  text-align: center;
 }
 
 .appointment table {
@@ -444,26 +437,33 @@
 
 .appointment table td,
 .appointment table th {
-  height: 40px;
+  height: 50px;
   width: 100%;
-  border: 1px solid grey;
-  text-align: center;
-}
-
-.appointment table th {
-  background-color: #6cb2eb;
-  border: 1px solid grey;
 }
 
 .appointment table thead {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: white;
+  font-size: 1.1em;
+  text-align: center;
+  border-radius: 5px 5px 0px 0px;
   width: 99.25%;
   display: table;
   table-layout: fixed;
+  z-index: 50px;
+  background-color: #6c7ae0;
+  box-shadow: 6px -7px 20px 5px #d4d4d4;
 }
 
 .appointment table tbody {
+  font-size: 1em;
+  border-radius: 0px 0px 5px 5px;
+  text-align: center;
   display: block;
   overflow-y: scroll;
+  background-color: white;
+  box-shadow: 6px 15px 20px 5px #d4d4d4;
 }
 
 .appointment table tbody tr {
@@ -475,12 +475,18 @@
   table-layout: fixed;
 }
 
-.appointment table tr:nth-child(even) {
+.appointment table tbody tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-.appointment table tr:hover {
-  background-color: #6cb2eb;
+.appointment table tbody tr:hover {
+  background-color: #ddd;
+}
+
+.appointment table tbody tr:active {
+  background-color: #4253d7;
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
 }
 
 .profile {
@@ -502,7 +508,7 @@
 }
 
 .profile #fullpage section:nth-of-type(2n) {
-  background-color: lightgray;
+  background-color: #6cb2eb;
 }
 
 .profile #fullpage .client-info {
@@ -599,14 +605,14 @@
 }
 
 .profile #fullpage .client-appointmments .appointmments-name > h1 {
-  color: #333333;
+  color: #1d1d1d;
   font-weight: 600;
   font-size: 50px;
 }
 
 .profile #fullpage .client-appointmments .appointmments-name hr {
   margin-top: 2%;
-  border: 2px solid #6cb2eb;
+  border: 2px solid grey;
 }
 
 .profile #fullpage .client-appointmments .appointmments-name p {
@@ -626,32 +632,37 @@
           flex-flow: column;
   height: 70vh;
   width: 100%;
-  border: 1px solid lightgrey;
-  background-color: lightgray;
 }
 
 .profile #fullpage .client-appointmments .appointmments-table table td,
 .profile #fullpage .client-appointmments .appointmments-table table th {
-  height: 40px;
+  height: 50px;
   width: 100%;
-  border: 1px solid grey;
-  text-align: center;
-}
-
-.profile #fullpage .client-appointmments .appointmments-table table th {
-  background-color: #6cb2eb;
-  border: 1px solid grey;
 }
 
 .profile #fullpage .client-appointmments .appointmments-table table thead {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: white;
+  font-size: 1.1em;
+  text-align: center;
+  border-radius: 5px 5px 0px 0px;
   width: 99.25%;
   display: table;
   table-layout: fixed;
+  z-index: 50px;
+  background-color: #6c7ae0;
+  box-shadow: 6px 15px 20px 5px #a9d2f2;
 }
 
 .profile #fullpage .client-appointmments .appointmments-table table tbody {
+  font-size: 1em;
+  border-radius: 0px 0px 5px 5px;
+  text-align: center;
   display: block;
   overflow-y: scroll;
+  background-color: white;
+  box-shadow: 6px 15px 20px 5px #a9d2f2;
 }
 
 .profile #fullpage .client-appointmments .appointmments-table table tbody tr {
@@ -663,12 +674,12 @@
   table-layout: fixed;
 }
 
-.profile #fullpage .client-appointmments .appointmments-table table tr:nth-child(even) {
+.profile #fullpage .client-appointmments .appointmments-table table tbody tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-.profile #fullpage .client-appointmments .appointmments-table table tr:hover {
-  background-color: #6cb2eb;
+.profile #fullpage .client-appointmments .appointmments-table table tbody tr:hover {
+  background-color: #ddd;
 }
 
 .profile #fullpage .client-analysis {
@@ -708,26 +719,33 @@
 
 .profile #fullpage .client-analysis .anaylsis-table table td,
 .profile #fullpage .client-analysis .anaylsis-table table th {
-  height: 40px;
+  height: 50px;
   width: 100%;
-  border: 1px solid grey;
-  text-align: center;
-}
-
-.profile #fullpage .client-analysis .anaylsis-table table th {
-  background-color: #6cb2eb;
-  border: 1px solid grey;
 }
 
 .profile #fullpage .client-analysis .anaylsis-table table thead {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: white;
+  font-size: 1.1em;
+  text-align: center;
+  border-radius: 5px 5px 0px 0px;
   width: 99.25%;
   display: table;
   table-layout: fixed;
+  z-index: 50px;
+  background-color: #6c7ae0;
+  box-shadow: 6px -7px 20px 5px #d4d4d4;
 }
 
 .profile #fullpage .client-analysis .anaylsis-table table tbody {
+  font-size: 1em;
+  border-radius: 0px 0px 5px 5px;
+  text-align: center;
   display: block;
   overflow-y: scroll;
+  background-color: white;
+  box-shadow: 6px 15px 20px 5px #d4d4d4;
 }
 
 .profile #fullpage .client-analysis .anaylsis-table table tbody tr {
@@ -739,16 +757,24 @@
   table-layout: fixed;
 }
 
-.profile #fullpage .client-analysis .anaylsis-table table tr:nth-child(even) {
+.profile #fullpage .client-analysis .anaylsis-table table tbody tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-.profile #fullpage .client-analysis .anaylsis-table table tr:hover {
-  background-color: #6cb2eb;
+.profile #fullpage .client-analysis .anaylsis-table table tbody tr:hover {
+  background-color: #ddd;
 }
 
 .editProfile {
   font-family: "Nunito", sans-serif;
+  background-color: #000333;
+  background-color: #000cc7;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 400'%3E%3Cdefs%3E%3CradialGradient id='a' cx='396' cy='281' r='514' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%233421dd'/%3E%3Cstop offset='1' stop-color='%23000cc7'/%3E%3C/radialGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='400' y1='148' x2='400' y2='333'%3E%3Cstop offset='0' stop-color='%23FA3' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23FA3' stop-opacity='0.5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='800' height='400'/%3E%3Cg fill-opacity='0.4'%3E%3Ccircle fill='url(%23b)' cx='267.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='532.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='400' cy='30' r='300'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .editProfile h2 {
@@ -941,7 +967,37 @@
 .clientMedic .header .item1 {
   position: absolute;
   right: 5em;
-  top: 0.7em;
+  top: 0.2em;
+}
+
+.clientMedic .header .item1 button {
+  margin-top: 0.5em;
+  height: 2em;
+  box-shadow: inset 0px 1px 0px 0px #bbdaf7;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #79bbff), to(#378de5));
+  background: linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+  background-color: #79bbff;
+  border-radius: 3px;
+  border: 1px solid #84bbf3;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 1em;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #528ecc;
+}
+
+.clientMedic .header .item1 button:hover {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #378de5), to(#79bbff));
+  background: linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+  background-color: #378de5;
+}
+
+.clientMedic .header .item1 button:active {
+  position: relative;
+  top: 1px;
 }
 
 .clientMedic .header span {
@@ -967,26 +1023,33 @@
 
 .clientMedic .comments table td,
 .clientMedic .comments table th {
-  height: 40px;
+  height: 50px;
   width: 100%;
-  border: 1px solid grey;
-  text-align: center;
-}
-
-.clientMedic .comments table th {
-  background-color: #6cb2eb;
-  border: 1px solid grey;
 }
 
 .clientMedic .comments table thead {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: white;
+  font-size: 1.1em;
+  text-align: center;
+  border-radius: 5px 5px 0px 0px;
   width: 99.25%;
   display: table;
   table-layout: fixed;
+  z-index: 50px;
+  background-color: #6c7ae0;
+  box-shadow: 6px -7px 20px 5px #d4d4d4;
 }
 
 .clientMedic .comments table tbody {
+  font-size: 1em;
+  border-radius: 0px 0px 5px 5px;
+  text-align: center;
   display: block;
   overflow-y: scroll;
+  background-color: white;
+  box-shadow: 6px 15px 20px 5px #d4d4d4;
 }
 
 .clientMedic .comments table tbody tr {
@@ -998,12 +1061,12 @@
   table-layout: fixed;
 }
 
-.clientMedic .comments table tr:nth-child(even) {
+.clientMedic .comments table tbody tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-.clientMedic .comments table tr:hover {
-  background-color: #6cb2eb;
+.clientMedic .comments table tbody tr:hover {
+  background-color: #ddd;
 }
 
 .clientMedic #init {

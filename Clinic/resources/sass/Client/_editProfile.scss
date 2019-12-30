@@ -1,7 +1,15 @@
 .editProfile {
-    font-family: "Nunito", sans-serif;   
+    font-family: "Nunito", sans-serif;
+    background-color: #000333;
+    background-color: #000cc7;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 400'%3E%3Cdefs%3E%3CradialGradient id='a' cx='396' cy='281' r='514' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%233421dd'/%3E%3Cstop offset='1' stop-color='%23000cc7'/%3E%3C/radialGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='400' y1='148' x2='400' y2='333'%3E%3Cstop offset='0' stop-color='%23FA3' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23FA3' stop-opacity='0.5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='800' height='400'/%3E%3Cg fill-opacity='0.4'%3E%3Ccircle fill='url(%23b)' cx='267.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='532.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='400' cy='30' r='300'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
 
-     h2{
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    h2 {
         color: #333333;
         font-weight: 600;
         font-size: 30px;
@@ -10,138 +18,131 @@
         margin-top: 2%;
         border: 2px solid $cyan;
     }
-   
-    input{
-        border:none;
+
+    input {
+        border: none;
         background: transparent;
         border-bottom: 1px solid grey;
         font-size: 18px;
         width: 100%;
     }
-    label{
+    label {
         font-size: 20px;
         color: grey;
     }
 
-    textarea:focus, input:focus{
+    textarea:focus,
+    input:focus {
         outline: none;
     }
-.container{
-    display: flex;
-    justify-content: center;
-    padding: 1%;
+    .container {
+        display: flex;
+        justify-content: center;
+        padding: 1%;
 
-    .perfil{
-        padding: 3%;
-        padding-top: 0%;
-        display: block;
-        background-color: white;
-        border: 0.8px solid lightgray;
-        border-radius: 2%;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        width: 40%;
-        
-      
-    }
-    
-    .email{
-        padding: 3%;
-        padding-top: 0%;
-        display: block;
-        background-color: white;
-        border: 0.8px solid lightgray;
-        border-radius: 2%;
-        margin-left: 2%;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        width: 40%;
-       
-    }
+        .perfil {
+            padding: 3%;
+            padding-top: 0%;
+            display: block;
+            background-color: white;
+            border: 0.8px solid lightgray;
+            border-radius: 2%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            width: 40%;
+        }
 
-}
-
-.container2{
-    display: flex;
-    justify-content: center;
-    padding: 1%;
-    .password{
-        padding: 3%;
-        padding-top: 0%;
-        display: block;
-        background-color: white;
-        border: 0.8px solid lightgray;
-        border-radius: 2%;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        width: 40%;
-        
-    }
-    
-    .eliminar{
-        padding: 3%;
-        padding-top: 0%;
-        display: block;
-        background-color: white;
-        border: 0.8px solid lightgray;
-        border-radius: 2%;
-        margin-left: 2%;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        width: 40%;
+        .email {
+            padding: 3%;
+            padding-top: 0%;
+            display: block;
+            background-color: white;
+            border: 0.8px solid lightgray;
+            border-radius: 2%;
+            margin-left: 2%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            width: 40%;
+        }
     }
 
-}
+    .container2 {
+        display: flex;
+        justify-content: center;
+        padding: 1%;
+        .password {
+            padding: 3%;
+            padding-top: 0%;
+            display: block;
+            background-color: white;
+            border: 0.8px solid lightgray;
+            border-radius: 2%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            width: 40%;
+        }
 
-button {
-    box-shadow: inset 0px 1px 0px 0px #bbdaf7;
-    background: linear-gradient(
-        to bottom,
-        #79bbff 5%,
-        #378de5 100%
-    );
-    background-color: #79bbff;
-    border-radius: 6px;
-    border: 1px solid #84bbf3;
-    display: inline-block;
-    cursor: pointer;
-    color: #ffffff;
-    font-family: Arial;
-    font-size: 23px;
-    font-weight: bold;
-    padding: 11px 24px;
-    text-decoration: none;
-    text-shadow: 0px 1px 0px #528ecc;
-    
-}
-button:hover {
-    background: linear-gradient(
-        to bottom,
-        #378de5 5%,
-        #79bbff 100%
-    );
-    background-color: #378de5;
-}
-button:active {
-    position: relative;
-    top: 1px;
-}
+        .eliminar {
+            padding: 3%;
+            padding-top: 0%;
+            display: block;
+            background-color: white;
+            border: 0.8px solid lightgray;
+            border-radius: 2%;
+            margin-left: 2%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            width: 40%;
+        }
+    }
 
-#btnEditEmail{
-    margin-top: 60%;
-}
+    button {
+        box-shadow: inset 0px 1px 0px 0px #bbdaf7;
+        background: linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+        background-color: #79bbff;
+        border-radius: 6px;
+        border: 1px solid #84bbf3;
+        display: inline-block;
+        cursor: pointer;
+        color: #ffffff;
+        font-family: Arial;
+        font-size: 23px;
+        font-weight: bold;
+        padding: 11px 24px;
+        text-decoration: none;
+        text-shadow: 0px 1px 0px #528ecc;
+    }
+    button:hover {
+        background: linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+        background-color: #378de5;
+    }
+    button:active {
+        position: relative;
+        top: 1px;
+    }
 
-#btnDeleteProfile{
-    margin-top: 15%;
-}
+    #btnEditEmail {
+        margin-top: 60%;
+    }
 
-.perfil:hover{
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-.email:hover{
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-.password:hover{
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-.eliminar:hover{
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
+    #btnDeleteProfile {
+        margin-top: 15%;
+    }
 
+    .perfil:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5),
+            0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    .email:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5),
+            0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    .password:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5),
+            0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    .eliminar:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5),
+            0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
 }

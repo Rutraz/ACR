@@ -29,7 +29,7 @@
         </div>
 
         <div class="item item1">
-            <button id="goBottom">Ver historial</button> <br><br>
+            <button id="goBottom">Ver historial</button> <br>
             <button id="goTop">Marcar Consulta</button>
         </div>
     </div>
