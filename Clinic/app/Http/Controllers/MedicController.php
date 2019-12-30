@@ -37,13 +37,11 @@ class MedicController extends Controller
             $idC = $user->id;
             $client = Client::where('user_id',$idC)->first();
             if($client){                
-                $medicos = MedicResource::collection(Medic::with('specialty')
+                $getMedic =  new MedicResource(Medic::with('specialty')
                 ->where('user_id',$id)
-                ->get());
-
-                $getMedic = $medicos[0]; 
+                ->first());
                
-                if($medicos)
+                if($getMedic)
                   return view('Client.medic', compact('user', 'getMedic'));
                 else
                     return redirect('/client/appointment');
@@ -71,13 +69,20 @@ class MedicController extends Controller
     public function EmployeeMedic($id){
         $user = Auth::user();
         if($user){
-            $medicos = MedicResource::collection(Medic::with('specialty')
+            $medico = Medic::with('specialty')
             ->where('medics.id',$id)
-            ->get());
-           
-            $getMedic = $medicos[0]; 
+            ->first();
 
-            if($medicos)
+            if($medico){
+                $getMedic = new MedicResource($medico);
+            }
+            else{
+                $getMedic = new MedicResource(Medic::with('specialty')
+                    ->where('user_id',$id)
+                    ->first());
+            }
+           
+            if($getMedic)
                 return view('Employee.singleMedic',compact('user','getMedic'));
             else
                 return redirect('/employee/medic');
@@ -90,11 +95,11 @@ class MedicController extends Controller
     public function EmployeeMedicAppoint($id){
         $user = Auth::user();
         if($user){
-            $medico = MedicResource::collection(Medic::with('specialty')
+            $getMedic = new MedicResource(Medic::with('specialty')
             ->where('user_id',$id)
-            ->get());
-            $getMedic = $medico[0]; 
-            if($medico)
+            ->first());
+           
+            if($getMedic)
                 return view('Employee.appointmentMedic',compact('user','getMedic'));
             else
                 return redirect('/employee');

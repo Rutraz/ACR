@@ -24,8 +24,7 @@ class AnalysisController extends Controller
             $id = $user->id;
             $client = Client::where('user_id',$id)->first();;
             if($client){
-                $analysis = Analysis::Select('*')->latest('date')->get();
-                return view('Client.analysis',compact('user','client','analysis'));
+                return view('Client.analysis',compact('user','client'));
             }
             else{
                 return redirect('/');

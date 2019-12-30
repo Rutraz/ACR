@@ -54,6 +54,7 @@ function askSearch() {
         type: "GET",
         async: true,
         success: function(data, statuTxt, xhr) {
+            console.log(data);
             $("#tbody").empty();
             startFilling(data.data, adse);
         }
