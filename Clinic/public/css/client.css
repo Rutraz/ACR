@@ -896,6 +896,56 @@
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.clientMedic {
+  font-family: "Nunito", sans-serif;
+}
+
+.clientMedic .header {
+  padding: 1%;
+  padding-left: 4%;
+  display: -webkit-box;
+  display: flex;
+  background-color: lightgray;
+  border-bottom: solid 2px grey;
+}
+
+.clientMedic .header #img_medic_profile {
+  width: 10em;
+}
+
+.clientMedic .header .item {
+  margin-left: 5em;
+}
+
+.clientMedic .header .item1 {
+  margin-left: 20em;
+}
+
+.clientMedic .header span {
+  color: #4d4d4d;
+}
+
+.clientMedic .calendar {
+  padding: 2%;
+  padding-left: 20%;
+}
+
+.clientMedic .calendar h1 {
+  padding-right: 25%;
+  text-align: center;
+}
+
+.clientMedic .calendar table {
+  border: solid blue;
+}
+
+.clientMedic .calendar table th,
+.clientMedic .calendar table td {
+  width: 10%;
+  border: solid black;
+  text-align: center;
+}
+
 body {
   margin: 0px;
   font-family: "Nunito", sans-serif;

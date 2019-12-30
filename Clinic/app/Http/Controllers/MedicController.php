@@ -42,7 +42,7 @@ class MedicController extends Controller
                 ->get());
 
                 $getMedic = $medicos[0]; 
-               
+                
                 if($medicos)
                   return view('Client.medic', compact('user', 'getMedic'));
                 else
