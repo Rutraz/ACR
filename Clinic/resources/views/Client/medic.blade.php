@@ -1,21 +1,71 @@
 @extends('layouts.client')
 
 @section('content')
-<div>
+<div class="clientMedic">
+    <script src="{{asset('js/test.js')}}" defer ></script>
+    <div class="header" style="background-image:url('{{ asset('assets/Gest/test.jpg') }}')">
+        <div> <!-- Coluna -->
+            <img id="img_medic_profile" src="\assets\Both\meidc.png" alt=""> <!-- LINHA -->
+        </div>
+        <div > <!-- Coluna -->
+            <div class="item">
+                <h1> <span> Medico: </span>  {{$getMedic->user->name}} </h1> <!-- LINHA -->
+            </div>
+            <div class="item">
+                <h1> <span> Especialidade: </span>{{$getMedic->specialty->specialty}} </h1> <!-- LINHA -->
+            </div>
+        </div>
+        <div> <!-- Coluna -->
+            <div class="item1">
+                <h1> <span> Rating: </span>{{$getMedic->rating}} </h1> <!-- LINHA -->
+            </div>
+            <div class="item1">
+                <h1>  <span> Adse:</span>
+                    @if($getMedic->adse == 1)
+                    Sim
+                    @else
+                    Não
+                    @endif
+                </h1> <!-- LINHA -->
+            </div>
+        </div>
+    </div>
+    
+    <div class ="calendar">
+        <h1>Janeiro</h1>
+        <table id="test">
+            <tr>
+                <th></th>
+                <th>Segunda</th>
+                <th>Terça</th>
+                <th>Quarta</th>
+                <th>Quinta</th>
+                <th>Sexta</th>
+                <th>Sabado</th>
+                <th>Domingo</th>
+            </tr>
+            <tr>
+                <td>8am</td>
+            </tr>
+            <tr>
+                <td>9am</td>
+            </tr>
+            <tr>
+                <td>10am</td>
+            </tr>
+            <tr>
+                <td>11am</td>
+            </tr>
+           
+        </table>
+        
 
-    <h1> Single Medic page</h1>
+    </div>
 
-    {{$getMedic->id}}
+    <div class ="comments">
 
-    <h1>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem, ea omnis esse dolorum quisquam numquam
-        quae accusamus quia repellat odit! Sed beatae rerum quibusdam vitae minus voluptates dignissimos illum numquam!
-    </h1>
-    <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus, repellat sunt facilis magnam quos, ab
-        cupiditate aliquid quod odio exercitationem quibusdam minima nostrum vel nihil, accusamus recusandae fugit.
-        Placeat, quisquam.</h1>
-    <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet pariatur quaerat accusamus praesentium sed,
-        itaque alias quia magnam? Maxime quaerat possimus dolorem fugit nobis numquam repellat repudiandae tempora
-        magnam illum.</h1>
-
+    </div>
+   
+    
 </div>
 @endsection

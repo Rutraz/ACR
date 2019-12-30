@@ -1,0 +1,54 @@
+.clientMedic{
+    font-family: "Nunito", sans-serif;   
+    
+    //Css do header da pagina do medico
+    .header{
+        padding: 1%;
+        padding-left: 4%;
+        display: flex;
+        background-color: lightgray;
+        border-bottom: solid 2px grey;
+      
+        #img_medic_profile{
+            width: 10em;
+        }
+        h1{
+             
+        }
+        .item{
+           margin-left: 5em;  
+        } 
+        .item1{
+            margin-left: 20em;     
+         } 
+         span {
+            color:  #4d4d4d;
+           
+        }
+    }
+    
+    .calendar{
+        padding: 2%;
+        padding-left: 20%;
+        h1{
+            padding-right: 25%;
+            text-align: center;
+        }
+        table{
+            border:solid blue;
+            th,td{
+                width: 10%;
+                border:solid black;
+                text-align: center;
+            }
+        }
+      
+    }
+
+    .comments{
+        
+    }
+
+
+
+}
