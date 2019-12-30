@@ -4,8 +4,8 @@
 <script src="{{ asset('js/utils.js')}}" defer></script>
 <div class="welcome">
     <img id="stetho" class="rotate-vert-center" src="{{asset('assets/Gest/healthcare-logo.png')}}" />
-
-    <h1>Bem vindo ao</h1>
+    <br>
+    <span>Bem vindo ao</span>
     <h1 class="title text-focus-in"> HealthCare </h1>
 
     <div class="text">

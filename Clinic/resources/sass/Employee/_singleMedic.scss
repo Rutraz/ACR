@@ -1,5 +1,4 @@
-.clientMedic {
-    font-family: "Nunito", sans-serif;
+.singleMedicPage {
     overflow: hidden;
     height: 100vh;
     .heighClassMaster {
@@ -92,7 +91,11 @@
             }
         }
     }
+
     #init {
         background-color: chocolate;
+    }
+    .clickable:hover {
+        background-color: red;
     }
 }

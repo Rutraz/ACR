@@ -1,71 +1,111 @@
 @extends('layouts.client')
 
 @section('content')
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <div class="clientMedic">
-    <script src="{{asset('js/test.js')}}" defer ></script>
-    <div class="header" style="background-image:url('{{ asset('assets/Gest/test.jpg') }}')">
-        <div> <!-- Coluna -->
-            <img id="img_medic_profile" src="\assets\Both\meidc.png" alt=""> <!-- LINHA -->
+
+
+    <div class="header">
+
+        <!-- Coluna -->
+        <img id="img_medic_profile" src="\assets\stethoscope.svg" alt=""> <!-- LINHA -->
+        <!-- Coluna -->
+        <div class="item">
+            <h3> <span> Medico:</span> {{$getMedic->user->name}} </h3> <!-- LINHA -->
+
+            <h3> <span> Especialidade:</span> {{$getMedic->specialty->specialty}} </h3> <!-- LINHA -->
         </div>
-        <div > <!-- Coluna -->
-            <div class="item">
-                <h1> <span> Medico: </span>  {{$getMedic->user->name}} </h1> <!-- LINHA -->
-            </div>
-            <div class="item">
-                <h1> <span> Especialidade: </span>{{$getMedic->specialty->specialty}} </h1> <!-- LINHA -->
-            </div>
+        <!-- Coluna -->
+        <div class="item">
+            <h3> <span> Rating:</span> {{$getMedic->rating}} </h3> <!-- LINHA -->
+
+            <h3> <span> Adse:</span>
+                @if($getMedic->adse == 1)
+                Sim
+                @else
+                Não
+                @endif
+            </h3> <!-- LINHA -->
         </div>
-        <div> <!-- Coluna -->
-            <div class="item1">
-                <h1> <span> Rating: </span>{{$getMedic->rating}} </h1> <!-- LINHA -->
-            </div>
-            <div class="item1">
-                <h1>  <span> Adse:</span>
-                    @if($getMedic->adse == 1)
-                    Sim
-                    @else
-                    Não
+
+        <div class="item item1">
+            <button id="goBottom">Ver historial</button> <br><br>
+            <button id="goTop">Marcar Consulta</button>
+        </div>
+    </div>
+
+    <div class="heighClassMaster">
+
+        <div id="init" class="heighClass">
+            <br>
+            <span>CALENDARIOs</span>
+        </div>
+
+        <div id="end" class="comments heighClass">
+
+            <h2>Historial de consultas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th> Data </th>
+                        <th> Rating </th>
+                        <th> Comentários </th>
+                    </tr>
+                </thead>
+
+                <tbody id="tbody">
+                    @if ($appointments->isNotEmpty())
+                    @foreach ($appointments as $item)
+                    @if($item->state->id ==4)
+                    <tr>
+                        <td>{{$item->date}}</td>
+                        @if ($item->rating != 0)
+
+                        <td>{{$item->rating}}</td>
+                        @else
+                        <td>Não existe avaliação sobre esta consulta</td>
+                        @endif
+                        @if ($item->comments != "")
+                        <td>{{$item->comments}}</td>
+                        @else
+                        <td>Não existe comentários sobre esta consulta</td>
+                        @endif
+                    </tr>
                     @endif
-                </h1> <!-- LINHA -->
-            </div>
+                    @endforeach
+                    @else
+                    <tr>
+                        <td colspan="3"> Não tem historial disponivel sobre consultas </td>
+                    </tr>
+                    @endif
+                </tbody>
+            </table>
         </div>
     </div>
-    
-    <div class ="calendar">
-        <h1>Janeiro</h1>
-        <table id="test">
-            <tr>
-                <th></th>
-                <th>Segunda</th>
-                <th>Terça</th>
-                <th>Quarta</th>
-                <th>Quinta</th>
-                <th>Sexta</th>
-                <th>Sabado</th>
-                <th>Domingo</th>
-            </tr>
-            <tr>
-                <td>8am</td>
-            </tr>
-            <tr>
-                <td>9am</td>
-            </tr>
-            <tr>
-                <td>10am</td>
-            </tr>
-            <tr>
-                <td>11am</td>
-            </tr>
-           
-        </table>
-        
 
-    </div>
+    <script>
+        var bool = true;
+        $("#goBottom").click(function() {
+            if(bool){
 
-    <div class ="comments">
+                $('html, body .heighClassMaster').animate({
+                    scrollTop: $("#end").offset().top
+                }, 1000);
+                bool = false;
+            }
+        });
 
-    </div>
-   
-    
+        $("#goTop").click(function() {
+            if(!bool){
+
+                $('html, body .heighClassMaster').animate({
+                    scrollTop: $("#init").offset().top
+                }, 1000);
+
+                bool = true;
+            }
+        });
+    </script>
+
 </div>
 @endsection

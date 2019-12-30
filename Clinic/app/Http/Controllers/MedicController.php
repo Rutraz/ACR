@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Medic;
 use App\Client;
 use App\Specialty;
+use App\Appointment;
 
 
 use App\User;
@@ -15,6 +16,7 @@ use App\User;
 use Validator;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Resources\MedicResource;
+use App\Http\Resources\MedicAppointmentResource;
 
 class MedicController extends Controller
 {
@@ -40,9 +42,11 @@ class MedicController extends Controller
                 $getMedic =  new MedicResource(Medic::with('specialty')
                 ->where('user_id',$id)
                 ->first());
+                $medico = Medic::where('user_id',$id)->first();
+                $appointments = MedicAppointmentResource::collection(Appointment::where('medic_id', $medico->id)->latest('date')->get());
                
                 if($getMedic)
-                  return view('Client.medic', compact('user', 'getMedic'));
+                  return view('Client.medic', compact('user', 'getMedic','appointments'));
                 else
                     return redirect('/client/appointment');
             }
@@ -82,8 +86,10 @@ class MedicController extends Controller
                     ->first());
             }
            
+            $appointments = MedicAppointmentResource::collection(Appointment::where('medic_id', $getMedic->id)->latest('date')->get());
+
             if($getMedic)
-                return view('Employee.singleMedic',compact('user','getMedic'));
+                return view('Employee.singleMedic',compact('user','getMedic','appointments'));
             else
                 return redirect('/employee/medic');
         }

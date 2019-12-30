@@ -99,6 +99,8 @@ Route::post('/employee/appointment/change','AppointmentController@employeeChange
 Route::get('/employee/appointment/{id}','AppointmentController@singleAppointment');
 Route::get('/employee/appointment/medic/{id}','MedicController@EmployeeMedicAppoint');
 
+
+
 //--------ANALISES
 Route::get('/employee/analysis','AnalysisController@employeeAnalysis'); // ENVIA A INFORMAÇÃO DE TODAS AS ANÁLISES
 Route::post('/employee/analysis/change','AnalysisController@employeeChangeStatus');
@@ -107,7 +109,7 @@ Route::post('/employee/analysis/change','AnalysisController@employeeChangeStatus
 //--------MEDICOS
 Route::get('/employee/medic','MedicController@getAllMedic'); // ENVIA A INFORMAÇÃO DE TODOS OS MEDICOS
 Route::get('/employee/medic/{id}','MedicController@EmployeeMedic');
-
+Route::post('/employee/medic/comment','AppointmentController@EraseComment');
 
 //--------HORARIOS
 Route::get('/employee/schedule','MedicController@schedule'); // ENVIA A HORARIOS DOS MEDICOS

@@ -224,26 +224,37 @@ class AppointmentController extends Controller
         }
     }
 
+    public function EraseComment(Request $request){
+        $user = Auth::user();
+        if($user){
+            $ids = $user->id;
+            $client = Employee::where('user_id',$ids)->first();
+            if($client){
+                $comment = "Comentário eliminado";
+                $message = Appointment::where('id',$request->id)->update(['comments' => $comment]);   
+                if($message){
+
+                    return response()->json([
+                        'success' => true,
+                        'message' =>  $comment,
+                    ], 201);
+                }
+                else{
+                    return response()->json([
+                        'success' => false,
+                        'message' => "Update error",
+                    ], 201);
+                }
+                            
+            }
+            else{
+                return redirect('/');
+            }  
+        }
+        else{
+            return redirect('/');
+        }
+    }
+
 
 }
-
-/*
-    {
-            id: 3,
-            date: "2019-11-30 16:15:06",
-            state: "Em espera",
-            comments: "Nao gosto dele",
-            rating: 3,
-            client: {
-            name: "Deusivaldo Jesus",
-            email: "client2@gmail.com"
-            },
-            medic: {
-            id: 1,
-            name: "Bonifacio Pedra",
-            specialty: "pernas",
-            rating: 5
-}
-},
-
-*/
