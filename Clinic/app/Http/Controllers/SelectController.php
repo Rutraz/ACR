@@ -46,5 +46,6 @@ class SelectController extends Controller
             return redirect('/');
         }
     }
+    
    
 }

@@ -22,6 +22,7 @@ class MedicResource extends JsonResource
             'specialty' => $this->specialty,
             'rating' => $this->rating,
             'adse' => $this->adse,
+            'calendarid' => $this->calendarid
         ];
     }
 }

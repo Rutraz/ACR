@@ -206,7 +206,8 @@ class ApiController extends Controller
                 'password' => 'required|string|min:8',
                 'cellphone' => 'required|string|regex:/^[0-9]{9}$/|unique:users',
                 'adse' => 'nullable|string',
-                'specialty' => 'required|string' 
+                'specialty' => 'required|string',
+                'calendarid' =>  'required|string'
         ]);
     
         if ($validator->fails()) {
@@ -229,7 +230,8 @@ class ApiController extends Controller
                 'user_id' =>  $user->id,
                 'specialty_id' => $request->specialty,
                 'rating' => '0',
-                'adse' => $request->adse,   
+                'calendarid' =>  $request->calendarid,
+                'adse' => $request->adse,  
             ]);
 
             DB::commit();

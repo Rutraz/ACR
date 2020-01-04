@@ -32,6 +32,10 @@
                     <label for="name">{{ __(' Especialidade: ') }}</label>
                     <select name="specialty" id="especialidades" value=""> </select>
                 </div>
+                <div class="ajust-left">
+                    <label for="calendarId">{{ __(' ID do calendário: ') }}</label>
+                    <input type="text" name="calendarId"> <br>
+                </div>
             </div>
 
 

@@ -1,5 +1,5 @@
 .profile {
-    font-family: "Nunito", sans-serif;
+    font-family: $font-family-sans-serif;
     * {
         margin-bottom: 0;
         margin-top: 0;
@@ -12,7 +12,7 @@
             height: 100vh;
 
             &:nth-of-type(2n) {
-                background-color: $cyan;
+                background-color: #aad7f5;
             }
         }
 

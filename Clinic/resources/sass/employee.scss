@@ -11,11 +11,11 @@
 
 body {
     margin: 0px;
-    font-family: "Nunito", sans-serif;
+    font-family: $font-family-sans-serif;
 }
 
 .sidenav {
-    font-family: "Nunito", sans-serif;
+    font-family: $font-family-sans-serif;
     position: fixed;
     left: 0;
     top: 0;

@@ -277,8 +277,20 @@
   text-align: left;
 }
 
+.appointmentPage {
+  overflow-x: hidden;
+}
+
 .appointmentPage .same {
   height: 100vh;
+}
+
+.appointmentPage .specialClass {
+  height: 200%;
+}
+
+.appointmentPage .specialClass .fc-timeGrid-view tr {
+  height: 50px;
 }
 
 .appointmentPage #top {
@@ -290,11 +302,11 @@
   background-repeat: no-repeat;
 }
 
-.appointmentPage #middle {
+.appointmentPage #bottom {
   background-color: #f1f1f1;
 }
 
-.appointmentPage table {
+.appointmentPage .table {
   margin-left: auto;
   margin-right: auto;
   margin-top: 2%;
@@ -308,13 +320,13 @@
   height: 80vh;
 }
 
-.appointmentPage table td,
-.appointmentPage table th {
+.appointmentPage .table td,
+.appointmentPage .table th {
   height: 50px;
   width: 100%;
 }
 
-.appointmentPage table thead {
+.appointmentPage .table thead {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   color: white;
@@ -329,7 +341,7 @@
   box-shadow: 6px -7px 20px 5px #d4d4d4;
 }
 
-.appointmentPage table tbody {
+.appointmentPage .table tbody {
   font-size: 1em;
   border-radius: 0px 0px 5px 5px;
   text-align: center;
@@ -339,36 +351,36 @@
   box-shadow: 6px 15px 20px 5px #d4d4d4;
 }
 
-.appointmentPage table tbody tr {
+.appointmentPage .table tbody tr {
   width: 100%;
   display: table;
   table-layout: fixed;
   background-color: white;
 }
 
-.appointmentPage table tbody tr:nth-child(even) {
+.appointmentPage .table tbody tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-.appointmentPage table tbody tr:hover {
+.appointmentPage .table tbody tr:hover {
   background-color: #ddd;
 }
 
-.appointmentPage table tbody tr:active {
+.appointmentPage .table tbody tr:active {
   background-color: #4253d7;
   -webkit-transform: translateY(4px);
           transform: translateY(4px);
 }
 
-.appointmentPage table .size {
+.appointmentPage .table .size {
   width: 20%;
 }
 
-.appointmentPage table .mediumSize {
+.appointmentPage .table .mediumSize {
   width: 50%;
 }
 
-.appointmentPage table button {
+.appointmentPage .table button {
   width: 90%;
   height: 2.8em;
   box-shadow: inset 0px 1px 0px 0px #bbdaf7;
@@ -385,11 +397,11 @@
   text-shadow: 0px 1px 0px #528ecc;
 }
 
-.appointmentPage table button:hover {
+.appointmentPage .table button:hover {
   background-color: #378de5;
 }
 
-.appointmentPage table button:active {
+.appointmentPage .table button:active {
   position: relative;
   top: 1px;
 }
@@ -436,13 +448,29 @@
   background-color: #378de5;
 }
 
+.appointmentPage .header fieldset {
+  border: hidden;
+  width: 50%;
+  margin-left: 3%;
+  padding-top: 2%;
+  font-size: 1.2em;
+}
+
+.appointmentPage .header fieldset input {
+  margin-right: 3%;
+  height: 2em;
+  border: none;
+  border-radius: 4px;
+  border: 2px solid #3490dc;
+}
+
 .appointmentPage .content {
   text-align: center;
 }
 
 .appointmentPage .content .title {
-  margin-top: 3em;
-  font-size: 5em;
+  margin-top: 2em;
+  font-size: 6em;
   font-weight: lighter;
   font-family: "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", "Helvetica Neue", sans-serif;
 }
@@ -460,6 +488,33 @@
   size: auto;
   margin-right: 3%;
   margin-left: 3%;
+}
+
+.appointmentPage .content .midleLinks button {
+  display: inline-block;
+  padding: 14px 20px;
+  font-size: 1.4em;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #6c7ae0;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.appointmentPage .content .midleLinks button:hover {
+  background-color: #37474f;
+  color: white;
+}
+
+.appointmentPage .content .midleLinks button:active {
+  background-color: #263238;
+  box-shadow: 0 1px #666;
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
 }
 
 .appointmentPage .special {
@@ -562,33 +617,16 @@
 
 .appointmentMedic .header {
   width: 100%;
-  padding-left: 2em;
+  padding-left: 0.5em;
   display: -webkit-box;
   display: flex;
-  background-color: #3cffe8;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%233cffe8'%3E%3Ccircle cx='769' cy='229' r='5'/%3E%3Ccircle cx='539' cy='269' r='5'/%3E%3Ccircle cx='603' cy='493' r='5'/%3E%3Ccircle cx='731' cy='737' r='5'/%3E%3Ccircle cx='520' cy='660' r='5'/%3E%3Ccircle cx='309' cy='538' r='5'/%3E%3Ccircle cx='295' cy='764' r='5'/%3E%3Ccircle cx='40' cy='599' r='5'/%3E%3Ccircle cx='102' cy='382' r='5'/%3E%3Ccircle cx='127' cy='80' r='5'/%3E%3Ccircle cx='370' cy='105' r='5'/%3E%3Ccircle cx='578' cy='42' r='5'/%3E%3Ccircle cx='237' cy='261' r='5'/%3E%3Ccircle cx='390' cy='382' r='5'/%3E%3C/g%3E%3C/svg%3E");
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: top;
-  background-repeat: no-repeat;
+  background-color: #3490dc;
   border-bottom: 1px solid black;
-  height: 6em;
+  height: 4em;
 }
 
-.appointmentMedic .header #img_medic_profile {
-  width: 5em;
-}
-
-.appointmentMedic .header .item {
-  margin-left: 7em;
-}
-
-.appointmentMedic .header .item h3 {
-  margin-top: 0.2em;
-}
-
-.appointmentMedic .header .item1 {
-  margin-left: 10em;
+.appointmentMedic .header h3 {
+  margin-right: 1%;
 }
 
 .appointmentMedic .header span {
@@ -598,9 +636,37 @@
   font-size: 1.2em;
 }
 
+.appointmentMedic .header input {
+  height: 2em;
+  border: none;
+  border-radius: 4px;
+  border: 2px solid #3490dc;
+  margin-top: 1.2em;
+}
+
+.appointmentMedic .header label {
+  font-size: 1em;
+  margin-top: 1.5em;
+  margin-left: 1%;
+}
+
+.appointmentMedic .fc-timeGrid-view tr {
+  height: 70px;
+}
+
+.fc-right button {
+  margin-right: 0.5em;
+}
+
 .welcomePage {
   text-align: center;
   background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg %3E%3Ccircle fill='%23ffffff' cx='50' cy='0' r='50'/%3E%3Cg fill='%23faf8ff' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%23f4f1ff' cx='50' cy='100' r='50'/%3E%3Cg fill='%23efeaff' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%23e9e3ff' cx='50' cy='200' r='50'/%3E%3Cg fill='%23e3dcff' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ded6ff' cx='50' cy='300' r='50'/%3E%3Cg fill='%23d8cfff' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%23d2c8ff' cx='50' cy='400' r='50'/%3E%3Cg fill='%23ccc1ff' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%23c6bbff' cx='50' cy='500' r='50'/%3E%3Cg fill='%23c0b4ff' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%23b9adff' cx='50' cy='600' r='50'/%3E%3Cg fill='%23b3a7ff' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%23aca0ff' cx='50' cy='700' r='50'/%3E%3Cg fill='%23a59aff' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%239e93ff' cx='50' cy='800' r='50'/%3E%3Cg fill='%23978dff' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%238f87ff' cx='50' cy='900' r='50'/%3E%3Cg fill='%238780ff' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%237f7aff' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 
 .welcomePage .cred {
@@ -734,8 +800,8 @@
   position: relative;
   display: -webkit-box;
   display: flex;
-  background-color: #3cffe8;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%233cffe8'%3E%3Ccircle cx='769' cy='229' r='5'/%3E%3Ccircle cx='539' cy='269' r='5'/%3E%3Ccircle cx='603' cy='493' r='5'/%3E%3Ccircle cx='731' cy='737' r='5'/%3E%3Ccircle cx='520' cy='660' r='5'/%3E%3Ccircle cx='309' cy='538' r='5'/%3E%3Ccircle cx='295' cy='764' r='5'/%3E%3Ccircle cx='40' cy='599' r='5'/%3E%3Ccircle cx='102' cy='382' r='5'/%3E%3Ccircle cx='127' cy='80' r='5'/%3E%3Ccircle cx='370' cy='105' r='5'/%3E%3Ccircle cx='578' cy='42' r='5'/%3E%3Ccircle cx='237' cy='261' r='5'/%3E%3Ccircle cx='390' cy='382' r='5'/%3E%3C/g%3E%3C/svg%3E");
+  background-color: #0f2dff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 400'%3E%3Cdefs%3E%3CradialGradient id='a' cx='396' cy='281' r='514' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%2367ddc9'/%3E%3Cstop offset='1' stop-color='%230f2dff'/%3E%3C/radialGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='400' y1='148' x2='400' y2='333'%3E%3Cstop offset='0' stop-color='%232bfff4' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%232bfff4' stop-opacity='0.5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='800' height='400'/%3E%3Cg fill-opacity='0.5'%3E%3Ccircle fill='url(%23b)' cx='267.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='532.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='400' cy='30' r='300'/%3E%3C/g%3E%3C/svg%3E");
   background-attachment: fixed;
   background-size: cover;
   background-position: top;
@@ -759,7 +825,32 @@
 .singleMedicPage .header .item1 {
   position: absolute;
   right: 5em;
-  top: 0.7em;
+  top: 0.2em;
+}
+
+.singleMedicPage .header .item1 button {
+  margin-top: 0.5em;
+  height: 2em;
+  box-shadow: inset 0px 1px 0px 0px #bbdaf7;
+  background-color: #37474f;
+  border-radius: 3px;
+  border: 1px solid #444444;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 1em;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.singleMedicPage .header .item1 button:hover {
+  background-color: #0f2dff;
+}
+
+.singleMedicPage .header .item1 button:active {
+  position: relative;
+  top: 1px;
 }
 
 .singleMedicPage .header span {
@@ -831,12 +922,16 @@
   background-color: #ddd;
 }
 
-.singleMedicPage #init {
-  background-color: chocolate;
-}
-
 .singleMedicPage .clickable:hover {
   background-color: red;
+}
+
+.fc-timeGrid-view tr {
+  height: 60px;
+}
+
+.fc-right button {
+  margin-right: 0.5em;
 }
 
 body {

@@ -32,7 +32,26 @@ class MedicController extends Controller
 
     }
 
+    public function MedicCalendar($id){
+        $user = Auth::user();
+        if($user){
+            $idC = $user->id;
+            
+            $medico = Medic::where('user_id',$id)->first();
+            $appointments = MedicAppointmentResource::collection(Appointment::where('medic_id', $medico->id)->latest('date')->get());
+            
+            return response()->json([
+                'success' => true,
+                'appointments' => $appointments
+            ], 201);     
+            
+        }else{
+                return redirect('/');
+            }
+    }
     
+    
+
     public function clientMedic($id){
         $user = Auth::user();
         if($user){
@@ -88,6 +107,7 @@ class MedicController extends Controller
            
             $appointments = MedicAppointmentResource::collection(Appointment::where('medic_id', $getMedic->id)->latest('date')->get());
 
+            
             if($getMedic)
                 return view('Employee.singleMedic',compact('user','getMedic','appointments'));
             else

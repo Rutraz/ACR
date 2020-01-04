@@ -72,7 +72,7 @@
             <button id="searchBtn" class="buttonItem" type=button>&#9773;</button>
         </div>
 
-        <table id="myID" class="specialTabel">
+        <table id="myID" class="table specialTabel ">
             <thead>
                 <tr>
                     <th class="size"> Rating </th>
@@ -131,7 +131,7 @@
         </div>
 
 
-        <table class="special">
+        <table class="table special">
             <thead>
                 <tr>
                     <th class="mediumSize"> Data </th>

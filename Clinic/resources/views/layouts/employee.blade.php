@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,34 +20,33 @@
     <!-- Styles -->
     <link href="{{ mix('/css/employee.css') }}" rel="stylesheet">
 </head>
+
 <body>
     <nav class="sidenav">
-                <header>
-                <a href="{{ url('/employee') }}">{{$user->name}}</a>
-                </header>
-            <a href="{{ url('/employee/appointment') }}">
-            <img src="{{asset('assets/Both/appointment.png')}}"/> Consultas
-            </a>
+        <header>
+            <a href="{{ url('/employee') }}">{{$user->name}}</a>
+        </header>
+        <a href="{{ url('/employee/appointment') }}">
+            <img src="{{asset('assets/Both/appointment.png')}}" /> Consultas
+        </a>
 
-            <a href="{{ url('/employee/analysis') }}">
-            <img src="{{asset('assets/Both/appointment.png')}}"/> Analises
-            </a>
+        <a href="{{ url('/employee/analysis') }}">
+            <img src="{{asset('assets/Both/appointment.png')}}" /> Analises
+        </a>
 
-            <a  href="{{ url('/employee/medic') }}">
-            <img src="{{asset('assets/Both/appointment.png')}}"/> Medicos
-            </a>
+        <a href="{{ url('/employee/medic') }}">
+            <img src="{{asset('assets/Both/appointment.png')}}" /> Medicos
+        </a>
 
-            <a href="{{ url('/employee/schedule') }}">
-            <img src="{{asset('assets/Both/appointment.png')}}"/> Horarios
-            </a>
 
-            <a href="{{ url('/employee/client') }}">
-            <img src="{{asset('assets/Both/appointment.png')}}"/> Clientes
-            </a>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST">
-                @csrf
-                <button type="submit"><img src="{{asset('assets/Both/appointment.png')}}"/> Logout</button>
-            </form>
+
+        <a href="{{ url('/employee/client') }}">
+            <img src="{{asset('assets/Both/appointment.png')}}" /> Clientes
+        </a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST">
+            @csrf
+            <button type="submit"><img src="{{asset('assets/Both/appointment.png')}}" /> Logout</button>
+        </form>
     </nav>
 
 
@@ -55,4 +55,5 @@
     </main>
 
 </body>
+
 </html>

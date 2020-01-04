@@ -1,7 +1,11 @@
 @extends('layouts.client')
 
 @section('content')
+<meta name="csrf-token" content="{{ csrf_token() }}">
+
 <script src="{{ asset('js/utils.js')}}" defer></script>
+<script src="{{ asset('js/oneMore.js') }}" defer></script>
+
 <div class="welcome">
     <img id="stetho" class="rotate-vert-center" src="{{asset('assets/Gest/healthcare-logo.png')}}" />
     <br>
@@ -22,6 +26,17 @@
         <div id="temperature2"></div>
     </div>
 
+    <div id="modalComent" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h1> Consultas e Analises marcadas </h1>
+            <div class="changedContent">
+                <div id="fillStuff"></div>
+                <div id="fillStuff2"></div>
+            </div>
+            <div id="error"></div>
+        </div>
+    </div>
 </div>
 
 </div>

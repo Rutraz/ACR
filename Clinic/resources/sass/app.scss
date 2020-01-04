@@ -19,7 +19,7 @@
 .topnav {
     overflow: hidden;
     background-color: $cyan;
-    font-family: "Nunito", sans-serif;
+    font-family: $font-family-sans-serif;
     a {
         float: left;
         color: #f2f2f2;
@@ -43,5 +43,5 @@
 }
 body {
     margin: 0px;
-    font-family: "Nunito", sans-serif;
+    font-family: $font-family-sans-serif;
 }

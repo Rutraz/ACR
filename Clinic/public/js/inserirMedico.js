@@ -36,6 +36,7 @@ function inserir() {
     var cell = sendmedic.cellphone.value;
     var pass = name + "123";
     var adse = sendmedic.adses.value;
+    var calendarId = sendmedic.calendarId.value;
     var esp = $("#especialidades option:selected").val();
 
     var erro = "";
@@ -46,8 +47,11 @@ function inserir() {
         cellphone: cell,
         password: pass,
         adse: adse,
-        specialty: esp
+        specialty: esp,
+        calendarid: calendarId
     };
+
+    console.log(dataToSend);
 
     $.ajax({
         url: "/api/medic",

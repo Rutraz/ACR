@@ -2,7 +2,7 @@
 
 @section('content')
 <script src="{{ asset('js/help.js') }}" defer></script>
-<div>
+<div class="helpPage">
     <div class="headerhelp" style="background-image:url('{{ asset('assets/Gest/helpbg.png') }}')">
         <p class="maintitle"> FAQ </p>
         <p class="abstract"> Têm alguma dúvida relativamente ao funcionamento do nosso serviço ou à nossa plataforma de

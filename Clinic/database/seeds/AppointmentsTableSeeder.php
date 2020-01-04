@@ -28,16 +28,16 @@ class AppointmentsTableSeeder extends Seeder
             'client_id' => '2',
         ]);
         DB::table('appointments')->insert([
-            'date' => '2019-11-30 16:15:06',
+            'date' => '2020-01-07 16:00:00',
             'state_id' => '2',
-            'rating' => '3',
-            'comments' => 'Nao gosto dele',
+            'rating' => '0',
+            'comments' => '',
             'medic_id' => '1',
             'client_id' => '2',
         ]);
 
         DB::table('appointments')->insert([
-            'date' => '2019-11-18 11:15:06',
+            'date' => '2020-01-08 14:00:00',
             'state_id' => '2',
             'rating' => '0',
             'comments' => '',

@@ -55,6 +55,8 @@ Route::get('/query', 'SelectController@index'); // VERIFICA SE É CLIENTE OU FUN
 //ROTAS PARA CLIENTE
 Route::get('/client', 'ClientController@index'); // ENVIA A INFORMAÇÃO DO CLIENTE
 
+Route::get('/client/news','AppointmentController@CheckAppointClient');
+
 //--------PROFILE
 Route::get('/client/profile','ClientController@profile'); // ENVIA A INFORMAÇÃO DO CLIENTE COM CONSULTAS E ANALISES
 
@@ -73,14 +75,23 @@ Route::get('/client/appointment','AppointmentController@client');
 
 Route::get('/client/appointment/medic/{id}','MedicController@clientMedic');
 
+Route::post('/client/appointment/medic/{id}','AppointmentController@createAppoint');
+
 Route::post('/client/appointment/comment','AppointmentController@modifyComment');
+
+Route::post('/client/appointment/cancel','AppointmentController@clientChangeStatus');
 
 Route::post('/client/appointment/rate','AppointmentController@modifyRating');
 
+Route::get('/client/appointment/medic/{id}/calendar','MedicController@clientMedicCalendar');
 
 
 //--------ANALISES
 Route::get('/client/analysis','AnalysisController@clientAnalysis'); // ENVIA AS ANÁLISES MARCADAS
+
+Route::post('/client/analysis/cancel','AnalysisController@clientChangeStatus');
+
+Route::post('/client/analysis/create','AnalysisController@createAnalysis');
 
 //--------SUPORTE
 Route::get('/client/support','EmployeeController@support'); // ENVIA A INFORMAÇÃO DOS FUNCIONARIOS
@@ -98,22 +109,18 @@ Route::get('/employee/appointment','AppointmentController@employee');
 Route::post('/employee/appointment/change','AppointmentController@employeeChangeStatus');
 Route::get('/employee/appointment/{id}','AppointmentController@singleAppointment');
 Route::get('/employee/appointment/medic/{id}','MedicController@EmployeeMedicAppoint');
-
+Route::post('/employee/appointment/medic/{id}','AppointmentController@createAppointEmployee');
 
 
 //--------ANALISES
 Route::get('/employee/analysis','AnalysisController@employeeAnalysis'); // ENVIA A INFORMAÇÃO DE TODAS AS ANÁLISES
 Route::post('/employee/analysis/change','AnalysisController@employeeChangeStatus');
-
+Route::post('/employee/analysis/create','AnalysisController@createEmployeeAnalysis');
 
 //--------MEDICOS
 Route::get('/employee/medic','MedicController@getAllMedic'); // ENVIA A INFORMAÇÃO DE TODOS OS MEDICOS
 Route::get('/employee/medic/{id}','MedicController@EmployeeMedic');
 Route::post('/employee/medic/comment','AppointmentController@EraseComment');
-
-//--------HORARIOS
-Route::get('/employee/schedule','MedicController@schedule'); // ENVIA A HORARIOS DOS MEDICOS
-
 
 
 Route::get('/medic/search','MedicController@medicSearch');
@@ -154,3 +161,6 @@ Route::get('/api/client/{id}/analysis', 'ApiController@getClientAnalysis'); //EN
 Route::get('/api/client/user/{id}', 'ApiController@getClientSingleUser'); // ENVIA A INFORMAÇÃO DO CLIENTE ID=X
 
 
+Route::get('/api/analysis','AnalysisController@returnAnalysis');
+
+Route::get('/api/appointment/medic/{id}/calendar','MedicController@MedicCalendar');

@@ -1,13 +1,24 @@
 @extends('layouts.employee')
 
 @section('content')
+<script src="https://cdn.jsdelivr.net/npm/moment@2/moment.min.js"></script>
+<script src="https://apis.google.com/js/api.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+
+
+<link href='{{asset('fullcalender/packages/core/main.css')}}' rel='stylesheet' />
+<link href='{{asset('fullcalender/packages/daygrid/main.css')}}' rel='stylesheet' />
+<link href='{{asset('fullcalender/packages/timegrid/main.css')}}' rel='stylesheet' />
+<link href='{{asset('fullcalender/packages/list/main.css')}}' rel='stylesheet' />
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
 <div class="singleMedicPage">
 
     <div class="header">
-
+        <input type="hidden" name="medicID" id="medicID" value="{{$getMedic->user->id}}">
+        <input type="hidden" name="calendarid" id="calendarid" value="{{$getMedic->calendarid}}">
         <!-- Coluna -->
         <img id="img_medic_profile" src="\assets\stethoscope.svg" alt=""> <!-- LINHA -->
         <!-- Coluna -->
@@ -30,16 +41,38 @@
         </div>
 
         <div class="item item1">
-            <button id="goBottom">Ver historial</button> <br><br>
-            <button id="goTop">Marcar Consulta</button>
+            <button id="goBottom">Historial</button> <br>
+            <button id="goTop">Horário</button>
         </div>
     </div>
 
     <div class="heighClassMaster">
 
-        <div id="init" class="heighClass">
+        <div id="modalEvent" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="changedContent">
+                    <h1> Modificar estado da consulta </h1>
+                    <div id="NameOfUser"></div>
+                    <select name="stateChange" id="stateChange">
+                        <option value="3">Aceite</option>
+                        <option value="4">Concluido</option>
+                        <option value="5">Cancelar</option>
+                    </select>
+                    <br> <br>
+                    <div id="error"></div>
+                    <button id="sendEvent">Enviar </button>
+                    <br>
+                </div>
+            </div>
+        </div>
 
-            <span>CALENDARIO PARA MODIFICAR</span>
+        <!-- FALTA ACABAR O CALENDÀRIO PARA MUDAR O HORARIO -->
+        <div id="init" style="width:90%; text-align:center; margin-left:auto; margin-right:auto;">
+            <div id='calendar' class="sizeUpTr"></div>
+
+            <div style='clear:both'></div>
+
         </div>
         <div id="end" class="comments heighClass">
 
@@ -49,6 +82,7 @@
                     <div class="changedContent">
                         <input type="hidden" name="_token" id="token" value="{{csrf_token()}}">
                         <h1> Eliminar commentario </h1>
+
                         <div id="error"></div>
                         <button id="sendComment">Eliminar </button>
                         <br>
@@ -90,11 +124,11 @@
                     </tr>
                     @endif
                     @endforeach
-                    @else
-                    <tr>
-                        <td colspan="3"> Não tem historial disponivel sobre consultas </td>
-                    </tr>
                     @endif
+
+                    <tr>
+                        <td> Histórico de apenas consultas finalizadas </td>
+                    </tr>
                 </tbody>
             </table>
         </div>
@@ -185,6 +219,81 @@
                     }
             });
         });
+
+       function openEventModal(name,id){
+           var id = id;
+            var modal = document.getElementById("modalEvent");
+            var calendar = document.getElementById("calendar");
+            $("#NameOfUser").empty();
+            $("#NameOfUser").append("<h2>"+name+" </h2>");
+            calendar.style.display = "none";
+            modal.style.display = "block";
+                    
+            var span = document.getElementsByClassName("close")[0];
+            
+            span.onclick = function() {
+                modal.style.display = "none";
+                calendar.style.display = "block";
+                $("#sendEvent").remove();
+                $(".changedContent").append('<button id="sendEvent">Enviar </button>');
+            };
+            
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                    calendar.style.display = "block";
+                    $("#sendEvent").remove();
+                    $(".changedContent").append('<button id="sendEvent">Enviar </button>');
+                }
+            };
+
+            $("#sendEvent").click(function() {
+                var content = $("#stateChange").val();
+                var token = $("#token").val();
+                var dataToSend = {
+                    id: id,
+                    " _token": token,
+                    state_id: content
+                };
+                console.log(dataToSend);
+                
+                $.ajax({
+                    url: "/employee/appointment/change",
+                    type: "POST",
+                    data: dataToSend,
+                    async: true,
+                    success: function(data, statuTxt, xhr) {
+                        console.log(data);
+                        if (data.success) {
+                            modal.style.display = "none";
+                            calendar.style.display = "block";
+                            $("#calendar").empty();
+                            initPage()         ;    
+                        } else {
+                            $("#error").empty();
+                            $("#error").append(
+                                "<span>" + data.message + "</span> "
+                            );
+                        }
+                        $("#sendEvent").remove();
+                        $(".changedContent").append(
+                            '<button id="sendEvent">Enviar </button>'
+                        );
+                    }
+                });
+               
+            });
+        }
+
     </script>
+
+    <script src='{{asset('fullcalender/packages/core/main.js')}}'></script>
+    <script src='{{asset('fullcalender/packages/interaction/main.js')}}'></script>
+    <script src='{{asset('fullcalender/packages/daygrid/main.js')}}'></script>
+    <script src='{{asset('fullcalender/packages/timegrid/main.js')}}'></script>
+    <script src='{{asset('fullcalender/packages/list/main.js')}}'></script>
+    <script src='{{asset('fullcalender/packages/core/locales-all.js')}}'></script>
+
+    <script src='{{asset('fullcalender/js/medicCalendar.js')}}'></script>
 </div>
 @endsection
