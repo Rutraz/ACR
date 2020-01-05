@@ -92,17 +92,21 @@ function calendar() {
 
 function verify(date, start, callback) {
     var currentDate = new Date(date);
-
+    var bool = false;
     workableData.forEach(element => {
         var minDate = new Date(element.start);
         var maxDate = new Date(element.end);
 
         if (currentDate >= minDate && currentDate < maxDate) {
+            bool = true;
             callback(start);
         } else {
             console.log("Out Side range !!");
         }
     });
+    if (!bool) {
+        alert("Não é possivel marcar a consulta nesta hora");
+    }
 }
 
 function printHoliday() {

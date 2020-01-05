@@ -156,7 +156,7 @@
 
                 <br><br>
 
-                <label for="comfirm">{{ __('Comfirme a password') }}</label>
+                <label for="comfirm">{{ __('Confirme a password') }}</label>
                 <input id="comfirm" type="password" class="loginput @error('comfirm') invalid @enderror" name="comfirm"
                     placeholder="Confirma a sua nova password" required autocomplete="new-password" minlength="8">
 
@@ -189,7 +189,7 @@
 
                 <br><br>
 
-                <label for="passwordComfirm">{{ __('Comfirme a password') }}</label>
+                <label for="passwordComfirm">{{ __('Confirme a password') }}</label>
                 <input id="passwordComfirm" type="password" class="loginput @error('passwordComfirm') invalid @enderror"
                     name="passwordComfirm" placeholder="Confirma a sua nova password" required minlength="8">
 

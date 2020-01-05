@@ -1,5 +1,6 @@
 .aboutContainer {
     font-family: "Nunito", sans-serif;
+    height: 300%;
     .header {
         text-align: center;
         background-size: 100%;
@@ -13,7 +14,6 @@
     }
 
     .body {
-        height: 100vh;
         .m-b-md {
             padding-left: 5%;
             display: flex;

@@ -522,7 +522,7 @@
 }
 
 .helpPage {
-  height: 100vh;
+  height: 300%;
 }
 
 .helpPage .headerhelp {
@@ -618,6 +618,7 @@
 
 .aboutContainer {
   font-family: "Nunito", sans-serif;
+  height: 300%;
 }
 
 .aboutContainer .header {
@@ -633,7 +634,6 @@
 }
 
 .aboutContainer .body {
-  height: 100vh;
   margin: 0px;
 }
 

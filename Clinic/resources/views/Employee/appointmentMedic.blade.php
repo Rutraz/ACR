@@ -65,7 +65,7 @@
             
 
             if(cc && email){
-                if (confirm("Quer comfimar a consulta para " + start + "!")) {
+                
                     var obj = {
                         _token: $("#token").val(),
                         id: $("#medicID").val(),
@@ -124,9 +124,7 @@
                             }
                         }
                     });
-                }else{
-                    console.log("adeus");
-                }
+                
             }else{
                 $("#cc").css("border-color", "#ff1a1a");
                 $("#email").css("border-color", "#ff1a1a");     

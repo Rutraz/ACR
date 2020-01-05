@@ -127,7 +127,7 @@
         });
 
         function sendData(start) {
-            if (confirm("Quer comfimar a consulta para " + start + "!")) {
+            
                 var obj = {
                     _token: $("#token").val(),
                     id: $("#medicID").val(),
@@ -169,9 +169,7 @@
                     }
                 });
             
-            } else {
-                console.log("adeus");
-            }
+            
         }
     </script>
 
