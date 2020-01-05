@@ -113,10 +113,12 @@
 
                 tr {
                     width: 100%;
-                }
-                tr {
                     display: table;
                     table-layout: fixed;
+                }
+
+                td {
+                    overflow-x: auto;
                 }
                 tr:nth-child(even) {
                     background-color: #f2f2f2;

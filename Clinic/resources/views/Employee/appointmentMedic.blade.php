@@ -65,65 +65,68 @@
             
 
             if(cc && email){
-                var obj = {
-                    _token: $("#token").val(),
-                    id: $("#medicID").val(),
-                    cc :cc,
-                    email: email,
-                    date: start
-                };
-            console.log(obj);
+                if (confirm("Quer comfimar a consulta para " + start + "!")) {
+                    var obj = {
+                        _token: $("#token").val(),
+                        id: $("#medicID").val(),
+                        cc :cc,
+                        email: email,
+                        date: start
+                    };
+                console.log(obj);
 
-                $.ajax({
-                    url: "/employee/appointment/medic/" + obj.id,
-                    type: "POST",
-                    data: obj,
-                    async: true,
-                    success: function(data, statuTxt, xhr) {
-                        console.log(data);
+                    $.ajax({
+                        url: "/employee/appointment/medic/" + obj.id,
+                        type: "POST",
+                        data: obj,
+                        async: true,
+                        success: function(data, statuTxt, xhr) {
+                            console.log(data);
 
-                        if (data.success) {
-                            var date = new Date(data.message.date);
-                            var dateEnd = moment(date)
-                            .add(1, "hours")
-                                .format();
-                            console.log(date.toISOString());
-                            console.log(dateEnd);
+                            if (data.success) {
+                                var date = new Date(data.message.date);
+                                var dateEnd = moment(date)
+                                .add(1, "hours")
+                                    .format();
+                                console.log(date.toISOString());
+                                console.log(dateEnd);
 
-                            var obj = {
-                                groupId: "full",
-                                id: data.message.id,
-                                start: date.toISOString(),
-                                end: dateEnd,
-                                color: data.message.state.color, // an option!
-                                textColor: "black" // an option!
-                            };
+                                var obj = {
+                                    groupId: "full",
+                                    id: data.message.id,
+                                    start: date.toISOString(),
+                                    end: dateEnd,
+                                    color: data.message.state.color, // an option!
+                                    textColor: "black" // an option!
+                                };
 
-                            console.log(calendar);
-                            eventData.push(obj);
+                                eventData.push(obj);
 
-                            $("#calendar").empty();
-                            calendar();
-                            alert("Marcou a consulta com sucesso");
-                        }
-                        else{
-                            var text = "";
-                            if(data.message){
-
-                                if(data.message.cc){
-                                    text += "Cartao de cidadao invalido \n"
-                                }
-                                if(data.message.email){
-                                    text += "Email invalido"
-                                }
-                            }else{
-                                text += data.messageNot
+                                $("#calendar").empty();
+                                calendar();
+                                alert("Marcou a consulta com sucesso");
                             }
-                            
-                            alert(text);
+                            else{
+                                var text = "";
+                                if(data.message){
+
+                                    if(data.message.cc){
+                                        text += "Cartao de cidadao invalido \n"
+                                    }
+                                    if(data.message.email){
+                                        text += "Email invalido"
+                                    }
+                                }else{
+                                    text += data.messageNot
+                                }
+                                
+                                alert(text);
+                            }
                         }
-                    }
-                });
+                    });
+                }else{
+                    console.log("adeus");
+                }
             }else{
                 $("#cc").css("border-color", "#ff1a1a");
                 $("#email").css("border-color", "#ff1a1a");     

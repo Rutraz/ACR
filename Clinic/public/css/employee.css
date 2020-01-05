@@ -74,6 +74,7 @@
 
 ::-webkit-scrollbar {
   width: 0.5em;
+  height: 0.4em;
 }
 
 ::-webkit-scrollbar-track {
@@ -239,6 +240,10 @@
   table-layout: fixed;
 }
 
+.medics table tbody td {
+  overflow-x: auto;
+}
+
 .medics table tbody tr:nth-child(even) {
   background-color: #f2f2f2;
 }
@@ -356,6 +361,10 @@
   display: table;
   table-layout: fixed;
   background-color: white;
+}
+
+.appointmentPage .table tbody td {
+  overflow-x: auto;
 }
 
 .appointmentPage .table tbody tr:nth-child(even) {
@@ -740,6 +749,10 @@
   background-color: #f2f2f2;
 }
 
+.welcomePage table tbody td {
+  overflow-x: auto;
+}
+
 .welcomePage table tbody tr:hover {
   background-color: #ddd;
 }
@@ -907,11 +920,12 @@
 
 .singleMedicPage .comments table tbody tr {
   width: 100%;
-}
-
-.singleMedicPage .comments table tbody tr {
   display: table;
   table-layout: fixed;
+}
+
+.singleMedicPage .comments table tbody td {
+  overflow-x: auto;
 }
 
 .singleMedicPage .comments table tbody tr:nth-child(even) {

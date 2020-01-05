@@ -10,16 +10,16 @@
             <input type="hidden" name="_token" value="{{csrf_token()}}">
             <div class="item">
                 <label for="name">{{ __('Nome: ') }}</label>
-                <input type="text" name="name">
+                <input type="text" name="name" required>
 
                 <div class="ajust-left">
                     <label for="name">{{ __('Email: ') }}</label>
-                    <input type="text" name="email">
+                    <input type="email" name="email" required>
                 </div>
 
                 <div class="ajust-left">
                     <label for="name">{{ __(' Telefone: ') }}</label>
-                    <input type="text" name="cellphone"> <br>
+                    <input type="text" name="cellphone" required> <br>
                 </div>
             </div>
             <br>
@@ -30,11 +30,11 @@
 
                 <div class="ajust-left1">
                     <label for="name">{{ __(' Especialidade: ') }}</label>
-                    <select name="specialty" id="especialidades" value=""> </select>
+                    <select name="specialty" id="especialidades" value="" required> </select>
                 </div>
                 <div class="ajust-left">
                     <label for="calendarId">{{ __(' ID do calendário: ') }}</label>
-                    <input type="text" name="calendarId"> <br>
+                    <input type="text" name="calendarId" required> <br>
                 </div>
             </div>
 
@@ -104,14 +104,14 @@
                 @foreach($medicos as $medico)
                 <tr>
                     <td class="size"> {{$medico->id}} </td>
-                    <td id="nameTd{{$medico->id}}"> {{$medico->user->name}} </td>
-                    <td id="emailTd{{$medico->id}}"> {{$medico->user->email}}</td>
+                    <td id="nameTd{{$medico->id}}">{{$medico->user->name}}</td>
+                    <td id="emailTd{{$medico->id}}">{{$medico->user->email}}</td>
                     <td id="cellTd{{$medico->id}}">{{$medico->user->cellphone}}</td>
-                    <td class="size"> {{$medico->rating}} </td>
+                    <td class="size">{{$medico->rating}}</td>
                     @if($medico->adse == 1)
-                    <td id="adse1Td{{$medico->id}}" class="size"> Sim </td>
+                    <td id="adse1Td{{$medico->id}}" class="size">Sim</td>
                     @else
-                    <td id="adse1Td{{$medico->id}}" class="size"> Não </td>
+                    <td id="adse1Td{{$medico->id}}" class="size">Não</td>
                     @endif
                     <td id="espTd{{$medico->id}}">{{$medico->specialty->specialty}}</td>
                     <td class="size">

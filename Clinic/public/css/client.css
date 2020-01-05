@@ -74,6 +74,7 @@
 
 ::-webkit-scrollbar {
   width: 0.5em;
+  height: 0.4em;
 }
 
 ::-webkit-scrollbar-track {
@@ -370,6 +371,10 @@
   width: 45%;
 }
 
+.welcome .changedContent ul {
+  text-decoration: none;
+}
+
 .appointment {
   font-family: "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 1em;
@@ -492,11 +497,12 @@
 
 .appointment table tbody tr {
   width: 100%;
-}
-
-.appointment table tbody tr {
   display: table;
   table-layout: fixed;
+}
+
+.appointment table tbody td {
+  overflow-x: auto;
 }
 
 .appointment table tbody tr:nth-child(even) {
@@ -691,11 +697,12 @@
 
 .profile #fullpage .client-appointmments .appointmments-table table tbody tr {
   width: 100%;
-}
-
-.profile #fullpage .client-appointmments .appointmments-table table tbody tr {
   display: table;
   table-layout: fixed;
+}
+
+.profile #fullpage .client-appointmments .appointmments-table table tbody td {
+  overflow-x: auto;
 }
 
 .profile #fullpage .client-appointmments .appointmments-table table tbody tr:nth-child(even) {
@@ -1073,11 +1080,12 @@
 
 .clientMedic .comments table tbody tr {
   width: 100%;
-}
-
-.clientMedic .comments table tbody tr {
   display: table;
   table-layout: fixed;
+}
+
+.clientMedic .comments table tbody td {
+  overflow-x: auto;
 }
 
 .clientMedic .comments table tbody tr:nth-child(even) {

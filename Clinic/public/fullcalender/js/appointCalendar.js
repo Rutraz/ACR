@@ -6,7 +6,6 @@ function initPage() {
     $.get(
         "/api/appointment/medic/" + $("#medicID").val() + "/calendar",
         function(data) {
-            console.log(data);
             if (data.success) {
                 for (var el in data.appointments) {
                     var date = new Date(data.appointments[el].date);
@@ -15,7 +14,7 @@ function initPage() {
                         .format();
 
                     var obj = {
-                        groupId: "full",
+                        groupId: "completed",
                         id: data.appointments[el].id,
                         start: date.toISOString(),
                         end: dateEnd,
@@ -61,7 +60,6 @@ function calendar() {
         editable: false,
 
         dateClick: function(event) {
-            var bool = false;
             var start = moment(event.dateStr).format("YYYY-MM-DD HH:mm:ss");
 
             var verification = moment(event.dateStr).format("HH:mm:ss");
@@ -76,8 +74,7 @@ function calendar() {
 
             if (parse != 0 && date.getTime() > now.getTime()) {
                 if (confirm("Quer comfimar as analises para " + start + "!")) {
-                    console.log(start);
-                    sendData(start);
+                    verify(event.dateStr, start, sendData);
                 }
             } else {
                 console.log("adeus");
@@ -93,9 +90,22 @@ function calendar() {
     calendar.render();
 }
 
-function printHoliday() {
-    var calendarId = "1i29600sqpel6cuovbc3g6qhqc@group.calendar.google.com";
+function verify(date, start, callback) {
+    var currentDate = new Date(date);
 
+    workableData.forEach(element => {
+        var minDate = new Date(element.start);
+        var maxDate = new Date(element.end);
+
+        if (currentDate >= minDate && currentDate < maxDate) {
+            callback(start);
+        } else {
+            console.log("Out Side range !!");
+        }
+    });
+}
+
+function printHoliday() {
     var apiKey = "AIzaSyCKT1TdtuayzpzjoKQnuh1nJU7NH95dIwk";
 
     var calendarIdHoliday = "en.portuguese#holiday@group.v.calendar.google.com";
@@ -116,7 +126,7 @@ function printHoliday() {
                 timeZone: userTimeZone,
                 singleEvents: true,
                 timeMin: new Date().toISOString(), //traz apenas o eventos apartir de hoje
-                maxResults: 20,
+                maxResults: 10,
                 orderBy: "startTime"
             });
         })
@@ -128,7 +138,7 @@ function printHoliday() {
 
                     for (var el in response.result.items) {
                         var obj = {
-                            groupId: "completed",
+                            groupId: "holiday",
                             title: response.result.items[el].summary,
                             id: response.result.items[el].id,
                             start: moment(response.result.items[el].start.date)
@@ -142,8 +152,8 @@ function printHoliday() {
                         };
                         eventData.push(obj);
                     }
-                    console.log("EventData");
-                    console.log(eventData);
+                    /*  console.log("EventData");
+                    console.log(eventData); */
                     gapi.load("client", printCalendar);
                 }
             },
@@ -174,7 +184,7 @@ function printCalendar() {
                 timeZone: userTimeZone,
                 singleEvents: true,
                 timeMin: new Date().toISOString(), //traz apenas o eventos apartir de hoje
-                maxResults: 20,
+                maxResults: 30,
                 orderBy: "startTime"
             });
         })
@@ -186,7 +196,7 @@ function printCalendar() {
 
                     for (var el in response.result.items) {
                         var obj = {
-                            groupId: "completed",
+                            groupId: "work",
                             title: response.result.items[el].summary,
                             id: response.result.items[el].id,
                             start: response.result.items[el].start.dateTime,
@@ -195,9 +205,10 @@ function printCalendar() {
                             color: "blue" // an option!
                         };
                         eventData.push(obj);
+                        workableData.push(obj);
                     }
-                    console.log("EventData");
-                    console.log(eventData);
+                    /* console.log("EventData");
+                    console.log(eventData); */
                     calendar();
                 }
             },

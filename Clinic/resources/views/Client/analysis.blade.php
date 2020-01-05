@@ -41,47 +41,47 @@
 
     <script>
         function sendData(start) {
-        var obj = {
-            _token: $("#token").val(),
-            date: start
-        };
-    console.log(obj);
+            var obj = {
+                _token: $("#token").val(),
+                date: start
+            };
+            console.log(obj);
 
-    $.ajax({
-        url: "/client/analysis/create",
-        type: "POST",
-        data: obj,
-        async: true,
-        success: function(data, statuTxt, xhr) {
-            console.log(data);
+            $.ajax({
+                url: "/client/analysis/create",
+                type: "POST",
+                data: obj,
+                async: true,
+                success: function(data, statuTxt, xhr) {
+                    console.log(data);
 
-            if (data.success) {
-                var date = new Date(data.message.date);
-                var dateEnd = moment(date)
-                    .add(30, "m")
-                    .format();
-                console.log(date.toISOString());
-                console.log(dateEnd);
+                    if (data.success) {
+                        var date = new Date(data.message.date);
+                        var dateEnd = moment(date)
+                            .add(30, "m")
+                            .format();
+                        console.log(date.toISOString());
+                        console.log(dateEnd);
 
-                var obj = {
-                    groupId: "full",
-                    id: data.message.id,
-                    start: date.toISOString(),
-                    end: dateEnd,
-                    color: "yellow", // an option!
-                    textColor: "black" // an option!
-                };
+                        var obj = {
+                            groupId: "full",
+                            id: data.message.id,
+                            start: date.toISOString(),
+                            end: dateEnd,
+                            color: "yellow", // an option!
+                            textColor: "black" // an option!
+                        };
 
-                console.log(calendar);
-                eventData.push(obj);
+                        console.log(calendar);
+                        eventData.push(obj);
 
-                $("#calendar").empty();
-                calendar();
-                alert("Foi marcado com sucesso");
-            }
+                        $("#calendar").empty();
+                        calendar();
+                        alert("Foi marcado com sucesso");
+                    }
+                }
+            });
         }
-    });
-}
     </script>
 
 </div>

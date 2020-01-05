@@ -1,5 +1,5 @@
+var obj = [];
 function initPage() {
-    var obj = [];
     //vai buscar a speciality dos medicos
     $.get("/api/medic/esp", function(data) {
         console.log(data.data);
@@ -41,6 +41,11 @@ function inserir() {
 
     var erro = "";
 
+    if (!name || !email || !cell || !adse || !calendarId) {
+        alert("Todos os campos são obrigatórios!");
+        return;
+    }
+
     var dataToSend = {
         name: name,
         email: email,
@@ -74,33 +79,63 @@ function inserir() {
                         "<td class='size'>" +
                         data.data.id +
                         "</td>" +
-                        "<td>" +
+                        "<td id='nameTd" +
+                        data.data.id +
+                        "'>" +
                         data.data.user.name +
                         "</td>" +
-                        "<td>" +
+                        "<td id='emailTd" +
+                        data.data.id +
+                        "'>" +
                         data.data.user.email +
                         "</td>" +
-                        "<td>" +
+                        "<td id='cellTd" +
+                        data.data.id +
+                        "'>" +
                         data.data.user.cellphone +
                         "</td>" +
                         "<td class='size'>" +
                         data.data.rating +
                         "</td>" +
-                        "<td class='size'>" +
+                        "<td class='size' id='adse1Td" +
+                        data.data.id +
+                        "'>" +
                         data.data.adse +
                         "</td>" +
-                        "<td>" +
+                        "<td id='espTd" +
+                        data.data.id +
+                        "'>" +
                         data.data.specialty.specialty +
                         "</td>" +
                         "<td class='size' >" +
-                        "<form action='/admin/medics/" +
+                        "<input type='hidden' id='name" +
                         data.data.id +
-                        "' method='POST'>" +
-                        "<input type='hidden' name='_token' value=" +
-                        _token +
-                        ">" +
-                        "<button type='submit'>Editar</button>" +
-                        "</form>" +
+                        "' value=" +
+                        data.data.user.name +
+                        "> " +
+                        "<input type='hidden' id='email" +
+                        data.data.id +
+                        "' value=" +
+                        data.data.user.email +
+                        "> " +
+                        "<input type='hidden' id='cellphone" +
+                        data.data.id +
+                        "' value=" +
+                        data.data.user.cellphone +
+                        "> " +
+                        "<input type='hidden' id='adse" +
+                        data.data.id +
+                        "' value=" +
+                        data.data.adse +
+                        "> " +
+                        "<input type='hidden' id='esp" +
+                        data.data.id +
+                        "' value=" +
+                        data.data.specialty.specialty +
+                        "> " +
+                        "<button id=" +
+                        data.data.id +
+                        " class='edit'>Editar</button>" +
                         "</td>" +
                         "<td class='size' >" +
                         "<form action='/admin/medics/" +
@@ -114,6 +149,12 @@ function inserir() {
                         "</td>" +
                         "</tr>"
                 );
+                EditarMedico(obj);
+                sendmedic.name.value = "";
+                sendmedic.email.value = "";
+                sendmedic.cellphone.value = "";
+                sendmedic.adses.value = "";
+                sendmedic.calendarId.value = "";
             }
         }
     });

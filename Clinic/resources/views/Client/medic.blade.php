@@ -127,48 +127,52 @@
         });
 
         function sendData(start) {
-        var obj = {
-            _token: $("#token").val(),
-            id: $("#medicID").val(),
-            date: start,
-        };
-    console.log(obj);
-
-    $.ajax({
-        url: "/client/appointment/medic/" + obj.id,
-        type: "POST",
-        data: obj,
-        async: true,
-        success: function(data, statuTxt, xhr) {
-            console.log(data);
-
-            if (data.success) {
-                var date = new Date(data.message.date);
-                var dateEnd = moment(date)
-                .add(1, "hours")
-                    .format();
-                console.log(date.toISOString());
-                console.log(dateEnd);
-
+            if (confirm("Quer comfimar a consulta para " + start + "!")) {
                 var obj = {
-                    groupId: "full",
-                    id: data.message.id,
-                    start: date.toISOString(),
-                    end: dateEnd,
-                    color: data.message.state.color, // an option!
-                    textColor: "black" // an option!
+                    _token: $("#token").val(),
+                    id: $("#medicID").val(),
+                    date: start,
                 };
+                console.log(obj);
 
-                console.log(calendar);
-                eventData.push(obj);
+                $.ajax({
+                    url: "/client/appointment/medic/" + obj.id,
+                    type: "POST",
+                    data: obj,
+                    async: true,
+                    success: function(data, statuTxt, xhr) {
+                        console.log(data);
 
-                $("#calendar").empty();
-                calendar();
-                alert("Marcou a consulta com sucesso");
+                        if (data.success) {
+                            var date = new Date(data.message.date);
+                            var dateEnd = moment(date)
+                            .add(1, "hours")
+                                .format();
+                            console.log(date.toISOString());
+                            console.log(dateEnd);
+
+                            var obj = {
+                                groupId: "full",
+                                id: data.message.id,
+                                start: date.toISOString(),
+                                end: dateEnd,
+                                color: data.message.state.color, // an option!
+                                textColor: "black" // an option!
+                            };
+                            
+                            eventData.push(obj);
+
+                            $("#calendar").empty();
+                            calendar();
+                            alert("Marcou a consulta com sucesso");
+                        }
+                    }
+                });
+            
+            } else {
+                console.log("adeus");
             }
         }
-    });
-}
     </script>
 
     <script src='{{asset('fullcalender/packages/core/main.js')}}'></script>

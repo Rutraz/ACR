@@ -4,7 +4,7 @@ function initPage() {
     gapi.load("client", printHoliday);
 
     $.get("/api/analysis", function(data) {
-        console.log(data);
+        /*  console.log(data); */
         if (data.success) {
             for (var el in data.message) {
                 var date = new Date(data.message[el].date);
@@ -104,8 +104,6 @@ function calendar() {
 }
 
 function printHoliday() {
-    var calendarId = "1i29600sqpel6cuovbc3g6qhqc@group.calendar.google.com";
-
     var apiKey = "AIzaSyCKT1TdtuayzpzjoKQnuh1nJU7NH95dIwk";
 
     var calendarIdHoliday = "en.portuguese#holiday@group.v.calendar.google.com";
@@ -152,8 +150,8 @@ function printHoliday() {
                         };
                         eventData.push(obj);
                     }
-                    console.log("EventData");
-                    console.log(eventData);
+                    /* console.log("EventData");
+                    console.log(eventData); */
                     gapi.load("client", printCalendar);
                 }
             },
@@ -206,8 +204,8 @@ function printCalendar() {
                         };
                         eventData.push(obj);
                     }
-                    console.log("EventData");
-                    console.log(eventData);
+                    /*  console.log("EventData");
+                    console.log(eventData); */
                     calendar();
                 }
             },

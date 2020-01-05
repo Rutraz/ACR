@@ -74,6 +74,7 @@
 
 ::-webkit-scrollbar {
   width: 0.5em;
+  height: 0.4em;
 }
 
 ::-webkit-scrollbar-track {
@@ -114,7 +115,7 @@
 
 .admin .admin-table .size {
   height: 50px;
-  width: 50%;
+  width: 40%;
 }
 
 .admin .admin-table #email {
@@ -154,13 +155,9 @@
 }
 
 .admin .admin-table table {
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-          flex-flow: column;
   width: 100%;
   height: 65vh;
+  border-collapse: collapse;
 }
 
 .admin .admin-table table td,
@@ -196,11 +193,12 @@
 
 .admin .admin-table table tbody tr {
   width: 100%;
-}
-
-.admin .admin-table table tbody tr {
   display: table;
   table-layout: fixed;
+}
+
+.admin .admin-table table tbody td {
+  overflow-x: auto;
 }
 
 .admin .admin-table table tbody button {

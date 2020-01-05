@@ -8,7 +8,7 @@ function initPage() {
     $.get(
         "/api/appointment/medic/" + $("#medicID").val() + "/calendar",
         function(data) {
-            console.log(data);
+            /*  console.log(data); */
             if (data.success) {
                 for (var el in data.appointments) {
                     var date = new Date(data.appointments[el].date);
