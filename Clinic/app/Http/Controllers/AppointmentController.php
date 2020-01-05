@@ -305,9 +305,19 @@ class AppointmentController extends Controller
                         'message' =>  $validator->errors(),
                     ], 201);
                 }else{
+                    $message = Appointment::where('id',$request->id)->update(['rating' => $request->rating]); 
+
+                    $singl = Appointment::find($request->id);
+
+                    $appoint = Appointment::select('*')->where('medic_id',$singl->medic_id)->get();
+
+                    $objectAveragePrice = $appoint->avg('rating');
+                   
+
+                    $medic = Medic::where('id',$singl->medic_id)->update(['rating' => $objectAveragePrice]);
                     
-                    $message = Appointment::where('id',$request->id)->update(['rating' => $request->rating]);   
-                    if($message){
+                    
+                    if($message && $medic){
 
                         return response()->json([
                             'success' => true,
