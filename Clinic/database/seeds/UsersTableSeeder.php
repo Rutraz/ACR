@@ -12,7 +12,7 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'name' => 'Joao Fernandes',
+            'name' => 'Admin',
             'email' => 'admin@admin.com',
             'cellphone' => '291775123' ,
             'password' => bcrypt('admin123'),
@@ -47,23 +47,58 @@ class UsersTableSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
-            'name' => 'Maria Alberta',
+            'name' => 'Riley Reid',
             'email' => 'employee1@gmail.com',
             'cellphone' => '291775124' ,
             'password' => bcrypt('12345678'),
         ]);
 
         DB::table('users')->insert([
-            'name' => 'Albertino Rocha',
+            'name' => 'Sasha Grey',
             'email' => 'employee2@gmail.com',
             'cellphone' => '291775125' ,
             'password' => bcrypt('12345678'),
         ]);
 
         DB::table('users')->insert([
+            'name' => 'Mia Khalifa',
+            'email' => 'employee3@gmail.com',
+            'cellphone' => '291775169' ,
+            'password' => bcrypt('12345678'),
+        ]);
+
+        DB::table('users')->insert([
             'name' => 'Filipe Corneto',
             'email' => 'medic3@gmail.com',
-            'cellphone' => '923234694' ,
+            'cellphone' => '986542326' ,
+            'password' => bcrypt('12345678'),
+        ]);
+
+        DB::table('users')->insert([
+            'name' => 'Alberto Vieira',
+            'email' => 'client3@gmail.com',
+            'cellphone' => '968526324' ,
+            'password' => bcrypt('12345678'),
+        ]);
+
+        DB::table('users')->insert([
+            'name' => 'Leonardo Abreu',
+            'email' => 'client4@gmail.com',
+            'cellphone' => '986147852' ,
+            'password' => bcrypt('12345678'),
+        ]);
+
+        DB::table('users')->insert([
+            'name' => 'Ruben Abreu',
+            'email' => 'client5@gmail.com',
+            'cellphone' => '968213542' ,
+            'password' => bcrypt('12345678'),
+        ]);
+
+        DB::table('users')->insert([
+            'name' => 'João Santos',
+            'email' => 'client6@gmail.com',
+            'cellphone' => '925654901' ,
             'password' => bcrypt('12345678'),
         ]);
     }

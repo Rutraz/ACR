@@ -12,19 +12,23 @@ class SpecialtysTableSeeder extends Seeder
     public function run()
     {
         DB::table('specialties')->insert([
-            'specialty' => "pernas"
+            'specialty' => "Pediatria"
         ]); 
         
         DB::table('specialties')->insert([
-            'specialty' => "braços"
+            'specialty' => "Ortopedia"
         ]); 
         
         DB::table('specialties')->insert([
-            'specialty' => "cabeça"
+            'specialty' => "Neurologia"
         ]); 
         
         DB::table('specialties')->insert([
-            'specialty' => "ginecologista"
+            'specialty' => "Ginecologista"
+        ]);
+        
+        DB::table('specialties')->insert([
+            'specialty' => "Urologia"
         ]); 
     }
 }

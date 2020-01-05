@@ -25,5 +25,10 @@ class EmployeesTableSeeder extends Seeder
             'user_id' => '7',
             'admin' => false,
          ]);
+
+         DB::table('employees')->insert([
+            'user_id' => '8',
+            'admin' => false,
+         ]);
     }
 }
