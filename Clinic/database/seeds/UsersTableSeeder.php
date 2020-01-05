@@ -47,28 +47,28 @@ class UsersTableSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
-            'name' => 'Riley Reid',
+            'name' => 'Antonio Variações',
             'email' => 'employee1@gmail.com',
             'cellphone' => '291775124' ,
             'password' => bcrypt('12345678'),
         ]);
 
         DB::table('users')->insert([
-            'name' => 'Sasha Grey',
+            'name' => 'Erica Jardim',
             'email' => 'employee2@gmail.com',
             'cellphone' => '291775125' ,
             'password' => bcrypt('12345678'),
         ]);
 
         DB::table('users')->insert([
-            'name' => 'Mia Khalifa',
+            'name' => 'Vitor Velosa',
             'email' => 'employee3@gmail.com',
             'cellphone' => '291775169' ,
             'password' => bcrypt('12345678'),
         ]);
 
         DB::table('users')->insert([
-            'name' => 'Filipe Corneto',
+            'name' => 'Filipe Dantas',
             'email' => 'medic3@gmail.com',
             'cellphone' => '986542326' ,
             'password' => bcrypt('12345678'),
