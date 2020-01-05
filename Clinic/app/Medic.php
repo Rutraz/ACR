@@ -10,12 +10,6 @@ class Medic extends Model
         'user_id', 'specialty_id', 'rating','adse', 'calendarid'
     ];
 
-
-    public function blocks(){
-
-        return $this->belongsToMany('App\Block',"medic_has__blocks");
-
-    }
     public function appointment(){
         return $this->hasMany('App\Appointment');
     }
